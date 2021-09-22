@@ -1,0 +1,1753 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2021-09-22 00:39:16 by Eclipse SUMO netconvert Version 1.10.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="C:\Program%20Files%20(x86)\Eclipse\Sumo\data\typemap\osmNetconvert.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+        <railway.topology.repair.stop-turn value="true"/>
+    </railway>
+
+    <report>
+        <verbose value="true"/>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="-1950137263" lane="-305176901#2_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-2036538582" lane="-193138280#1_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-2142801107" lane="-303105496#0_0" startPos="9.21" endPos="24.21" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-2142801168" lane="-204269347#3_0" startPos="10.89" endPos="25.89" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-2402775161" lane="-204278072#2_0" startPos="9.44" endPos="24.44" friendlyPos="true" lines="541A 541B 541C 541L 541E 541P"/>
+    <busStop id="-2435446325" lane="-193026196#2_0" startPos="17.40" endPos="32.40" friendlyPos="true" lines="541A 541B 541C 541L 541E 541P"/>
+    <busStop id="-2458620750" lane="-305172098#0_0" startPos="0.00" endPos="10.97" friendlyPos="true" lines="222 221"/>
+    <busStop id="-2458620753" lane="-305172098#3_0" startPos="9.13" endPos="24.13" friendlyPos="true" lines="222 221"/>
+    <busStop id="-2458620762" lane="-226014647#1_0" startPos="6.60" endPos="21.60" friendlyPos="true" lines="196B B196 196D 197R 197B1 197B 222"/>
+    <busStop id="-2458907765" lane="-259401628#1_0" startPos="17.13" endPos="32.13" friendlyPos="true" lines="241A"/>
+    <busStop id="-2458907768" lane="-372500444#0_0" startPos="6.78" endPos="21.78" friendlyPos="true" lines="241A"/>
+    <busStop id="-2458907788" lane="-372500444#3_0" startPos="122.59" endPos="135.81" friendlyPos="true" lines="241A"/>
+    <busStop id="-2458907791" lane="-496253716_0" startPos="27.68" endPos="42.68" friendlyPos="true" lines="241A"/>
+    <busStop id="-2458907794" lane="-459839141#2_0" startPos="24.41" endPos="36.60" friendlyPos="true" lines="241A"/>
+    <busStop id="-2652353692" lane="-956437244#3_0" startPos="61.35" endPos="68.85" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-259777969#0_0" pos="22.95" length="7.79" friendlyPos="1"/>
+        <access lane="-259777969#1_0" pos="42.97" length="44.24" friendlyPos="1"/>
+        <access lane="-259777970_0" pos="0.00" length="7.79" friendlyPos="1"/>
+        <access lane="-259777982_0" pos="0.00" length="45.12" friendlyPos="1"/>
+        <access lane="259777969#1_0" pos="0.00" length="47.35" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-2823666404" lane="-259470109#1_0" startPos="16.78" endPos="31.78" friendlyPos="true" lines="197C">
+        <access lane="-181347086#2_0" pos="0.00" length="34.13" friendlyPos="1"/>
+        <access lane="-303082613#0_0" pos="40.85" length="37.77" friendlyPos="1"/>
+        <access lane="181347086#2_0" pos="74.35" length="38.87" friendlyPos="1"/>
+        <access lane="303082613#0_0" pos="0.00" length="42.09" friendlyPos="1"/>
+        <access lane="368279839_0" pos="40.88" length="52.16" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-2984341834" lane="-539338534_0" startPos="3.45" endPos="18.45" friendlyPos="true" lines="197C">
+        <access lane="-181347083#8_0" pos="0.00" length="21.69" friendlyPos="1"/>
+        <access lane="-539338521#0_0" pos="124.44" length="24.47" friendlyPos="1"/>
+        <access lane="181347083#8_0" pos="107.93" length="17.69" friendlyPos="1"/>
+        <access lane="401044398_0" pos="0.00" length="62.63" friendlyPos="1"/>
+        <access lane="539338521#0_0" pos="0.00" length="21.00" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-2985310317" lane="-363458497#4_0" startPos="38.18" endPos="53.18" friendlyPos="true" lines="100A"/>
+    <busStop id="-3010640647" lane="-363468030#0_0" startPos="40.67" endPos="55.67" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="-3118998087" lane="-259735276#3_0" startPos="11.80" endPos="26.80" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-193139466#0_0" pos="159.34" length="31.51" friendlyPos="1"/>
+        <access lane="-306872646#1_0" pos="0.00" length="34.75" friendlyPos="1"/>
+        <access lane="193139466#0_0" pos="0.00" length="26.83" friendlyPos="1"/>
+        <access lane="306872646#1_0" pos="41.20" length="30.53" friendlyPos="1"/>
+        <access lane="962510039_0" pos="85.42" length="81.84" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-3119042305" lane="-303082601#5_0" startPos="171.84" endPos="186.84" friendlyPos="true" lines="1965 196B 197R 197B1 197B">
+        <access lane="-256537870#3_0" pos="0.00" length="47.78" friendlyPos="1"/>
+        <access lane="-618372003_0" pos="0.00" length="96.54" friendlyPos="1"/>
+        <access lane="256537870#2_0" pos="34.37" length="103.83" friendlyPos="1"/>
+        <access lane="256537870#3_0" pos="27.91" length="50.28" friendlyPos="1"/>
+        <access lane="618372003_0" pos="99.67" length="101.29" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-3334432877" lane="-305176902#6_0" startPos="48.38" endPos="63.38" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-3337988342" lane="-49793790#3_0" startPos="3.41" endPos="18.41" friendlyPos="true" lines="222"/>
+    <busStop id="-3337988664" lane="-305176899#4_0" startPos="14.60" endPos="29.60" friendlyPos="true" lines="222"/>
+    <busStop id="-3361646782" lane="-363484167#3_0" startPos="27.56" endPos="42.56" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-259777972_0" pos="15.75" length="34.76" friendlyPos="1"/>
+        <access lane="-259777986#0_0" pos="0.64" length="45.06" friendlyPos="1"/>
+        <access lane="-259777986#1_0" pos="8.10" length="47.70" friendlyPos="1"/>
+        <access lane="259777972_0" pos="30.47" length="29.96" friendlyPos="1"/>
+        <access lane="259777986#0_0" pos="8.53" length="49.86" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-3393236460" lane="-297176956#7_0" startPos="1.57" endPos="13.59" friendlyPos="true" lines="100A"/>
+    <busStop id="-3393236473" lane="-421207841#0_0" startPos="49.80" endPos="64.80" friendlyPos="true" lines="1965 196B 196I 196D 100U 197 197C 197A">
+        <access lane="-342138978#0_0" pos="39.04" length="63.80" friendlyPos="1"/>
+        <access lane="-368279897_0" pos="13.80" length="50.99" friendlyPos="1"/>
+        <access lane="181347090#5_0" pos="11.88" length="59.42" friendlyPos="1"/>
+        <access lane="342138978#0_0" pos="0.00" length="59.06" friendlyPos="1"/>
+        <access lane="368279897_0" pos="13.89" length="44.22" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-3393236479" lane="-204266499#0_0" startPos="0.00" endPos="11.88" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="-3393236480" lane="-363468029#2_0" startPos="33.98" endPos="48.98" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-3393236482" lane="-342138972#2_0" startPos="3.49" endPos="18.49" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-3455836752" lane="-193138280#6_0" startPos="48.45" endPos="62.38" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-3455836753" lane="-193138280#6_0" startPos="50.71" endPos="62.38" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-3455855342" lane="-303099165_0" startPos="9.56" endPos="24.56" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-3455855343" lane="-303099165_0" startPos="9.21" endPos="24.21" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-3455866589" lane="-475192922#0_0" startPos="117.65" endPos="132.26" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-3455866591" lane="-981781077_0" startPos="29.38" endPos="44.38" friendlyPos="true" lines="1966"/>
+    <busStop id="-3455872593" lane="-475192922#0_0" startPos="116.39" endPos="131.39" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-353779871" lane="-911320123_0" startPos="12.67" endPos="27.67" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-256921675_0" pos="73.51" length="49.85" friendlyPos="1"/>
+        <access lane="-959658183_0" pos="75.43" length="59.40" friendlyPos="1"/>
+        <access lane="-960039964_0" pos="0.00" length="62.64" friendlyPos="1"/>
+        <access lane="256921675_0" pos="10.35" length="45.03" friendlyPos="1"/>
+        <access lane="959658183_0" pos="0.00" length="62.63" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-3729684433" lane="-193026196#2_0" startPos="15.28" endPos="30.28" friendlyPos="true" lines="541A 541B 541C 541L 541E 541P"/>
+    <busStop id="-3729745008" lane="-305172098#0_0" startPos="0.00" endPos="10.97" friendlyPos="true" lines="222 221"/>
+    <busStop id="-3729745009" lane="-305172098#3_0" startPos="9.78" endPos="24.78" friendlyPos="true" lines="222 221"/>
+    <busStop id="-3729788833" lane="-204278072#2_0" startPos="8.82" endPos="23.82" friendlyPos="true" lines="541A 541B 541C 541L 541E 541P"/>
+    <busStop id="-3798359745" lane="-303082572#4_0" startPos="18.34" endPos="33.34" friendlyPos="true" lines="100A"/>
+    <busStop id="-3798360865" lane="-363457760#1_0" startPos="11.18" endPos="26.18" friendlyPos="true" lines="100A"/>
+    <busStop id="-3883788923" lane="-303082573#4_0" startPos="37.75" endPos="52.75" friendlyPos="true" lines="100A"/>
+    <busStop id="-4001060150" lane="-303099172#3_0" startPos="18.98" endPos="33.98" friendlyPos="true" lines="1966"/>
+    <busStop id="-4127110091" lane="-822733904#1_0" startPos="5.61" endPos="15.54" friendlyPos="true" lines="1965 196B 196I 196D 197R 197B1 197B">
+        <access lane="-318229655_0" pos="70.22" length="19.10" friendlyPos="1"/>
+        <access lane="193220760#0_0" pos="2.26" length="25.26" friendlyPos="1"/>
+        <access lane="193220760#1_0" pos="7.84" length="7.99" friendlyPos="1"/>
+        <access lane="193220764#0_0" pos="0.00" length="30.00" friendlyPos="1"/>
+        <access lane="318229655_0" pos="0.00" length="19.90" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4194067386" lane="-363489416#5_0" startPos="0.00" endPos="13.41" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-419315426_0" pos="28.25" length="29.22" friendlyPos="1"/>
+        <access lane="-419315428#1_0" pos="0.00" length="14.64" friendlyPos="1"/>
+        <access lane="419315426_0" pos="0.00" length="33.95" friendlyPos="1"/>
+        <access lane="419315428#0_0" pos="14.52" length="38.59" friendlyPos="1"/>
+        <access lane="419315428#1_0" pos="9.56" length="11.42" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4210137921" lane="-421207841#0_0" startPos="50.11" endPos="65.11" friendlyPos="true" lines="1965 196B 196I 196D 100U 197 197C 197A">
+        <access lane="-342138978#0_0" pos="38.45" length="62.37" friendlyPos="1"/>
+        <access lane="-368279897_0" pos="13.80" length="58.86" friendlyPos="1"/>
+        <access lane="181347090#5_0" pos="11.88" length="61.65" friendlyPos="1"/>
+        <access lane="342138978#0_0" pos="0.59" length="57.57" friendlyPos="1"/>
+        <access lane="368279897_0" pos="13.89" length="52.25" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4210137946" lane="-204266498#1_0" startPos="0.29" endPos="15.29" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-4210137952" lane="-204266498#6_0" startPos="14.10" endPos="29.10" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-4222178502" lane="-363454254#1_0" startPos="7.96" endPos="19.11" friendlyPos="true" lines="200A "/>
+    <busStop id="-4544000076" lane="-363484167#0_0" startPos="128.12" endPos="143.12" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-259777976#0_0" pos="29.79" length="207.30" friendlyPos="1"/>
+        <access lane="-960072131_0" pos="0.00" length="208.87" friendlyPos="1"/>
+        <access lane="259777976#0_0" pos="0.00" length="202.60" friendlyPos="1"/>
+        <access lane="259777976#1_0" pos="0.00" length="224.20" friendlyPos="1"/>
+        <access lane="960072131_0" pos="26.74" length="204.38" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4544742350" lane="-303082573#4_0" startPos="38.45" endPos="53.45" friendlyPos="true" lines="100A"/>
+    <busStop id="-4544742351" lane="-303082573#0_0" startPos="0.56" endPos="15.56" friendlyPos="true" lines="100A"/>
+    <busStop id="-4544742352" lane="-303082573#0_0" startPos="0.56" endPos="15.56" friendlyPos="true" lines="100A"/>
+    <busStop id="-4544742355" lane="-363458497#4_0" startPos="38.58" endPos="53.58" friendlyPos="true" lines="100A"/>
+    <busStop id="-4544742356" lane="-303082572#4_0" startPos="18.54" endPos="33.54" friendlyPos="true" lines="100A"/>
+    <busStop id="-4544742357" lane="-363457760#1_0" startPos="11.86" endPos="26.86" friendlyPos="true" lines="100A"/>
+    <busStop id="-4544794390" lane="-350103656#2_0" startPos="22.05" endPos="34.29" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="-4562836274" lane="-204266537#0_0" startPos="37.60" endPos="52.60" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-4562836275" lane="-204266537#0_0" startPos="36.87" endPos="51.87" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-4728682336" lane="-363472908#5_0" startPos="4.67" endPos="19.67" friendlyPos="true" lines="197 197C 197A 197R"/>
+    <busStop id="-4751078504" lane="-420843500#0_0" startPos="0.00" endPos="14.56" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="-4820847430" lane="-363472906#3_0" startPos="0.00" endPos="9.38" friendlyPos="true" lines="1965 196B 196I 196D 100U 197 197C 197A">
+        <access lane="-363472908#1_0" pos="4.48" length="35.44" friendlyPos="1"/>
+        <access lane="-363472908#2_0" pos="3.70" length="41.78" friendlyPos="1"/>
+        <access lane="-568381692#2_0" pos="0.00" length="40.99" friendlyPos="1"/>
+        <access lane="363472908#0_0" pos="0.00" length="40.24" friendlyPos="1"/>
+        <access lane="568381692#1_0" pos="14.64" length="45.19" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4820847432" lane="-363472906#3_0" startPos="0.00" endPos="9.38" friendlyPos="true" lines="1965 196B 196I 196D 100U 197 197C 197A">
+        <access lane="-363472908#1_0" pos="4.48" length="38.00" friendlyPos="1"/>
+        <access lane="-363472908#2_0" pos="3.70" length="48.26" friendlyPos="1"/>
+        <access lane="-568381692#2_0" pos="0.00" length="38.14" friendlyPos="1"/>
+        <access lane="363472908#0_0" pos="0.00" length="42.62" friendlyPos="1"/>
+        <access lane="568381692#1_0" pos="14.64" length="42.74" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4906911065" lane="-191714265#1_0" startPos="62.78" endPos="77.78" friendlyPos="true" lines="541B  541R 196B 196D 197R 197B1 197B 222"/>
+    <busStop id="-4906911067" lane="-191714265#1_0" startPos="61.97" endPos="76.97" friendlyPos="true" lines="541B  541R 196B 196D 197R 197B1 197B 222"/>
+    <busStop id="-4911689703" lane="-459839141#2_0" startPos="24.78" endPos="36.60" friendlyPos="true" lines="241A"/>
+    <busStop id="-4911689704" lane="-496253716_0" startPos="28.98" endPos="43.98" friendlyPos="true" lines="241A"/>
+    <busStop id="-4911689705" lane="-372500444#3_0" startPos="121.94" endPos="135.81" friendlyPos="true" lines="241A"/>
+    <busStop id="-4911689708" lane="-372500444#0_0" startPos="6.78" endPos="21.78" friendlyPos="true" lines="241A"/>
+    <busStop id="-4911689709" lane="-259401628#1_0" startPos="16.90" endPos="31.90" friendlyPos="true" lines="241A"/>
+    <busStop id="-4941397842" lane="-956437244#3_0" startPos="59.04" endPos="68.85" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-259777969#0_0" pos="22.95" length="6.69" friendlyPos="1"/>
+        <access lane="-259777969#1_0" pos="42.97" length="43.98" friendlyPos="1"/>
+        <access lane="-259777970_0" pos="0.00" length="2.05" friendlyPos="1"/>
+        <access lane="-259777982_0" pos="0.00" length="42.52" friendlyPos="1"/>
+        <access lane="259777982_0" pos="343.33" length="45.43" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397844" lane="-363484167#0_0" startPos="127.65" endPos="142.65" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-259777976#0_0" pos="29.79" length="206.27" friendlyPos="1"/>
+        <access lane="-960072131_0" pos="0.00" length="208.30" friendlyPos="1"/>
+        <access lane="259777976#0_0" pos="0.00" length="201.54" friendlyPos="1"/>
+        <access lane="259777976#1_0" pos="0.00" length="221.48" friendlyPos="1"/>
+        <access lane="960072131_0" pos="26.74" length="203.87" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397852" lane="-303082601#5_0" startPos="171.88" endPos="186.88" friendlyPos="true" lines="1965 196B 197R 197B1 197B">
+        <access lane="-256537870#3_0" pos="0.00" length="46.62" friendlyPos="1"/>
+        <access lane="-618372003_0" pos="0.00" length="94.87" friendlyPos="1"/>
+        <access lane="256537870#2_0" pos="34.37" length="102.68" friendlyPos="1"/>
+        <access lane="256537870#3_0" pos="27.91" length="49.52" friendlyPos="1"/>
+        <access lane="618372003_0" pos="99.67" length="99.65" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397855" lane="-822733904#1_0" startPos="3.92" endPos="15.54" friendlyPos="true" lines="1965 196B 196I 196D 197R 197B1 197B">
+        <access lane="-318229655_0" pos="70.22" length="8.15" friendlyPos="1"/>
+        <access lane="193220760#0_0" pos="2.26" length="36.27" friendlyPos="1"/>
+        <access lane="193220760#1_0" pos="10.15" length="13.12" friendlyPos="1"/>
+        <access lane="193220764#0_0" pos="0.00" length="29.54" friendlyPos="1"/>
+        <access lane="318229655_0" pos="0.00" length="10.18" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397858" lane="-911320116#2_0" startPos="50.17" endPos="65.17" friendlyPos="true" lines="1965 196B 196I 196D 197R 197B1 197B">
+        <access lane="-256537871#0_0" pos="39.62" length="34.42" friendlyPos="1"/>
+        <access lane="-256537871#1_0" pos="12.55" length="64.63" friendlyPos="1"/>
+        <access lane="-651562484_0" pos="22.98" length="69.77" friendlyPos="1"/>
+        <access lane="256537871#0_0" pos="87.95" length="29.62" friendlyPos="1"/>
+        <access lane="256537871#1_0" pos="0.00" length="60.88" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397859" lane="-911320116#2_0" startPos="50.61" endPos="65.61" friendlyPos="true" lines="1965 196B 196I 196D 197R 197B1 197B">
+        <access lane="-256537871#0_0" pos="40.16" length="47.67" friendlyPos="1"/>
+        <access lane="-256537871#1_0" pos="12.55" length="68.79" friendlyPos="1"/>
+        <access lane="-651562484_0" pos="27.68" length="75.78" friendlyPos="1"/>
+        <access lane="256537871#0_0" pos="87.41" length="42.87" friendlyPos="1"/>
+        <access lane="256537871#1_0" pos="0.00" length="64.53" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397864" lane="-539338534_0" startPos="4.02" endPos="19.02" friendlyPos="true" lines="197C">
+        <access lane="-181347083#8_0" pos="0.00" length="29.83" friendlyPos="1"/>
+        <access lane="-539338521#0_0" pos="124.44" length="20.11" friendlyPos="1"/>
+        <access lane="181347083#8_0" pos="107.93" length="26.90" friendlyPos="1"/>
+        <access lane="368284018_0" pos="0.00" length="67.02" friendlyPos="1"/>
+        <access lane="539338521#0_0" pos="0.00" length="15.43" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397866" lane="-421207841#1_0" startPos="65.02" endPos="80.02" friendlyPos="true" lines="197C">
+        <access lane="-181347077#4_0" pos="0.00" length="20.48" friendlyPos="1"/>
+        <access lane="-314664957_0" pos="7.63" length="74.15" friendlyPos="1"/>
+        <access lane="-342138979#0_0" pos="34.57" length="26.88" friendlyPos="1"/>
+        <access lane="181347077#4_0" pos="55.03" length="15.78" friendlyPos="1"/>
+        <access lane="342138979#0_0" pos="0.00" length="23.50" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397867" lane="-421207841#1_0" startPos="65.29" endPos="80.29" friendlyPos="true" lines="197C">
+        <access lane="-181347077#4_0" pos="0.00" length="22.45" friendlyPos="1"/>
+        <access lane="-314664957_0" pos="7.25" length="67.09" friendlyPos="1"/>
+        <access lane="-342138979#0_0" pos="34.57" length="22.39" friendlyPos="1"/>
+        <access lane="181347077#4_0" pos="55.03" length="18.39" friendlyPos="1"/>
+        <access lane="342138979#0_0" pos="0.00" length="18.32" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4941397868" lane="-259470109#1_0" startPos="17.48" endPos="32.48" friendlyPos="true" lines="197C">
+        <access lane="-181347086#2_0" pos="1.65" length="32.71" friendlyPos="1"/>
+        <access lane="-303082613#0_0" pos="40.85" length="41.65" friendlyPos="1"/>
+        <access lane="181347086#2_0" pos="72.70" length="37.51" friendlyPos="1"/>
+        <access lane="303082613#0_0" pos="0.00" length="45.52" friendlyPos="1"/>
+        <access lane="368279839_0" pos="40.45" length="51.46" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-4951510689" lane="-368079759#1_0" startPos="57.95" endPos="72.95" friendlyPos="true" lines="223G 223V 212E 223C 541S 223E 223A 212F 212Q"/>
+    <busStop id="-5084889288" lane="-363483827#4_0" startPos="244.45" endPos="258.59" friendlyPos="true" lines="1966"/>
+    <busStop id="-5084889289" lane="-363483827#4_0" startPos="245.10" endPos="258.59" friendlyPos="true" lines="1966"/>
+    <busStop id="-5084889290" lane="-193139481#0_0" startPos="1.53" endPos="16.53" friendlyPos="true" lines="1966"/>
+    <busStop id="-5084889292" lane="-193139481#0_0" startPos="0.00" endPos="14.83" friendlyPos="true" lines="1966"/>
+    <busStop id="-5084889294" lane="-303099172#3_0" startPos="19.99" endPos="34.99" friendlyPos="true" lines="1966"/>
+    <busStop id="-5098452101" lane="-193138280#3_0" startPos="80.30" endPos="95.30" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-5105209683" lane="-193138280#3_0" startPos="80.90" endPos="95.90" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-5130992187" lane="-363468028#2_0" startPos="5.34" endPos="20.34" friendlyPos="true" lines="100U"/>
+    <busStop id="-5130992188" lane="-363468028#2_0" startPos="4.38" endPos="19.38" friendlyPos="true" lines="100U"/>
+    <busStop id="-5144139043" lane="-286663226_0" startPos="548.97" endPos="563.97" friendlyPos="true" lines=""/>
+    <busStop id="-5150946074" lane="-303099172#0_0" startPos="0.00" endPos="8.91" friendlyPos="true" lines="1966"/>
+    <busStop id="-5150946075" lane="-303099172#0_0" startPos="0.00" endPos="8.91" friendlyPos="true" lines="1966"/>
+    <busStop id="-5253334521" lane="-199341668#3_0" startPos="4.95" endPos="19.95" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334522" lane="-199341668#3_0" startPos="5.64" endPos="20.64" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334523" lane="-199341668#0_0" startPos="21.19" endPos="36.19" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334524" lane="-199341668#0_0" startPos="20.72" endPos="35.72" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334525" lane="-199341668#2_0" startPos="40.75" endPos="55.75" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334526" lane="-199341668#2_0" startPos="40.61" endPos="55.61" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334527" lane="-199341686#0_0" startPos="38.75" endPos="53.75" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334528" lane="-199341686#0_0" startPos="38.43" endPos="53.43" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334529" lane="-199341686#2_0" startPos="24.46" endPos="39.46" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334530" lane="-199341686#2_0" startPos="25.00" endPos="40.00" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334531" lane="-240164166_0" startPos="39.25" endPos="54.25" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334532" lane="-240164166_0" startPos="39.68" endPos="54.68" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334533" lane="-363055806_0" startPos="35.89" endPos="50.89" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5253334534" lane="-363055806_0" startPos="35.89" endPos="50.89" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-5292113063" lane="-303082601#1_0" startPos="35.59" endPos="50.59" friendlyPos="true" lines="1965 196B 196I 196D 197R 197B1 197B">
+        <access lane="-618372483_0" pos="30.66" length="19.20" friendlyPos="1"/>
+        <access lane="-959068961_0" pos="6.50" length="56.81" friendlyPos="1"/>
+        <access lane="-959068962#1_0" pos="41.52" length="50.21" friendlyPos="1"/>
+        <access lane="618372483_0" pos="38.00" length="24.00" friendlyPos="1"/>
+        <access lane="959068962#1_0" pos="32.41" length="55.01" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5293795967" lane="-259470109#1_0" startPos="23.48" endPos="38.48" friendlyPos="true" lines="1965 196B 196I 196D 100U 197 197C 197A">
+        <access lane="-181347086#2_0" pos="0.00" length="46.66" friendlyPos="1"/>
+        <access lane="-303082613#0_0" pos="40.85" length="45.74" friendlyPos="1"/>
+        <access lane="-368279839_0" pos="0.00" length="49.04" friendlyPos="1"/>
+        <access lane="303082613#0_0" pos="0.00" length="50.44" friendlyPos="1"/>
+        <access lane="368279839_0" pos="40.88" length="44.55" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5293795968" lane="-259470109#1_0" startPos="23.35" endPos="38.35" friendlyPos="true" lines="1965 196B 196I 196D 100U 197 197C 197A">
+        <access lane="-181347086#2_0" pos="0.00" length="43.60" friendlyPos="1"/>
+        <access lane="-303082613#0_0" pos="40.85" length="47.30" friendlyPos="1"/>
+        <access lane="-368279839_0" pos="0.00" length="47.04" friendlyPos="1"/>
+        <access lane="181347086#2_0" pos="74.35" length="48.38" friendlyPos="1"/>
+        <access lane="368279839_0" pos="40.88" length="42.30" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5468338780" lane="-568381692#0_0" startPos="13.96" endPos="28.96" friendlyPos="true" lines="197R"/>
+    <busStop id="-5468338781" lane="-568381692#0_0" startPos="13.50" endPos="28.50" friendlyPos="true" lines="197R"/>
+    <busStop id="-5468392122" lane="-204266499#0_0" startPos="0.00" endPos="11.85" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="-5474454056" lane="-342138972#0_0" startPos="8.25" endPos="23.25" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-5474454057" lane="-342138972#0_0" startPos="8.49" endPos="23.49" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-5480927597" lane="-503895297_0" startPos="27.85" endPos="42.85" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-503895304#0_0" pos="24.37" length="19.73" friendlyPos="1"/>
+        <access lane="-503895304#1_0" pos="0.00" length="45.95" friendlyPos="1"/>
+        <access lane="205672790_0" pos="24.18" length="38.88" friendlyPos="1"/>
+        <access lane="503895301_0" pos="0.00" length="36.24" friendlyPos="1"/>
+        <access lane="503895304#0_0" pos="20.11" length="24.53" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5480927598" lane="-503895297_0" startPos="27.85" endPos="42.85" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-503895304#0_0" pos="23.27" length="9.16" friendlyPos="1"/>
+        <access lane="-503895304#1_0" pos="0.74" length="43.72" friendlyPos="1"/>
+        <access lane="205672790_0" pos="24.18" length="34.77" friendlyPos="1"/>
+        <access lane="503895301_0" pos="0.00" length="33.30" friendlyPos="1"/>
+        <access lane="503895304#0_0" pos="21.21" length="13.96" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5480927599" lane="-31622081#1_0" startPos="255.54" endPos="270.54" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-205672769#11_0" pos="51.76" length="145.54" friendlyPos="1"/>
+        <access lane="-205672769#12_0" pos="146.11" length="172.27" friendlyPos="1"/>
+        <access lane="-256977003_0" pos="0.00" length="23.38" friendlyPos="1"/>
+        <access lane="205672769#11_0" pos="97.92" length="150.34" friendlyPos="1"/>
+        <access lane="256977003_0" pos="35.62" length="27.96" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5480927600" lane="-31622081#1_0" startPos="255.56" endPos="270.56" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-205672769#11_0" pos="53.86" length="136.31" friendlyPos="1"/>
+        <access lane="-205672769#12_0" pos="146.11" length="166.33" friendlyPos="1"/>
+        <access lane="-256977003_0" pos="1.40" length="22.37" friendlyPos="1"/>
+        <access lane="205672769#11_0" pos="95.81" length="141.11" friendlyPos="1"/>
+        <access lane="256977003_0" pos="34.21" length="27.17" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5480941653" lane="-296358485#0_0" startPos="192.80" endPos="207.80" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-363483827#4_0" pos="58.37" length="179.65" friendlyPos="1"/>
+        <access lane="363483827#4_0" pos="198.88" length="174.85" friendlyPos="1"/>
+        <access lane="487990267_0" pos="45.46" length="205.55" friendlyPos="1"/>
+        <access lane="487990268_0" pos="0.00" length="201.00" friendlyPos="1"/>
+        <access lane="487990270_0" pos="0.00" length="208.41" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5480941654" lane="-296358485#0_0" startPos="192.80" endPos="207.80" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-363483827#4_0" pos="50.21" length="192.48" friendlyPos="1"/>
+        <access lane="363483827#4_0" pos="207.03" length="187.68" friendlyPos="1"/>
+        <access lane="487990267_0" pos="45.46" length="211.89" friendlyPos="1"/>
+        <access lane="487990268_0" pos="0.00" length="207.07" friendlyPos="1"/>
+        <access lane="487990270_0" pos="0.00" length="213.42" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-5481418865" lane="-303105495#0_0" startPos="81.58" endPos="96.58" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418866" lane="-303105495#0_0" startPos="81.58" endPos="96.58" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418867" lane="-458526550#0_0" startPos="0.00" endPos="10.97" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418868" lane="-204269347#0_0" startPos="155.08" endPos="170.08" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418869" lane="-204269347#0_0" startPos="155.29" endPos="170.29" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418870" lane="-204269347#0_0" startPos="6.08" endPos="21.08" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418871" lane="-204269347#0_0" startPos="6.86" endPos="21.86" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418872" lane="-204269347#2_0" startPos="3.85" endPos="18.85" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418873" lane="-204269347#2_0" startPos="3.74" endPos="18.74" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418874" lane="-204269347#3_0" startPos="10.05" endPos="25.05" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418875" lane="-748893880_0" startPos="32.04" endPos="47.04" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418876" lane="-748893880_0" startPos="32.04" endPos="47.04" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418885" lane="-458526550#0_0" startPos="0.00" endPos="10.98" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418886" lane="-458526550#0_0" startPos="0.00" endPos="11.27" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418889" lane="-303105496#1_0" startPos="0.00" endPos="9.52" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418890" lane="-303105496#1_0" startPos="0.00" endPos="7.93" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481418891" lane="-303105496#0_0" startPos="9.21" endPos="24.21" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-5481695160" lane="-204266536#1_0" startPos="10.21" endPos="25.02" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-5481695161" lane="-204266536#1_0" startPos="10.28" endPos="25.02" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-5610568184" lane="-350103656#2_0" startPos="21.75" endPos="34.29" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="-5610568185" lane="-420843500#0_0" startPos="0.00" endPos="14.35" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="-6083737966" lane="-387565205_0" startPos="0.00" endPos="12.15" friendlyPos="true" lines="Santa Maria → Caçapava do Sul via São Sepé Santa Maria → São Sepé Santa Maria → Santana da Boa Vista Santa Maria → Rosário do Sul Santa Maria → Livramento">
+        <access lane="-204398597#0_0" pos="69.54" length="31.43" friendlyPos="1"/>
+        <access lane="-334889468#1_0" pos="0.00" length="20.41" friendlyPos="1"/>
+        <access lane="204398597#0_0" pos="0.00" length="27.33" friendlyPos="1"/>
+        <access lane="334889468#1_0" pos="31.00" length="25.18" friendlyPos="1"/>
+        <access lane="958982838_0" pos="17.59" length="13.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6083739510" lane="-352049284#0_0" startPos="1.06" endPos="16.06" friendlyPos="true" lines="196I">
+        <access lane="-199352104#0_0" pos="67.42" length="75.89" friendlyPos="1"/>
+        <access lane="-352050064#1_0" pos="0.00" length="16.69" friendlyPos="1"/>
+        <access lane="199352104#0_0" pos="33.28" length="71.09" friendlyPos="1"/>
+        <access lane="352050064#0_0" pos="28.52" length="12.46" friendlyPos="1"/>
+        <access lane="966077839_0" pos="12.51" length="55.02" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6216948223" lane="-699104409_0" startPos="20.30" endPos="35.30" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6216948223@9714065" lane="-699104409_0" startPos="20.30" endPos="35.30" friendlyPos="true" lines="222"/>
+    <busStop id="-6216948224" lane="-699104409_0" startPos="20.30" endPos="35.30" friendlyPos="true" lines="222"/>
+    <busStop id="-6376596791" lane="-303082575#1_0" startPos="0.00" endPos="12.15" friendlyPos="true" lines="100A"/>
+    <busStop id="-6376596792" lane="-303082575#1_0" startPos="0.00" endPos="11.78" friendlyPos="true" lines="100A"/>
+    <busStop id="-6382029163" lane="-303082580#0_0" startPos="0.00" endPos="13.64" friendlyPos="true" lines="100A"/>
+    <busStop id="-6382029164" lane="-303082580#0_0" startPos="0.00" endPos="13.64" friendlyPos="true" lines="100A"/>
+    <busStop id="-6405256160" lane="-193030317#0_0" startPos="56.53" endPos="69.51" friendlyPos="true" lines="241A"/>
+    <busStop id="-6518178250" lane="-363489416#5_0" startPos="2.90" endPos="17.90" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-419315426_0" pos="24.46" length="18.39" friendlyPos="1"/>
+        <access lane="-419315428#1_0" pos="1.86" length="19.82" friendlyPos="1"/>
+        <access lane="419315426_0" pos="3.79" length="23.19" friendlyPos="1"/>
+        <access lane="419315428#0_0" pos="14.52" length="29.91" friendlyPos="1"/>
+        <access lane="419315428#1_0" pos="7.70" length="15.02" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6518178252" lane="-259735276#3_0" startPos="12.05" endPos="27.05" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-193139466#0_0" pos="159.34" length="34.61" friendlyPos="1"/>
+        <access lane="-306872646#1_0" pos="0.00" length="33.68" friendlyPos="1"/>
+        <access lane="193139466#0_0" pos="0.00" length="30.18" friendlyPos="1"/>
+        <access lane="306872646#1_0" pos="41.20" length="29.11" friendlyPos="1"/>
+        <access lane="962510039_0" pos="84.64" length="75.86" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6518178254" lane="-363472908#5_0" startPos="4.31" endPos="19.31" friendlyPos="true" lines="197 197C 197A 197R"/>
+    <busStop id="-6518178255" lane="-363468030#0_0" startPos="40.82" endPos="55.82" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="-6518178258" lane="-342138972#2_0" startPos="3.87" endPos="18.87" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-6518178259" lane="-363468029#2_0" startPos="33.88" endPos="48.88" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-6518178260" lane="-204266498#1_0" startPos="0.86" endPos="15.86" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-6518178261" lane="-204266498#6_0" startPos="14.21" endPos="29.21" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="-6518178262" lane="-204266537#0_0" startPos="36.91" endPos="51.91" friendlyPos="true" lines="197B 197M"/>
+    <busStop id="-6519748669" lane="-226014647#1_0" startPos="6.60" endPos="21.60" friendlyPos="true" lines="196B B196 196D 197R 197B1 197B 222"/>
+    <busStop id="-6519748672" lane="-193138280#1_0" startPos="0.00" endPos="8.04" friendlyPos="true" lines="1966 241A"/>
+    <busStop id="-6519748679" lane="-363484167#3_0" startPos="27.11" endPos="42.11" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-259777972_0" pos="15.87" length="27.98" friendlyPos="1"/>
+        <access lane="-259777986#0_0" pos="0.00" length="41.82" friendlyPos="1"/>
+        <access lane="-259777986#1_0" pos="8.10" length="42.36" friendlyPos="1"/>
+        <access lane="259777972_0" pos="30.35" length="23.18" friendlyPos="1"/>
+        <access lane="259777986#0_0" pos="9.18" length="46.59" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6519748682" lane="-303082601#1_0" startPos="36.67" endPos="51.67" friendlyPos="true" lines="1965 196B 196I 196D 197R 197B1 197B">
+        <access lane="-618372483_0" pos="29.25" length="8.16" friendlyPos="1"/>
+        <access lane="-959068961_0" pos="6.50" length="52.93" friendlyPos="1"/>
+        <access lane="-959068962#1_0" pos="40.19" length="39.22" friendlyPos="1"/>
+        <access lane="618372483_0" pos="39.49" length="12.96" friendlyPos="1"/>
+        <access lane="959068962#1_0" pos="33.74" length="44.02" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6522347417" lane="-296358485#0_0" startPos="0.00" endPos="11.98" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-381447936#1_0" pos="0.00" length="12.67" friendlyPos="1"/>
+        <access lane="-381447937_0" pos="0.00" length="103.59" friendlyPos="1"/>
+        <access lane="-981781080_0" pos="40.35" length="35.91" friendlyPos="1"/>
+        <access lane="381447936#1_0" pos="54.41" length="9.84" friendlyPos="1"/>
+        <access lane="981781080_0" pos="0.00" length="31.12" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6524702970" lane="-296358485#0_0" startPos="0.00" endPos="11.86" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-381447936#1_0" pos="1.92" length="10.68" friendlyPos="1"/>
+        <access lane="-381447937_0" pos="0.00" length="92.93" friendlyPos="1"/>
+        <access lane="-981781080_0" pos="40.35" length="40.24" friendlyPos="1"/>
+        <access lane="381447936#1_0" pos="52.49" length="5.88" friendlyPos="1"/>
+        <access lane="981781080_0" pos="0.00" length="35.73" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6524845283" lane="-911320123_0" startPos="11.27" endPos="26.27" friendlyPos="true" lines="196B 196I 196D 197R 197B1 197B">
+        <access lane="-256921675_0" pos="73.51" length="60.53" friendlyPos="1"/>
+        <access lane="-959658183_0" pos="75.43" length="66.56" friendlyPos="1"/>
+        <access lane="205672772_0" pos="18.65" length="67.57" friendlyPos="1"/>
+        <access lane="256921675_0" pos="10.35" length="55.71" friendlyPos="1"/>
+        <access lane="959658183_0" pos="0.00" length="70.25" friendlyPos="1"/>
+    </busStop>
+    <busStop id="-6530706031" lane="-363460869_0" startPos="85.23" endPos="100.23" friendlyPos="true" lines="100A"/>
+    <busStop id="-6530706032" lane="-363460869_0" startPos="85.70" endPos="100.70" friendlyPos="true" lines="100A"/>
+    <busStop id="-6535732374" lane="-297176956#7_0" startPos="3.33" endPos="13.59" friendlyPos="true" lines="100A"/>
+    <busStop id="-6564931591" lane="-305176902#6_0" startPos="48.87" endPos="63.87" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6564931592" lane="-305176899#4_0" startPos="14.54" endPos="29.54" friendlyPos="true" lines="222"/>
+    <busStop id="-6564931593" lane="-49793790#3_0" startPos="2.45" endPos="17.45" friendlyPos="true" lines="222"/>
+    <busStop id="-6564953637" lane="-390566189#3_0" startPos="72.07" endPos="87.07" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6564953638" lane="-390566189#3_0" startPos="70.98" endPos="85.98" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6566670392" lane="-305176901#0_0" startPos="11.05" endPos="26.05" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6566670393" lane="-305176901#0_0" startPos="11.55" endPos="26.55" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6566670397" lane="-305176901#2_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-6638909792" lane="-363454254#1_0" startPos="8.52" endPos="19.11" friendlyPos="true" lines="200A "/>
+    <busStop id="-6757893109" lane="-720014527_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="Santa Maria → Silveira Martins"/>
+    <busStop id="-6757893151" lane="-720014554_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="-6910865459" lane="-303105494#1_0" startPos="3.83" endPos="18.83" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-6910865460" lane="-303105494#1_0" startPos="3.49" endPos="18.49" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="-7154075019" lane="-259431917#1_0" startPos="55.14" endPos="70.14" friendlyPos="true" lines="222 222A"/>
+    <busStop id="-7154075020" lane="-259431917#1_0" startPos="55.28" endPos="70.28" friendlyPos="true" lines="222 222A"/>
+    <busStop id="1263400455" lane="301981247#3_0" startPos="17.55" endPos="25.05" friendlyPos="true" lines=" A196 196A 1961 196E 1965 196B B196 196I 196D 100P 100U 197C"/>
+    <busStop id="1784261336" lane="373701313#3_0" startPos="71.22" endPos="86.22" friendlyPos="true"/>
+    <busStop id="1917492638" lane="303107781#0_0" startPos="35.44" endPos="50.44" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="1929404200" lane="681285285#0_0" startPos="0.00" endPos="4.94" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="2035590397" lane="777361473#1_0" startPos="23.37" endPos="38.37" friendlyPos="true" lines=" 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="2035590428" lane="193030312#0_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="241A"/>
+    <busStop id="2036542857" lane="761787853_0" startPos="0.00" endPos="13.81" friendlyPos="true" lines="1965 241A"/>
+    <busStop id="2037346636" lane="911320116#2_0" startPos="128.91" endPos="143.91" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-256537871#1_0" pos="0.00" length="12.32" friendlyPos="1"/>
+        <access lane="-381451287#0_0" pos="0.00" length="33.59" friendlyPos="1"/>
+        <access lane="-651562484_0" pos="27.68" length="35.03" friendlyPos="1"/>
+        <access lane="256537871#1_0" pos="12.55" length="8.13" friendlyPos="1"/>
+        <access lane="651562484_0" pos="0.00" length="36.39" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2071578441" lane="363480437#2_0" startPos="11.25" endPos="26.25" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-370656171#0_0" pos="0.00" length="20.47" friendlyPos="1"/>
+        <access lane="260751041_0" pos="258.62" length="25.53" friendlyPos="1"/>
+        <access lane="370656171#0_0" pos="33.54" length="24.19" friendlyPos="1"/>
+        <access lane="971828267#2_0" pos="26.23" length="27.70" friendlyPos="1"/>
+        <access lane="971828267#3_0" pos="5.77" length="11.54" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2093445983" name="Rodoviária de Santa Maria" lane="192428837#15_0" startPos="0.00" endPos="6.73" friendlyPos="true" lines=" 0437 1830"/>
+    <busStop id="2093445993" name="Rodoviária de Santa Maria" lane="720014524_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines=" 0437 1830"/>
+    <busStop id="2093446021" lane="305176901#2_0" startPos="3.12" endPos="18.12" friendlyPos="true" lines="221"/>
+    <busStop id="2142801101" lane="204269361#6_0" startPos="179.18" endPos="186.56" friendlyPos="true"/>
+    <busStop id="2156452179" lane="350463977#8_0" startPos="9.36" endPos="20.17" friendlyPos="true"/>
+    <busStop id="2156452294" lane="869364126#3_0" startPos="8.99" endPos="16.49" friendlyPos="true"/>
+    <busStop id="2173912365" lane="259470103#5_0" startPos="18.45" endPos="25.95" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-207251673#2_0" pos="0.00" length="37.16" friendlyPos="1"/>
+        <access lane="207251673#2_0" pos="19.19" length="32.41" friendlyPos="1"/>
+        <access lane="503903775_0" pos="37.96" length="13.47" friendlyPos="1"/>
+        <access lane="971828262#1_0" pos="11.40" length="12.33" friendlyPos="1"/>
+        <access lane="971828263#1_0" pos="0.00" length="35.39" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2400147129" lane="167699930#3_0" startPos="2.42" endPos="17.42" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="2435446323" lane="406021800_0" startPos="90.85" endPos="105.85" friendlyPos="true" lines="1966 196G"/>
+    <busStop id="2435446324" lane="193026196#5_0" startPos="9.98" endPos="24.98" friendlyPos="true" lines="212J 541I 541M 541K 541R 541T 541Q  355B 355C 212B 541S 212Q"/>
+    <busStop id="2435446329" lane="193811246#1_0" startPos="24.62" endPos="32.57" friendlyPos="true" lines="212J 541I 541M 541K 541R 541T 541Q  355B 355C 212B 541S 212C 212X 212S 212Q"/>
+    <busStop id="2435446329@7883639" lane="193811246#1_0" startPos="20.85" endPos="35.85" friendlyPos="true" lines="212C 212I 212X"/>
+    <busStop id="2435446330" lane="231958644#1_0" startPos="53.12" endPos="67.37" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P 196E A196 196A 100A 197 100P 212C 212I 212X 197A E196 241A"/>
+    <busStop id="2435446331" lane="50783634#3_0" startPos="34.23" endPos="49.23" friendlyPos="true" lines=" 196E A196 196A 100A 197 100P 197A E196 241A"/>
+    <busStop id="2435446332" lane="368494308#2_0" startPos="58.68" endPos="73.68" friendlyPos="true" lines="212J  541I 541M 541K 541R 541T 541Q 355B 355C A196 196A 1961 196E 212B 196F 1965 196C 100P 100U 100A 197 541S 212C 212X 212S 212Q 197M"/>
+    <busStop id="2435446333" lane="368486584#2_0" startPos="22.68" endPos="37.68" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="2435470835" lane="49793803#3_0" startPos="40.21" endPos="55.21" friendlyPos="true" lines=" 196E A196 196A 1966 100A 197 100P 197A E196 241A"/>
+    <busStop id="2435470839" lane="224088356_0" startPos="0.00" endPos="13.66" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="2438372760" lane="358563417#1_0" startPos="2.00" endPos="17.00" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P A196 B196 196B 196A 100A 197 197C 100P 212C 212I 212X 197A 197R 241A 591 222 221 222A"/>
+    <busStop id="2438372761" lane="50301275#1_0" startPos="16.66" endPos="31.66" friendlyPos="true" lines="1961"/>
+    <busStop id="2444774063" lane="462346954#0_0" startPos="29.59" endPos="44.59" friendlyPos="true"/>
+    <busStop id="2449072191" lane="372500758#2_0" startPos="62.60" endPos="77.15" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A"/>
+    <busStop id="2449072192" lane="371535957#0_0" startPos="6.87" endPos="21.87" friendlyPos="true" lines=" 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="2449072193" lane="478958533#1_0" startPos="52.91" endPos="67.91" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A"/>
+    <busStop id="2449072194" lane="478958532#1_0" startPos="53.42" endPos="68.42" friendlyPos="true" lines=" 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="2449072196" lane="372500759#0_0" startPos="22.07" endPos="37.07" friendlyPos="true" lines=" 196A 1961 196F 1965 196C 100P 100U 100A 197 197M">
+        <access lane="-372090175_0" pos="4.96" length="12.47" friendlyPos="1"/>
+        <access lane="372090175_0" pos="30.19" length="17.27" friendlyPos="1"/>
+        <access lane="478958535_0" pos="276.46" length="40.69" friendlyPos="1"/>
+        <access lane="546844929_0" pos="14.14" length="19.14" friendlyPos="1"/>
+        <access lane="979887656_0" pos="40.37" length="36.48" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2452978092" lane="258407154_0" startPos="71.74" endPos="86.74" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="237390953#2_0" pos="136.73" length="20.00" friendlyPos="1"/>
+        <access lane="259857821_0" pos="0.00" length="53.39" friendlyPos="1"/>
+        <access lane="301172045_0" pos="0.00" length="30.73" friendlyPos="1"/>
+        <access lane="315692206#3_0" pos="18.17" length="28.68" friendlyPos="1"/>
+        <access lane="315692206#4_0" pos="3.84" length="25.47" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2452978098" lane="167596744#1_0" startPos="130.47" endPos="145.47" friendlyPos="true" lines=" 196E 196A 100P 100U 197 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="237390953#2_0" pos="126.06" length="38.58" friendlyPos="1"/>
+        <access lane="301172045_0" pos="0.00" length="10.62" friendlyPos="1"/>
+        <access lane="315692206#2_0" pos="113.37" length="42.00" friendlyPos="1"/>
+        <access lane="315692206#3_0" pos="18.17" length="9.97" friendlyPos="1"/>
+        <access lane="315692206#4_0" pos="0.35" length="5.97" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2452978323" lane="368091908#1_0" startPos="24.27" endPos="39.27" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C">
+        <access lane="237390955#3_0" pos="30.04" length="30.38" friendlyPos="1"/>
+        <access lane="237390956#2_0" pos="73.43" length="53.35" friendlyPos="1"/>
+        <access lane="237390956#3_0" pos="28.85" length="19.71" friendlyPos="1"/>
+        <access lane="981862994#0_0" pos="2.60" length="48.10" friendlyPos="1"/>
+        <access lane="981862994#1_0" pos="0.00" length="48.26" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2452978333" lane="182397393#1_0" startPos="219.74" endPos="234.74" friendlyPos="true" lines=" 200A Circular UFSM D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196">
+        <access lane="237390955#2_0" pos="40.38" length="50.37" friendlyPos="1"/>
+        <access lane="237390955#3_0" pos="28.74" length="10.49" friendlyPos="1"/>
+        <access lane="237390956#3_0" pos="27.39" length="39.58" friendlyPos="1"/>
+        <access lane="981862994#1_0" pos="3.67" length="47.02" friendlyPos="1"/>
+        <access lane="981862994#2_0" pos="0.00" length="46.65" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2452978396" lane="368091908#2_0" startPos="24.18" endPos="39.18" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C">
+        <access lane="181341700_0" pos="0.00" length="36.83" friendlyPos="1"/>
+        <access lane="237390955#5_0" pos="28.71" length="32.44" friendlyPos="1"/>
+        <access lane="237390955#6_0" pos="0.00" length="33.18" friendlyPos="1"/>
+        <access lane="237390956#4_0" pos="28.42" length="18.44" friendlyPos="1"/>
+        <access lane="981862995#0_0" pos="1.08" length="46.67" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2452978403" lane="182397393#0_0" startPos="83.79" endPos="98.79" friendlyPos="true" lines=" 200A Circular UFSM D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196">
+        <access lane="181341700_0" pos="0.00" length="16.53" friendlyPos="1"/>
+        <access lane="237390955#5_0" pos="29.59" length="11.93" friendlyPos="1"/>
+        <access lane="237390955#6_0" pos="0.00" length="14.05" friendlyPos="1"/>
+        <access lane="237390956#4_0" pos="28.99" length="38.98" friendlyPos="1"/>
+        <access lane="981862995#2_0" pos="0.00" length="48.78" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2458620746" lane="368091941#1_0" startPos="51.55" endPos="66.55" friendlyPos="true" lines="212A 223V 223P"/>
+    <busStop id="2458620748" lane="305172074#0_0" startPos="18.56" endPos="33.56" friendlyPos="true" lines="541B  541R 196B B196 196D 197R 197B1 197B 222 221 222D"/>
+    <busStop id="2458620756" lane="305172077#4_0" startPos="6.50" endPos="21.50" friendlyPos="true" lines="541B  541R 196B B196 196D 197R 197B1 197B 222 222D"/>
+    <busStop id="2458620761" lane="226014647#0_0" startPos="97.71" endPos="112.71" friendlyPos="true" lines="D196 196D B196 196B 197C 197R  221"/>
+    <busStop id="2458620762" lane="226014647#0_0" startPos="99.09" endPos="114.09" friendlyPos="true" lines="D196 196D B196 196B 197C 197R  221"/>
+    <busStop id="2458620763" lane="388508702_0" startPos="128.23" endPos="134.39" friendlyPos="true" lines="541B  541R 222 221 222D"/>
+    <busStop id="2458620763@6095000" lane="388508702_0" startPos="119.80" endPos="127.41" friendlyPos="true" lines=""/>
+    <busStop id="2458620768" lane="50301280#2_0" startPos="28.36" endPos="43.36" friendlyPos="true" lines="541B  541R 222"/>
+    <busStop id="2458883091" lane="469561203_0" startPos="19.01" endPos="34.01" friendlyPos="true" lines="541B 541R  D196 196D B196 196B 197C 197R 222 221"/>
+    <busStop id="2458883092" lane="193309351#0_0" startPos="23.71" endPos="38.71" friendlyPos="true" lines="541B 541R  D196 196D B196 196B 197C 197R 222 221"/>
+    <busStop id="2458907761" lane="193030312#2_0" startPos="14.06" endPos="29.06" friendlyPos="true" lines="241A"/>
+    <busStop id="2458907776" lane="983077648#0_0" startPos="22.16" endPos="37.16" friendlyPos="true" lines="241A"/>
+    <busStop id="2458907781" lane="193030311#1_0" startPos="15.47" endPos="30.47" friendlyPos="true"/>
+    <busStop id="2458907796" lane="372502415#11_0" startPos="20.88" endPos="35.88" friendlyPos="true" lines="241A"/>
+    <busStop id="2458907798" lane="372502415#2_0" startPos="14.15" endPos="29.15" friendlyPos="true" lines="241A"/>
+    <busStop id="2458907799" lane="678028830#1_0" startPos="3.08" endPos="18.08" friendlyPos="true" lines="241A"/>
+    <busStop id="2475475690" lane="200672740#3_0" startPos="24.21" endPos="39.21" friendlyPos="true" lines=""/>
+    <busStop id="2647914597" lane="199426663_0" startPos="105.98" endPos="120.98" friendlyPos="true" lines=" 196A 1961 196F 1965 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="256533932#0_0" pos="77.85" length="146.30" friendlyPos="1"/>
+        <access lane="256533932#1_0" pos="3.05" length="144.81" friendlyPos="1"/>
+        <access lane="459923740_0" pos="45.53" length="142.38" friendlyPos="1"/>
+        <access lane="459923741_0" pos="92.27" length="33.40" friendlyPos="1"/>
+        <access lane="459923742_0" pos="83.22" length="12.64" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2647914869" lane="221413755#9_0" startPos="7.27" endPos="22.27" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="2647914927" lane="221413755#1_0" startPos="6.64" endPos="21.64" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="2652353798" lane="363484167#3_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-259777972_0" pos="46.85" length="47.84" friendlyPos="1"/>
+        <access lane="-259777977#3_0" pos="0.00" length="12.14" friendlyPos="1"/>
+        <access lane="259777972_0" pos="0.00" length="44.87" friendlyPos="1"/>
+        <access lane="259777977#2_0" pos="2.32" length="49.17" friendlyPos="1"/>
+        <access lane="259777977#3_0" pos="14.51" length="12.14" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2656266410" lane="912572268#1_0" startPos="159.60" endPos="174.60" friendlyPos="true"/>
+    <busStop id="2656266411" lane="301521093#4_0" startPos="17.29" endPos="32.29" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="2656266421" lane="344153327#1_0" startPos="12.23" endPos="27.23" friendlyPos="true" lines="222A"/>
+    <busStop id="2656266487" lane="301521094#0_0" startPos="5.40" endPos="20.40" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="2656266638" lane="539264858#9_0" startPos="6.00" endPos="21.00" friendlyPos="true" lines="355B 355C 1965 591"/>
+    <busStop id="2656266641" lane="539264849#1_0" startPos="49.16" endPos="61.43" friendlyPos="true"/>
+    <busStop id="2656266708" lane="539264863#1_0" startPos="0.20" endPos="15.20" friendlyPos="true"/>
+    <busStop id="2656266714" lane="539264858#3_0" startPos="30.54" endPos="42.97" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="2656266743" lane="301511499#1_0" startPos="2.58" endPos="17.58" friendlyPos="true"/>
+    <busStop id="2656266752" lane="504322129#3_0" startPos="1.42" endPos="16.42" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="2656636367" lane="368559006#0_0" startPos="44.41" endPos="59.41" friendlyPos="true" lines="155C  160 156"/>
+    <busStop id="2656636422" lane="408999833#1_0" startPos="34.21" endPos="49.21" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="2656636428" lane="368559564#2_0" startPos="31.87" endPos="39.37" friendlyPos="true"/>
+    <busStop id="2656636452" lane="225971204_0" startPos="178.43" endPos="193.43" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="2656636463" lane="361257111#0_0" startPos="132.42" endPos="147.42" friendlyPos="true" lines="155C  160 156 168"/>
+    <busStop id="2656636495" lane="49732812#3_0" startPos="18.63" endPos="33.63" friendlyPos="true"/>
+    <busStop id="2656636498" lane="373701300#1_0" startPos="32.51" endPos="47.51" friendlyPos="true" lines="355B"/>
+    <busStop id="2656636504" lane="938420816_0" startPos="76.59" endPos="91.59" friendlyPos="true"/>
+    <busStop id="2656636530" lane="200621109#5_0" startPos="36.15" endPos="51.15" friendlyPos="true"/>
+    <busStop id="2656636531" lane="978818441#0_0" startPos="0.00" endPos="9.18" friendlyPos="true"/>
+    <busStop id="2712707949" lane="193030337#1_0" startPos="0.00" endPos="14.32" friendlyPos="true" lines="212J 541K 541T 541Q"/>
+    <busStop id="2799887824" lane="529574209_0" startPos="41.52" endPos="49.02" friendlyPos="true" lines=" 200A 1965 100P 100U 197C"/>
+    <busStop id="2823666404" lane="259470109#1_0" startPos="28.58" endPos="43.58" friendlyPos="true" lines="196D 196B 1966 196I ">
+        <access lane="-181347086#2_0" pos="0.00" length="34.13" friendlyPos="1"/>
+        <access lane="-303082613#0_0" pos="40.85" length="37.77" friendlyPos="1"/>
+        <access lane="181347086#2_0" pos="74.35" length="38.87" friendlyPos="1"/>
+        <access lane="303082613#0_0" pos="0.00" length="42.09" friendlyPos="1"/>
+        <access lane="368279839_0" pos="40.88" length="52.16" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2846222242" lane="167596736#6_0" startPos="20.94" endPos="35.94" friendlyPos="true" lines=" 200A D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196"/>
+    <busStop id="2896436727" lane="286008850#2_0" startPos="0.71" endPos="8.07" friendlyPos="true"/>
+    <busStop id="2976399348" lane="363481691#12_0" startPos="45.64" endPos="60.64" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-303099175#0_0" pos="0.00" length="38.80" friendlyPos="1"/>
+        <access lane="-303099175#1_0" pos="0.00" length="37.00" friendlyPos="1"/>
+        <access lane="303099175#1_0" pos="0.20" length="41.68" friendlyPos="1"/>
+        <access lane="521961216_0" pos="1.61" length="33.43" friendlyPos="1"/>
+        <access lane="971828258#1_0" pos="19.64" length="11.02" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2976399351" lane="363481691#8_0" startPos="11.27" endPos="26.27" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-259855028#2_0" pos="0.00" length="31.20" friendlyPos="1"/>
+        <access lane="259855028#0_0" pos="4.89" length="31.72" friendlyPos="1"/>
+        <access lane="259855028#2_0" pos="7.26" length="26.61" friendlyPos="1"/>
+        <access lane="487538681_0" pos="28.19" length="16.26" friendlyPos="1"/>
+        <access lane="971828256#1_0" pos="12.78" length="8.55" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2976418641" lane="303099159#2_0" startPos="0.06" endPos="15.06" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-367115070#0_0" pos="0.00" length="40.69" friendlyPos="1"/>
+        <access lane="294066209_0" pos="0.00" length="38.89" friendlyPos="1"/>
+        <access lane="367135967_0" pos="10.90" length="19.33" friendlyPos="1"/>
+        <access lane="971828259#1_0" pos="44.12" length="42.00" friendlyPos="1"/>
+        <access lane="971828270#1_0" pos="22.02" length="10.83" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2976473149" lane="181347079#0_0" startPos="16.92" endPos="31.92" friendlyPos="true" lines="100U 197 197M"/>
+    <busStop id="2976551190" lane="303082593#0_0" startPos="4.58" endPos="19.58" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="2984341834" lane="539338534_0" startPos="14.63" endPos="29.63" friendlyPos="true" lines="196D 196B 1966 196I ">
+        <access lane="-181347083#8_0" pos="0.00" length="21.69" friendlyPos="1"/>
+        <access lane="-539338521#0_0" pos="124.44" length="24.47" friendlyPos="1"/>
+        <access lane="181347083#8_0" pos="107.93" length="17.69" friendlyPos="1"/>
+        <access lane="401044398_0" pos="0.00" length="62.63" friendlyPos="1"/>
+        <access lane="539338521#0_0" pos="0.00" length="21.00" friendlyPos="1"/>
+    </busStop>
+    <busStop id="2985310317" lane="363458497#4_0" startPos="7.04" endPos="22.04" friendlyPos="true" lines=" 100A"/>
+    <busStop id="2999798198" lane="207246950#9_0" startPos="0.00" endPos="10.66" friendlyPos="true"/>
+    <busStop id="2999808435" lane="207246950#0_0" startPos="23.83" endPos="38.83" friendlyPos="true"/>
+    <busStop id="3010640646" lane="207243785#3_0" startPos="1.87" endPos="16.87" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="3061763287" lane="301981265#3_0" startPos="15.60" endPos="30.60" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="3061763299" lane="167596736#4_0" startPos="12.81" endPos="27.81" friendlyPos="true" lines=" 200A Agudo → Santa Maria via UFSM Santa Maria → Agudo via UFSM D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196"/>
+    <busStop id="3061763307" lane="368091933#3_0" startPos="3.64" endPos="18.64" friendlyPos="true"/>
+    <busStop id="3061763316" lane="371529911#0_0" startPos="20.17" endPos="35.17" friendlyPos="true"/>
+    <busStop id="3061763317" lane="301981261#2_0" startPos="33.85" endPos="48.85" friendlyPos="true"/>
+    <busStop id="3061763319" lane="301981257#1_0" startPos="58.85" endPos="73.85" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="3061763321" lane="371529911#0_0" startPos="154.25" endPos="169.25" friendlyPos="true"/>
+    <busStop id="3061763322" lane="681285286#1_0" startPos="6.59" endPos="21.59" friendlyPos="true"/>
+    <busStop id="3135882098" lane="303082591#2_0" startPos="20.04" endPos="32.47" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-207227906#0_0" pos="74.40" length="58.05" friendlyPos="1"/>
+        <access lane="-207251645#9_0" pos="0.00" length="39.23" friendlyPos="1"/>
+        <access lane="207251645#9_0" pos="32.55" length="34.44" friendlyPos="1"/>
+        <access lane="503903774_0" pos="0.00" length="53.25" friendlyPos="1"/>
+        <access lane="971828264#0_0" pos="0.00" length="11.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="3135882101" lane="221413755#16_0" startPos="8.97" endPos="23.97" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="3135882108" lane="303082585#6_0" startPos="1.17" endPos="15.98" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="3305119529" name="Rodoviária de Camobi" lane="323729614_0" startPos="16.11" endPos="24.48" friendlyPos="true" lines=" 0437 Porto Alegre → Santa Maria via Cachoeira do Sul Novo Hamburgo → Santa Maria"/>
+    <busStop id="3305119535" name="Rodoviária de Camobi" lane="323729615_0" startPos="23.26" endPos="38.26" friendlyPos="true" lines=" Santa Maria → Sobradinho via Três Vendas Santa Maria → Sobradinho via Vila Rosa Santa Maria → Estrela via Santa Cruz e Venâncio Aires 0437 200A Santa Maria → Agudo Santa Maria → Agudo via UFSM Santa Maria → Porto Alegre via Cachoeira do Sul Santa Maria → Novo Hamburgo"/>
+    <busStop id="3337988664" lane="305176899#4_0" startPos="11.57" endPos="26.57" friendlyPos="true" lines="221"/>
+    <busStop id="3361554591" lane="225971199#2_0" startPos="21.17" endPos="36.17" friendlyPos="true" lines="541B 541R  D196 196D B196 196B 197C 197R"/>
+    <busStop id="3393236460" lane="297176956#7_0" startPos="0.00" endPos="12.04" friendlyPos="true" lines=" 100A"/>
+    <busStop id="3393236467" lane="183332637#0_0" startPos="4.57" endPos="19.57" friendlyPos="true"/>
+    <busStop id="3393236472" lane="568381692#1_0" startPos="0.00" endPos="7.50" friendlyPos="true" lines="100U 197 197M"/>
+    <busStop id="3393236478" lane="183192481#8_0" startPos="363.99" endPos="378.99" friendlyPos="true" lines="200A"/>
+    <busStop id="3393236535" lane="259733754#2_0" startPos="5.81" endPos="20.81" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="405310909_0" pos="34.53" length="40.02" friendlyPos="1"/>
+        <access lane="647474237#0_0" pos="18.21" length="14.68" friendlyPos="1"/>
+        <access lane="647474237#1_0" pos="0.00" length="31.65" friendlyPos="1"/>
+        <access lane="971828251_0" pos="0.00" length="38.86" friendlyPos="1"/>
+        <access lane="971828252_0" pos="15.26" length="11.56" friendlyPos="1"/>
+    </busStop>
+    <busStop id="3393236539" lane="303082582#4_0" startPos="38.97" endPos="53.97" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="3393236540" lane="303082589#2_0" startPos="29.20" endPos="44.20" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="3393236541" lane="303082589#1_0" startPos="9.51" endPos="24.51" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="3393236542" lane="303082584#2_0" startPos="21.67" endPos="36.67" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="3393237218" lane="258407149#2_0" startPos="0.00" endPos="14.23" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="3455836755" lane="303099165_0" startPos="24.65" endPos="39.65" friendlyPos="true" lines="1965"/>
+    <busStop id="3455855342" lane="303099165_0" startPos="24.60" endPos="39.60" friendlyPos="true" lines="1965"/>
+    <busStop id="3455872597" lane="761787853_0" startPos="0.00" endPos="13.81" friendlyPos="true" lines="1965 241A"/>
+    <busStop id="3477200117" lane="31622081#0_0" startPos="32.51" endPos="47.51" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-205672769#11_0" pos="0.00" length="122.38" friendlyPos="1"/>
+        <access lane="-205672769#12_0" pos="114.66" length="105.67" friendlyPos="1"/>
+        <access lane="-256977003_0" pos="0.00" length="123.77" friendlyPos="1"/>
+        <access lane="205672769#12_0" pos="31.45" length="110.47" friendlyPos="1"/>
+        <access lane="256977003_0" pos="35.62" length="118.99" friendlyPos="1"/>
+    </busStop>
+    <busStop id="3509128042" lane="225971208#3_0" startPos="15.62" endPos="23.12" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P A196 B196 196B 196A 100A 197 197C 100P 212C 212I 212X 197A 197R 241A 591 222 221 222A"/>
+    <busStop id="3558149118" lane="360935208#0_0" startPos="12.89" endPos="27.89" friendlyPos="true"/>
+    <busStop id="3728594978" lane="55354009#8_0" startPos="46.91" endPos="61.91" friendlyPos="true" lines=" 160"/>
+    <busStop id="3728594979" lane="55354009#8_0" startPos="46.91" endPos="61.91" friendlyPos="true" lines=" 160"/>
+    <busStop id="3729684427" lane="193030337#1_0" startPos="0.00" endPos="14.65" friendlyPos="true" lines="212J 541K 541T 541Q"/>
+    <busStop id="3729684431" lane="406021800_0" startPos="90.85" endPos="105.85" friendlyPos="true" lines="1966 196G"/>
+    <busStop id="3729684432" lane="193026196#5_0" startPos="11.84" endPos="26.84" friendlyPos="true" lines="212J 541I 541M 541K 541R 541T 541Q  355B 355C 212B 541S 212Q"/>
+    <busStop id="3729684434" lane="406021800_0" startPos="52.73" endPos="67.73" friendlyPos="true"/>
+    <busStop id="3729684436" lane="193811246#1_0" startPos="21.15" endPos="36.15" friendlyPos="true" lines="212J 541I 541M 541K 541R 541T 541Q  355B 355C 212B 541S 212C 212I 212X 212Q"/>
+    <busStop id="3729684437" lane="231958644#1_0" startPos="53.38" endPos="67.37" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P 196E A196 196A 100A 197 100P 212C 212I 212X 197A E196 Porto Alegre → Santa Maria via Cachoeira do Sul 241A"/>
+    <busStop id="3729684438" lane="368494308#2_0" startPos="58.37" endPos="73.37" friendlyPos="true" lines="212J  541I 541M 541K 541R 541T 541Q 355B 355C A196 196A 1961 196E 212B 196F 1965 196C 100P 100U 100A 197 541S 212C 212X 212S 212Q 197M"/>
+    <busStop id="3729684439" lane="50783634#3_0" startPos="32.72" endPos="47.72" friendlyPos="true" lines=" 196E A196 196A 100A 197 100P 197A E196 Porto Alegre → Santa Maria via Cachoeira do Sul 241A"/>
+    <busStop id="3729684440" lane="368486584#2_0" startPos="23.15" endPos="38.15" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="3729684441" lane="50014718#4_0" startPos="20.59" endPos="35.59" friendlyPos="true" lines=""/>
+    <busStop id="3729684442" lane="301521095#2_0" startPos="38.69" endPos="53.69" friendlyPos="true" lines="212J  541I 541M 541K 541R 541T 541Q 355B 355C A196 196A 1961 196E 212B 196F 1965 196C 100P 100U 100A 197 541S 212C 212X 212S 197M"/>
+    <busStop id="3729684443" lane="50014718#1_0" startPos="89.66" endPos="104.66" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P D196 196D 196E A196 B196 196B 196A 100A 197 197C 100P 212C 212I 212X 197A E196 197R 241A 222 221"/>
+    <busStop id="3729745004" lane="200672740#3_0" startPos="24.21" endPos="39.21" friendlyPos="true" lines=""/>
+    <busStop id="3729745005" lane="406490708#2_0" startPos="38.88" endPos="53.88" friendlyPos="true"/>
+    <busStop id="3729745006" lane="469561203_0" startPos="19.01" endPos="34.01" friendlyPos="true" lines="541B 541R  D196 196D B196 196B 197C 197R 222 221"/>
+    <busStop id="3729745007" lane="193309351#0_0" startPos="28.41" endPos="41.13" friendlyPos="true" lines="541B 541R  D196 196D B196 196B 197C 197R 222 221"/>
+    <busStop id="3729745010" lane="225971199#2_0" startPos="21.64" endPos="36.64" friendlyPos="true" lines="541B 541R  D196 196D B196 196B 197C 197R"/>
+    <busStop id="3729745011" lane="305172077#4_0" startPos="6.56" endPos="21.56" friendlyPos="true" lines="541B  541R 196B B196 196D 197R 197B1 197B 222 222D"/>
+    <busStop id="3729745012" lane="388508702_0" startPos="128.24" endPos="134.39" friendlyPos="true" lines="541B  541R 222 221 222D"/>
+    <busStop id="3733371596" lane="303174870#1_0" startPos="29.10" endPos="44.10" friendlyPos="true"/>
+    <busStop id="3743485949" lane="303082585#2_0" startPos="12.84" endPos="27.84" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="3756235203" lane="371536217#2_0" startPos="0.00" endPos="14.98" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="3771208457" lane="373701300#5_0" startPos="63.06" endPos="70.56" friendlyPos="true" lines="355B"/>
+    <busStop id="3771208494" lane="373701314#2_0" startPos="38.01" endPos="45.51" friendlyPos="true"/>
+    <busStop id="3798359745" lane="303082572#4_0" startPos="6.65" endPos="21.65" friendlyPos="true" lines=" 100A"/>
+    <busStop id="3798360865" lane="363457760#1_0" startPos="5.05" endPos="20.05" friendlyPos="true" lines=" 100A"/>
+    <busStop id="3830593364" lane="55354009#4_0" startPos="1.93" endPos="16.93" friendlyPos="true"/>
+    <busStop id="3883788923" lane="303082573#4_0" startPos="16.45" endPos="31.45" friendlyPos="true" lines=" 100A"/>
+    <busStop id="3883788940" lane="363460869_0" startPos="88.58" endPos="103.58" friendlyPos="true" lines=" 100A"/>
+    <busStop id="3883788944" lane="183332637#5_0" startPos="26.82" endPos="41.82" friendlyPos="true"/>
+    <busStop id="4017965051" lane="341783022#1_0" startPos="42.04" endPos="56.70" friendlyPos="true" lines="155C 168 222 221 222D 156"/>
+    <busStop id="4031249561" lane="193218144#8_0" startPos="40.90" endPos="55.90" friendlyPos="true"/>
+    <busStop id="4083982305" lane="360929409_0" startPos="40.93" endPos="55.93" friendlyPos="true" lines=" 1961 196E 196F 196D"/>
+    <busStop id="4083982307" lane="301981247#3_0" startPos="12.82" endPos="27.82" friendlyPos="true" lines=" A196 196A 1961 196E 1965 196B B196 196I 196D 100P 100U 197C"/>
+    <busStop id="4089238817" lane="224088356_0" startPos="0.00" endPos="13.66" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="4089238819" lane="49793803#3_0" startPos="41.89" endPos="56.89" friendlyPos="true" lines=" 196E A196 196A 1966 100A 197 100P 197A E196 Porto Alegre → Santa Maria via Cachoeira do Sul 241A"/>
+    <busStop id="4089238821" lane="371536217#2_0" startPos="0.00" endPos="13.15" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A"/>
+    <busStop id="4089238822" lane="777361473#1_0" startPos="22.89" endPos="37.89" friendlyPos="true" lines=" 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="4127110092" lane="193218143#13_0" startPos="6.37" endPos="21.37" friendlyPos="true"/>
+    <busStop id="4164186052" name="UFSM/Posto" lane="182584432_0" startPos="6.38" endPos="21.38" friendlyPos="true" lines=""/>
+    <busStop id="4181537554" lane="372510397#3_0" startPos="8.94" endPos="23.94" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-196865723#10_0" pos="3.25" length="46.57" friendlyPos="1"/>
+        <access lane="196865723#10_0" pos="209.97" length="41.77" friendlyPos="1"/>
+        <access lane="521961216_0" pos="0.00" length="31.78" friendlyPos="1"/>
+        <access lane="971828257_0" pos="18.03" length="3.46" friendlyPos="1"/>
+        <access lane="971828258#1_0" pos="19.64" length="54.69" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537555" lane="372510396#1_0" startPos="19.07" endPos="34.07" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-259855028#0_0" pos="28.83" length="54.01" friendlyPos="1"/>
+        <access lane="259855028#0_0" pos="0.00" length="50.96" friendlyPos="1"/>
+        <access lane="487538681_0" pos="46.17" length="23.21" friendlyPos="1"/>
+        <access lane="971828255_0" pos="30.05" length="2.13" friendlyPos="1"/>
+        <access lane="971828256#1_0" pos="13.84" length="54.77" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537556" lane="372510397#3_0" startPos="8.21" endPos="23.21" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-196865723#10_0" pos="0.00" length="47.05" friendlyPos="1"/>
+        <access lane="196865723#10_0" pos="213.22" length="42.33" friendlyPos="1"/>
+        <access lane="521961216_0" pos="0.00" length="24.58" friendlyPos="1"/>
+        <access lane="971828257_0" pos="18.03" length="13.22" friendlyPos="1"/>
+        <access lane="971828258#1_0" pos="19.26" length="41.68" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537557" lane="372510396#1_0" startPos="18.90" endPos="33.90" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-259855028#0_0" pos="28.83" length="43.07" friendlyPos="1"/>
+        <access lane="259855028#0_0" pos="0.00" length="39.87" friendlyPos="1"/>
+        <access lane="487538681_0" pos="45.80" length="12.03" friendlyPos="1"/>
+        <access lane="971828255_0" pos="30.05" length="13.16" friendlyPos="1"/>
+        <access lane="971828256#1_0" pos="13.84" length="44.95" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537558" lane="196865714#16_0" startPos="39.49" endPos="54.49" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-302514919_0" pos="6.69" length="48.13" friendlyPos="1"/>
+        <access lane="294066209_0" pos="0.00" length="51.12" friendlyPos="1"/>
+        <access lane="302514919_0" pos="114.64" length="52.93" friendlyPos="1"/>
+        <access lane="367135967_0" pos="10.90" length="48.16" friendlyPos="1"/>
+        <access lane="971828259#1_0" pos="58.49" length="2.54" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537559" lane="196865714#16_0" startPos="38.83" endPos="53.83" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-302514919_0" pos="0.28" length="50.62" friendlyPos="1"/>
+        <access lane="294066209_0" pos="0.00" length="42.14" friendlyPos="1"/>
+        <access lane="367135967_0" pos="10.90" length="38.27" friendlyPos="1"/>
+        <access lane="971828259#1_0" pos="58.36" length="12.33" friendlyPos="1"/>
+        <access lane="971828270#1_0" pos="22.02" length="46.05" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537560" lane="196865714#8_0" startPos="16.61" endPos="31.61" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-256539031_0" pos="3.15" length="19.34" friendlyPos="1"/>
+        <access lane="256539031_0" pos="158.00" length="22.34" friendlyPos="1"/>
+        <access lane="360378420_0" pos="30.44" length="57.51" friendlyPos="1"/>
+        <access lane="503903772_0" pos="33.23" length="27.84" friendlyPos="1"/>
+        <access lane="971828268_0" pos="24.05" length="3.59" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537561" lane="196865714#8_0" startPos="15.90" endPos="30.90" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-256539031_0" pos="0.00" length="21.97" friendlyPos="1"/>
+        <access lane="256539031_0" pos="161.15" length="24.89" friendlyPos="1"/>
+        <access lane="318229659#0_0" pos="0.00" length="54.87" friendlyPos="1"/>
+        <access lane="503903772_0" pos="33.10" length="17.43" friendlyPos="1"/>
+        <access lane="971828268_0" pos="24.05" length="6.88" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537562" lane="569156537#2_0" startPos="8.05" endPos="23.05" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-360378528#0_0" pos="0.00" length="23.07" friendlyPos="1"/>
+        <access lane="-422490518_0" pos="0.00" length="34.44" friendlyPos="1"/>
+        <access lane="971828266#0_0" pos="23.22" length="32.14" friendlyPos="1"/>
+        <access lane="971828266#1_0" pos="4.88" length="3.48" friendlyPos="1"/>
+        <access lane="984444815_0" pos="125.05" length="18.29" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537563" lane="569156537#2_0" startPos="7.91" endPos="22.91" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-360378528#0_0" pos="0.00" length="27.57" friendlyPos="1"/>
+        <access lane="-422490518_0" pos="0.00" length="35.68" friendlyPos="1"/>
+        <access lane="971828266#0_0" pos="23.22" length="32.89" friendlyPos="1"/>
+        <access lane="971828266#1_0" pos="4.88" length="8.44" friendlyPos="1"/>
+        <access lane="984444815_0" pos="125.05" length="23.31" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537564" lane="548552297#2_0" startPos="19.71" endPos="34.71" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-207227865#1_0" pos="92.20" length="30.82" friendlyPos="1"/>
+        <access lane="-371530861_0" pos="0.00" length="45.39" friendlyPos="1"/>
+        <access lane="207227865#1_0" pos="5.27" length="35.62" friendlyPos="1"/>
+        <access lane="371530861_0" pos="40.80" length="46.03" friendlyPos="1"/>
+        <access lane="971828265#1_0" pos="18.07" length="4.60" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537565" lane="548552297#2_0" startPos="18.34" endPos="33.34" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-207227865#1_0" pos="97.51" length="32.16" friendlyPos="1"/>
+        <access lane="-371530861_0" pos="0.00" length="37.15" friendlyPos="1"/>
+        <access lane="207227865#1_0" pos="0.00" length="36.97" friendlyPos="1"/>
+        <access lane="371530861_0" pos="40.80" length="37.65" friendlyPos="1"/>
+        <access lane="971828265#1_0" pos="16.10" length="12.37" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537566" lane="258407150#5_0" startPos="15.35" endPos="23.63" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-207227891#1_0" pos="39.45" length="33.54" friendlyPos="1"/>
+        <access lane="207227891#1_0" pos="0.00" length="38.13" friendlyPos="1"/>
+        <access lane="503903775_0" pos="20.13" length="19.84" friendlyPos="1"/>
+        <access lane="971828262#1_0" pos="0.00" length="44.38" friendlyPos="1"/>
+        <access lane="971828263#1_0" pos="14.98" length="3.35" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181537567" lane="258407150#5_0" startPos="16.13" endPos="23.63" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-207227891#1_0" pos="39.45" length="36.44" friendlyPos="1"/>
+        <access lane="207227891#1_0" pos="0.00" length="40.84" friendlyPos="1"/>
+        <access lane="503903775_0" pos="19.22" length="14.94" friendlyPos="1"/>
+        <access lane="971828262#1_0" pos="0.00" length="39.74" friendlyPos="1"/>
+        <access lane="971828263#1_0" pos="14.98" length="8.44" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181552955" lane="569156536#0_0" startPos="72.81" endPos="87.81" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-370656173#2_0" pos="0.00" length="35.27" friendlyPos="1"/>
+        <access lane="-422490517_0" pos="0.00" length="44.03" friendlyPos="1"/>
+        <access lane="370656173#2_0" pos="6.20" length="39.80" friendlyPos="1"/>
+        <access lane="971828269#0_0" pos="18.63" length="44.24" friendlyPos="1"/>
+        <access lane="971828269#1_0" pos="16.54" length="11.77" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181642143" lane="363480437#2_0" startPos="11.35" endPos="26.35" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-370656171#0_0" pos="0.00" length="16.84" friendlyPos="1"/>
+        <access lane="260751041_0" pos="253.51" length="23.63" friendlyPos="1"/>
+        <access lane="370656171#0_0" pos="33.54" length="21.58" friendlyPos="1"/>
+        <access lane="971828267#2_0" pos="26.23" length="25.29" friendlyPos="1"/>
+        <access lane="971828267#3_0" pos="5.77" length="2.50" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4181642156" lane="303082582#4_0" startPos="38.85" endPos="53.85" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="4181642157" lane="258407149#2_0" startPos="0.00" endPos="14.23" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 197 197M"/>
+    <busStop id="4194067386" lane="363489416#5_0" startPos="77.68" endPos="91.11" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-419315426_0" pos="28.25" length="29.22" friendlyPos="1"/>
+        <access lane="-419315428#1_0" pos="0.00" length="14.64" friendlyPos="1"/>
+        <access lane="419315426_0" pos="0.00" length="33.95" friendlyPos="1"/>
+        <access lane="419315428#0_0" pos="14.52" length="38.59" friendlyPos="1"/>
+        <access lane="419315428#1_0" pos="9.56" length="11.42" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4210137902" lane="297176956#7_0" startPos="0.00" endPos="11.88" friendlyPos="true" lines=" 100A"/>
+    <busStop id="4210137920" lane="568381692#0_0" startPos="104.54" endPos="114.56" friendlyPos="true" lines="100U 197 197M"/>
+    <busStop id="4210137979" lane="545481996_0" startPos="7.84" endPos="15.34" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="4210138292" lane="410386372_0" startPos="47.63" endPos="62.63" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="4210138293" lane="410386372_0" startPos="47.51" endPos="62.51" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="4210138294" lane="301981257#1_0" startPos="58.21" endPos="73.21" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="4210138295" lane="167699930#3_0" startPos="3.08" endPos="18.08" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="4210138304" lane="301981265#3_0" startPos="15.24" endPos="30.24" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="4222178502" lane="363454254#1_0" startPos="0.00" endPos="11.11" friendlyPos="true" lines=""/>
+    <busStop id="4368858291" lane="369562380#1_0" startPos="32.59" endPos="47.59" friendlyPos="true"/>
+    <busStop id="4437218259" lane="193032301_0" startPos="3.08" endPos="18.08" friendlyPos="true"/>
+    <busStop id="4543789051" lane="50301280#2_0" startPos="29.57" endPos="44.57" friendlyPos="true" lines="541B  541R 222"/>
+    <busStop id="4543789056" lane="305172074#0_0" startPos="19.03" endPos="34.03" friendlyPos="true" lines="541B  541R 196B B196 196D 197R 197B1 197B 222 221 222D"/>
+    <busStop id="4543925335" lane="301521095#2_0" startPos="39.27" endPos="54.27" friendlyPos="true" lines="212J  541I 541M 541K 541R 541T 541Q 355B 355C A196 196A 1961 196E 212B 196F 1965 196C 100P 100U 100A 197 541S 212C 212X 212S 197M"/>
+    <busStop id="4543976192" lane="372500446#1_0" startPos="39.63" endPos="54.63" friendlyPos="true"/>
+    <busStop id="4544015564" lane="193138280#5_0" startPos="2.28" endPos="17.28" friendlyPos="true" lines="1965"/>
+    <busStop id="4544677271" lane="363454254#1_0" startPos="0.00" endPos="11.33" friendlyPos="true" lines=""/>
+    <busStop id="4544742352" lane="303082574_0" startPos="10.98" endPos="25.98" friendlyPos="true" lines=" 100A"/>
+    <busStop id="4544750287" lane="303082587#5_0" startPos="7.59" endPos="22.59" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul"/>
+    <busStop id="4544794389" lane="569142160_0" startPos="0.00" endPos="11.60" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="4544794390" lane="350103656#2_0" startPos="0.00" endPos="12.24" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="4544828402" lane="368091941#1_0" startPos="50.39" endPos="65.39" friendlyPos="true" lines="212A 223V 223P"/>
+    <busStop id="4544828405" lane="193134644#1_0" startPos="78.36" endPos="93.36" friendlyPos="true" lines="541B "/>
+    <busStop id="4554426583" lane="368091971#0_0" startPos="62.28" endPos="77.28" friendlyPos="true" lines=" 1961 241A 236B"/>
+    <busStop id="4578488447" lane="475997383#1_0" startPos="59.17" endPos="74.17" friendlyPos="true" lines="155C  D196 196D 196E E196 168 160 156"/>
+    <busStop id="4578520178" lane="372500759#0_0" startPos="22.07" endPos="37.07" friendlyPos="true" lines=" 196A 1961 196F 1965 196C 100P 100U 100A 197 197M">
+        <access lane="-372090175_0" pos="0.00" length="13.77" friendlyPos="1"/>
+        <access lane="372090175_0" pos="35.14" length="18.51" friendlyPos="1"/>
+        <access lane="478958535_0" pos="275.90" length="30.63" friendlyPos="1"/>
+        <access lane="546844929_0" pos="14.64" length="9.07" friendlyPos="1"/>
+        <access lane="979887656_0" pos="40.37" length="33.83" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4578520180" lane="478958532#1_0" startPos="53.01" endPos="68.01" friendlyPos="true" lines=" 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="4578520181" lane="478958533#1_0" startPos="52.87" endPos="67.87" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="4578520182" lane="372500758#2_0" startPos="62.67" endPos="77.15" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="4578520183" lane="371535957#0_0" startPos="7.33" endPos="22.33" friendlyPos="true" lines=" 196A 1961 196E 196F 1965 196C 100P 100U 100A 197 197M"/>
+    <busStop id="4603748637" lane="358563417#1_0" startPos="2.30" endPos="17.30" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P A196 B196 196B 196A 100A 197 197C 100P 212C 212I 212X 197A 197R 241A 591 222 221 222A"/>
+    <busStop id="4604392752" lane="503896684_0" startPos="63.05" endPos="78.05" friendlyPos="true" lines=" 1961 241A 236B"/>
+    <busStop id="4604392755" lane="360935211#0_0" startPos="30.11" endPos="45.11" friendlyPos="true" lines=" 241A 236B"/>
+    <busStop id="4604392777" lane="360929410#2_0" startPos="111.29" endPos="118.79" friendlyPos="true"/>
+    <busStop id="4604392780" lane="360929410#0_0" startPos="113.70" endPos="128.70" friendlyPos="true"/>
+    <busStop id="4604392783" lane="58996891#0_0" startPos="78.53" endPos="93.53" friendlyPos="true" lines="241A"/>
+    <busStop id="4686905462" lane="474821610_0" startPos="23.39" endPos="38.39" friendlyPos="true" lines="212A 212J 541I 541M 541K 541R 541T 541Q  212B 541S 212C 223V 212X 223P 212S 212Q"/>
+    <busStop id="4696675289" lane="368091899#1_0" startPos="1.13" endPos="16.13" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="4696675290" lane="368091899#1_0" startPos="0.41" endPos="15.41" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="4696675292" lane="55354008_0" startPos="31.54" endPos="46.54" friendlyPos="true" lines=" 1961 196E 196F 196D 591 222A"/>
+    <busStop id="4696675294" lane="55354008_0" startPos="32.15" endPos="47.15" friendlyPos="true" lines=" 1961 196E 196F 196D 591 222A"/>
+    <busStop id="4696675295" lane="55354008_0" startPos="39.04" endPos="51.74" friendlyPos="true" lines=""/>
+    <busStop id="4696675298" lane="633932892_0" startPos="27.47" endPos="35.76" friendlyPos="true" lines=""/>
+    <busStop id="4696675298@8813625" lane="633932892_0" startPos="22.21" endPos="37.21" friendlyPos="true" lines="154A"/>
+    <busStop id="4696675299" lane="633932892_0" startPos="23.00" endPos="38.00" friendlyPos="true" lines=" 154A"/>
+    <busStop id="4728682185" lane="363472908#7_0" startPos="149.36" endPos="164.36" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="4728682186" lane="363472908#5_0" startPos="9.70" endPos="24.70" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="4728682187" lane="363472908#7_0" startPos="147.71" endPos="162.71" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="4728682336" lane="363472908#5_0" startPos="9.22" endPos="24.22" friendlyPos="true" lines="100U 197 197R 197B1 197B 197M"/>
+    <busStop id="4751078503" lane="181355804#2_0" startPos="24.69" endPos="39.69" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="4804939217" lane="305086980#1_0" startPos="204.83" endPos="212.33" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="4820847431" lane="539338511#0_0" startPos="0.00" endPos="8.67" friendlyPos="true" lines="196D 196B 1966 196I 197C ">
+        <access lane="-191114808#0_0" pos="31.80" length="36.55" friendlyPos="1"/>
+        <access lane="-446229614#4_0" pos="0.00" length="46.24" friendlyPos="1"/>
+        <access lane="191114808#0_0" pos="3.88" length="31.75" friendlyPos="1"/>
+        <access lane="446229614#4_0" pos="14.95" length="42.57" friendlyPos="1"/>
+        <access lane="479825226_0" pos="27.87" length="43.01" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4820847432" lane="363472906#2_0" startPos="39.78" endPos="54.78" friendlyPos="true" lines="196D 1966 196I">
+        <access lane="-363472908#1_0" pos="4.48" length="38.00" friendlyPos="1"/>
+        <access lane="-363472908#2_0" pos="3.70" length="48.26" friendlyPos="1"/>
+        <access lane="-568381692#2_0" pos="0.00" length="38.14" friendlyPos="1"/>
+        <access lane="363472908#0_0" pos="0.00" length="42.62" friendlyPos="1"/>
+        <access lane="568381692#1_0" pos="14.64" length="42.74" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4906911064" lane="191714265#1_0" startPos="42.43" endPos="57.43" friendlyPos="true" lines="D196 196D B196 196B 197C 197R  221"/>
+    <busStop id="4906911066" lane="191714265#1_0" startPos="42.88" endPos="57.88" friendlyPos="true" lines="D196 196D B196 196B 197C 197R  221"/>
+    <busStop id="4911689698" lane="678028830#1_0" startPos="4.31" endPos="19.31" friendlyPos="true" lines="241A"/>
+    <busStop id="4911689699" lane="372502415#2_0" startPos="12.60" endPos="27.60" friendlyPos="true" lines="241A"/>
+    <busStop id="4911689700" lane="372502415#11_0" startPos="10.58" endPos="25.58" friendlyPos="true"/>
+    <busStop id="4911689701" lane="372502415#11_0" startPos="19.98" endPos="34.98" friendlyPos="true" lines="241A"/>
+    <busStop id="4911689707" lane="259401628#4_0" startPos="53.78" endPos="68.78" friendlyPos="true"/>
+    <busStop id="4911689710" lane="193030317#0_0" startPos="24.05" endPos="39.05" friendlyPos="true"/>
+    <busStop id="4919388425" lane="396378810_0" startPos="5.63" endPos="20.63" friendlyPos="true" lines="212A 223V 223P"/>
+    <busStop id="4941323463" lane="269016268_0" startPos="57.24" endPos="72.24" friendlyPos="true" lines=" D196 196D 196E E196 154A"/>
+    <busStop id="4941323464" lane="269016268_0" startPos="57.25" endPos="72.25" friendlyPos="true" lines=" D196 196D 196E E196 154A"/>
+    <busStop id="4941323465" lane="358980057#0_0" startPos="15.02" endPos="30.02" friendlyPos="true" lines=" D196 196D 196E E196 154A"/>
+    <busStop id="4941323466" lane="358980057#0_0" startPos="15.71" endPos="30.71" friendlyPos="true" lines=" D196 196D 196E E196 154A"/>
+    <busStop id="4941323467" lane="368091947_0" startPos="34.58" endPos="49.58" friendlyPos="true" lines=" D196 196D 196E E196 154A"/>
+    <busStop id="4941323468" lane="368091947_0" startPos="34.29" endPos="49.29" friendlyPos="true" lines=" D196 196D 196E E196 154A"/>
+    <busStop id="4941397835" lane="31622081#0_0" startPos="30.67" endPos="45.67" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-205672769#11_0" pos="0.00" length="134.51" friendlyPos="1"/>
+        <access lane="-205672769#12_0" pos="110.83" length="116.37" friendlyPos="1"/>
+        <access lane="-256977003_0" pos="0.00" length="127.71" friendlyPos="1"/>
+        <access lane="205672769#12_0" pos="35.28" length="121.17" friendlyPos="1"/>
+        <access lane="256977003_0" pos="35.62" length="122.99" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397841" lane="956437244#4_0" startPos="78.08" endPos="93.08" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-256388562#2_0" pos="0.00" length="136.99" friendlyPos="1"/>
+        <access lane="-867007753#1_0" pos="0.00" length="203.05" friendlyPos="1"/>
+        <access lane="-867007753#2_0" pos="0.00" length="172.22" friendlyPos="1"/>
+        <access lane="256388562#2_0" pos="55.86" length="133.16" friendlyPos="1"/>
+        <access lane="867007753#2_0" pos="31.04" length="176.97" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397843" lane="956437244#4_0" startPos="77.72" endPos="92.72" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-256388562#2_0" pos="0.00" length="136.17" friendlyPos="1"/>
+        <access lane="-867007753#1_0" pos="15.98" length="199.32" friendlyPos="1"/>
+        <access lane="-867007753#2_0" pos="0.00" length="171.66" friendlyPos="1"/>
+        <access lane="256388562#2_0" pos="55.86" length="132.09" friendlyPos="1"/>
+        <access lane="867007753#2_0" pos="31.04" length="176.45" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397845" lane="259735276#3_0" startPos="100.21" endPos="113.82" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-193139466#0_0" pos="159.34" length="10.96" friendlyPos="1"/>
+        <access lane="-306872646#1_0" pos="0.00" length="21.79" friendlyPos="1"/>
+        <access lane="193139466#0_0" pos="0.00" length="6.70" friendlyPos="1"/>
+        <access lane="306872646#1_0" pos="41.20" length="19.90" friendlyPos="1"/>
+        <access lane="962510039_0" pos="99.05" length="85.45" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397846" lane="259735276#3_0" startPos="99.75" endPos="113.82" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-193139466#0_0" pos="159.34" length="15.66" friendlyPos="1"/>
+        <access lane="-306872646#1_0" pos="0.00" length="17.73" friendlyPos="1"/>
+        <access lane="193139466#0_0" pos="0.00" length="12.34" friendlyPos="1"/>
+        <access lane="306872646#1_0" pos="41.20" length="14.85" friendlyPos="1"/>
+        <access lane="962510039_0" pos="98.04" length="79.31" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397848" lane="303082601#6_0" startPos="60.45" endPos="75.45" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-182397410#0_0" pos="8.07" length="152.43" friendlyPos="1"/>
+        <access lane="-182397410#1_0" pos="103.57" length="154.82" friendlyPos="1"/>
+        <access lane="-256537874_0" pos="15.65" length="94.50" friendlyPos="1"/>
+        <access lane="182397410#0_0" pos="77.72" length="157.23" friendlyPos="1"/>
+        <access lane="256537874_0" pos="60.56" length="99.30" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397849" lane="303082601#6_0" startPos="60.46" endPos="75.46" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-182397410#0_0" pos="4.27" length="143.00" friendlyPos="1"/>
+        <access lane="-182397410#1_0" pos="103.57" length="144.61" friendlyPos="1"/>
+        <access lane="-256537874_0" pos="19.77" length="89.96" friendlyPos="1"/>
+        <access lane="182397410#0_0" pos="81.52" length="147.80" friendlyPos="1"/>
+        <access lane="256537874_0" pos="56.83" length="94.78" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397851" lane="303082601#5_0" startPos="37.85" endPos="52.85" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-256537870#3_0" pos="0.00" length="82.07" friendlyPos="1"/>
+        <access lane="-618372003_0" pos="0.00" length="130.81" friendlyPos="1"/>
+        <access lane="256537870#2_0" pos="34.37" length="138.09" friendlyPos="1"/>
+        <access lane="256537870#3_0" pos="27.91" length="84.44" friendlyPos="1"/>
+        <access lane="618372003_0" pos="99.67" length="135.57" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397853" lane="303082601#5_0" startPos="38.44" endPos="53.44" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-256537870#3_0" pos="0.00" length="80.89" friendlyPos="1"/>
+        <access lane="-618372003_0" pos="0.00" length="128.87" friendlyPos="1"/>
+        <access lane="256537870#2_0" pos="34.37" length="136.93" friendlyPos="1"/>
+        <access lane="256537870#3_0" pos="27.91" length="83.75" friendlyPos="1"/>
+        <access lane="618372003_0" pos="99.67" length="133.66" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397855" lane="822733904#1_0" startPos="0.00" endPos="11.64" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-318229655_0" pos="70.22" length="8.15" friendlyPos="1"/>
+        <access lane="193220760#0_0" pos="2.26" length="36.27" friendlyPos="1"/>
+        <access lane="193220760#1_0" pos="10.15" length="13.12" friendlyPos="1"/>
+        <access lane="193220764#0_0" pos="0.00" length="29.54" friendlyPos="1"/>
+        <access lane="318229655_0" pos="0.00" length="10.18" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397856" lane="911320116#2_0" startPos="128.61" endPos="143.61" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-256537871#1_0" pos="0.00" length="24.38" friendlyPos="1"/>
+        <access lane="-381451287#0_0" pos="0.00" length="44.99" friendlyPos="1"/>
+        <access lane="-651562484_0" pos="27.68" length="47.16" friendlyPos="1"/>
+        <access lane="256537871#0_0" pos="125.05" length="48.28" friendlyPos="1"/>
+        <access lane="256537871#1_0" pos="12.55" length="20.47" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397864" lane="539338534_0" startPos="14.06" endPos="29.06" friendlyPos="true" lines="196D 196B 1966 196I ">
+        <access lane="-181347083#8_0" pos="0.00" length="29.83" friendlyPos="1"/>
+        <access lane="-539338521#0_0" pos="124.44" length="20.11" friendlyPos="1"/>
+        <access lane="181347083#8_0" pos="107.93" length="26.90" friendlyPos="1"/>
+        <access lane="368284018_0" pos="0.00" length="67.02" friendlyPos="1"/>
+        <access lane="539338521#0_0" pos="0.00" length="15.43" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397866" lane="421207841#1_0" startPos="4.29" endPos="19.29" friendlyPos="true" lines="196D 196B 1966 196I ">
+        <access lane="-181347077#4_0" pos="0.00" length="20.48" friendlyPos="1"/>
+        <access lane="-314664957_0" pos="7.63" length="74.15" friendlyPos="1"/>
+        <access lane="-342138979#0_0" pos="34.57" length="26.88" friendlyPos="1"/>
+        <access lane="181347077#4_0" pos="55.03" length="15.78" friendlyPos="1"/>
+        <access lane="342138979#0_0" pos="0.00" length="23.50" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397867" lane="421207841#1_0" startPos="4.01" endPos="19.01" friendlyPos="true" lines="196D 196B 1966 196I ">
+        <access lane="-181347077#4_0" pos="0.00" length="22.45" friendlyPos="1"/>
+        <access lane="-314664957_0" pos="7.25" length="67.09" friendlyPos="1"/>
+        <access lane="-342138979#0_0" pos="34.57" length="22.39" friendlyPos="1"/>
+        <access lane="181347077#4_0" pos="55.03" length="18.39" friendlyPos="1"/>
+        <access lane="342138979#0_0" pos="0.00" length="18.32" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4941397868" lane="259470109#1_0" startPos="28.01" endPos="43.01" friendlyPos="true" lines="196D 196B 1966 196I ">
+        <access lane="-181347086#2_0" pos="1.65" length="32.71" friendlyPos="1"/>
+        <access lane="-303082613#0_0" pos="40.85" length="41.65" friendlyPos="1"/>
+        <access lane="181347086#2_0" pos="72.70" length="37.51" friendlyPos="1"/>
+        <access lane="303082613#0_0" pos="0.00" length="45.52" friendlyPos="1"/>
+        <access lane="368279839_0" pos="40.45" length="51.46" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4943218550" lane="372510396#12_0" startPos="0.00" endPos="13.06" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A">
+        <access lane="-256235331#0_0" pos="0.00" length="20.06" friendlyPos="1"/>
+        <access lane="256235331#0_0" pos="140.47" length="17.44" friendlyPos="1"/>
+        <access lane="503903770_0" pos="15.34" length="20.65" friendlyPos="1"/>
+        <access lane="971828253_0" pos="0.00" length="43.14" friendlyPos="1"/>
+        <access lane="971828254#1_0" pos="1.57" length="5.44" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4943218551" lane="372510396#12_0" startPos="0.00" endPos="13.28" friendlyPos="true" lines=" 196E 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-256235331#0_0" pos="0.00" length="24.15" friendlyPos="1"/>
+        <access lane="256235331#0_0" pos="140.47" length="22.50" friendlyPos="1"/>
+        <access lane="503903770_0" pos="14.65" length="14.12" friendlyPos="1"/>
+        <access lane="971828253_0" pos="0.00" length="36.98" friendlyPos="1"/>
+        <access lane="971828254#1_0" pos="1.57" length="12.05" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4944914735" lane="372502415#6_0" startPos="11.22" endPos="24.31" friendlyPos="true" lines="241A"/>
+    <busStop id="4944914736" lane="372502415#6_0" startPos="9.78" endPos="24.31" friendlyPos="true" lines="241A"/>
+    <busStop id="4944935652" lane="360935210#0_0" startPos="85.92" endPos="100.92" friendlyPos="true" lines=" 1961 241A 236B"/>
+    <busStop id="4944935653" lane="360935210#0_0" startPos="85.72" endPos="100.72" friendlyPos="true" lines=" 1961 241A 236B"/>
+    <busStop id="4945812528" lane="363481691#2_0" startPos="0.00" endPos="11.08" friendlyPos="true" lines=" 1961 196E 196F 100P 100U 100A 197 197M">
+        <access lane="-259855078_0" pos="3.53" length="21.32" friendlyPos="1"/>
+        <access lane="256977002_0" pos="428.27" length="22.39" friendlyPos="1"/>
+        <access lane="259855078_0" pos="228.28" length="16.52" friendlyPos="1"/>
+        <access lane="503903770_0" pos="0.00" length="19.90" friendlyPos="1"/>
+        <access lane="971828253_0" pos="6.00" length="0.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4945812529" lane="259733754#2_0" startPos="6.72" endPos="21.72" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-193138296#0_0" pos="122.30" length="40.18" friendlyPos="1"/>
+        <access lane="193138296#0_0" pos="0.00" length="44.97" friendlyPos="1"/>
+        <access lane="647474237#0_0" pos="18.87" length="25.40" friendlyPos="1"/>
+        <access lane="647474237#1_0" pos="0.00" length="41.39" friendlyPos="1"/>
+        <access lane="971828252_0" pos="15.26" length="3.06" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4945812530" lane="199426663_0" startPos="104.48" endPos="119.48" friendlyPos="true" lines=" 196A 1961 196F 1965 196C 100P 100U 100A 197 197M">
+        <access lane="256533932#0_0" pos="77.85" length="143.49" friendlyPos="1"/>
+        <access lane="256533932#1_0" pos="2.05" length="142.16" friendlyPos="1"/>
+        <access lane="459923740_0" pos="45.53" length="144.96" friendlyPos="1"/>
+        <access lane="459923741_0" pos="93.68" length="35.58" friendlyPos="1"/>
+        <access lane="459923742_0" pos="81.80" length="14.81" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4945877795" lane="344153330#1_0" startPos="2.60" endPos="17.60" friendlyPos="true" lines=" 1961 196E 196F 196D"/>
+    <busStop id="4945877796" lane="344153330#1_0" startPos="2.66" endPos="17.66" friendlyPos="true" lines=" 1961 196E 196F 196D"/>
+    <busStop id="4947800856" lane="504635828#1_0" startPos="11.87" endPos="26.87" friendlyPos="true">
+        <access lane="-256976023_0" pos="0.00" length="82.80" friendlyPos="1"/>
+        <access lane="-614603810_0" pos="17.31" length="44.89" friendlyPos="1"/>
+        <access lane="-647084082_0" pos="0.00" length="80.53" friendlyPos="1"/>
+        <access lane="256976023_0" pos="49.69" length="80.83" friendlyPos="1"/>
+        <access lane="386046534_0" pos="171.86" length="40.09" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4947830026" lane="305135197#0_0" startPos="78.31" endPos="93.31" friendlyPos="true" lines="196I 222"/>
+    <busStop id="4947830027" lane="305135197#0_0" startPos="79.59" endPos="94.59" friendlyPos="true" lines="196I 222"/>
+    <busStop id="4947830036" lane="965280414#0_0" startPos="0.00" endPos="6.97" friendlyPos="true"/>
+    <busStop id="4947830037" lane="286673107#1_0" startPos="0.00" endPos="11.75" friendlyPos="true" lines="196I">
+        <access lane="199426668#1_0" pos="3.30" length="21.23" friendlyPos="1"/>
+        <access lane="259225196#1_0" pos="1.60" length="24.33" friendlyPos="1"/>
+        <access lane="965280414#0_0" pos="0.02" length="8.15" friendlyPos="1"/>
+        <access lane="965280414#1_0" pos="0.00" length="9.46" friendlyPos="1"/>
+        <access lane="965280414#2_0" pos="0.00" length="26.74" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4949203578" lane="372503128#4_0" startPos="30.71" endPos="45.71" friendlyPos="true" lines=" 196A 100A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul">
+        <access lane="-231665996_0" pos="0.00" length="19.56" friendlyPos="1"/>
+        <access lane="193138296#0_0" pos="0.00" length="42.10" friendlyPos="1"/>
+        <access lane="231665996_0" pos="56.25" length="23.93" friendlyPos="1"/>
+        <access lane="647474237#0_0" pos="5.06" length="29.31" friendlyPos="1"/>
+        <access lane="971828251_0" pos="36.61" length="10.16" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4949203579" lane="372503128#4_0" startPos="30.88" endPos="45.88" friendlyPos="true" lines=" 196A 100A 197 100P 197A">
+        <access lane="-231665996_0" pos="0.00" length="17.33" friendlyPos="1"/>
+        <access lane="193138296#0_0" pos="0.00" length="50.84" friendlyPos="1"/>
+        <access lane="231665996_0" pos="56.25" length="22.13" friendlyPos="1"/>
+        <access lane="647474237#0_0" pos="5.06" length="35.17" friendlyPos="1"/>
+        <access lane="971828251_0" pos="36.61" length="5.08" friendlyPos="1"/>
+    </busStop>
+    <busStop id="4951284588" lane="368091941#1_0" startPos="15.38" endPos="30.38" friendlyPos="true" lines=""/>
+    <busStop id="4951284589" lane="368091941#1_0" startPos="15.55" endPos="30.55" friendlyPos="true" lines=""/>
+    <busStop id="4951449179" lane="270890210#0_0" startPos="31.96" endPos="46.96" friendlyPos="true"/>
+    <busStop id="4951449181" lane="240272342#0_0" startPos="58.82" endPos="73.82" friendlyPos="true"/>
+    <busStop id="4951449182" lane="193030337#3_0" startPos="34.29" endPos="49.29" friendlyPos="true" lines="212J 541K 541T 541Q"/>
+    <busStop id="4951449183" lane="193030337#3_0" startPos="34.45" endPos="49.45" friendlyPos="true" lines="212J 541K 541T 541Q"/>
+    <busStop id="4972706430" lane="49874187_0" startPos="10.80" endPos="25.80" friendlyPos="true"/>
+    <busStop id="4972706432" lane="504322133_0" startPos="134.80" endPos="149.80" friendlyPos="true"/>
+    <busStop id="4972835948" lane="193134644#1_0" startPos="78.15" endPos="93.15" friendlyPos="true" lines="541B  0437 Silveira Martins → Santa Maria"/>
+    <busStop id="4977276388" lane="240272342#1_0" startPos="81.20" endPos="96.20" friendlyPos="true"/>
+    <busStop id="4977276390" lane="259401634#1_0" startPos="0.00" endPos="13.97" friendlyPos="true"/>
+    <busStop id="4981463317" lane="368079765#2_0" startPos="46.78" endPos="61.78" friendlyPos="true"/>
+    <busStop id="5000330853" lane="358980598_0" startPos="5.14" endPos="20.14" friendlyPos="true"/>
+    <busStop id="5000783650" lane="462839164_0" startPos="25.28" endPos="40.28" friendlyPos="true" lines="591 222A"/>
+    <busStop id="5000783651" lane="462839164_0" startPos="31.03" endPos="46.03" friendlyPos="true" lines="591 222A"/>
+    <busStop id="5084889289" lane="363483827#4_0" startPos="0.00" endPos="14.23" friendlyPos="true" lines="1965"/>
+    <busStop id="5084889290" lane="193139481#0_0" startPos="214.17" endPos="229.17" friendlyPos="true" lines="1965"/>
+    <busStop id="5084889291" lane="193139481#0_0" startPos="214.67" endPos="229.30" friendlyPos="true" lines="1965"/>
+    <busStop id="5084889293" lane="303099172#3_0" startPos="50.38" endPos="65.38" friendlyPos="true" lines="1965 241A"/>
+    <busStop id="5084891104" lane="350103659#1_0" startPos="40.38" endPos="55.38" friendlyPos="true" lines=" A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C"/>
+    <busStop id="5098452100" lane="193138280#3_0" startPos="57.55" endPos="72.55" friendlyPos="true" lines="1965"/>
+    <busStop id="5098452101" lane="193138280#3_0" startPos="58.54" endPos="73.54" friendlyPos="true" lines="1965"/>
+    <busStop id="5099458528" lane="193138280#1_0" startPos="25.66" endPos="40.66" friendlyPos="true" lines="1965"/>
+    <busStop id="5099458529" lane="193138280#1_0" startPos="26.23" endPos="41.23" friendlyPos="true" lines="1965"/>
+    <busStop id="5111887933" lane="360933445_0" startPos="39.19" endPos="54.19" friendlyPos="true" lines=""/>
+    <busStop id="5111887934" lane="360933445_0" startPos="38.81" endPos="53.81" friendlyPos="true" lines=""/>
+    <busStop id="5111887935" lane="360938369_0" startPos="83.67" endPos="98.67" friendlyPos="true"/>
+    <busStop id="5111887937" lane="360929856#0_0" startPos="64.06" endPos="79.06" friendlyPos="true" lines=""/>
+    <busStop id="5111887938" lane="360929856#0_0" startPos="63.89" endPos="78.89" friendlyPos="true" lines=""/>
+    <busStop id="5113946458" lane="193139470#2_0" startPos="0.79" endPos="15.79" friendlyPos="true" lines="1965"/>
+    <busStop id="5113946459" lane="193139470#2_0" startPos="0.47" endPos="15.47" friendlyPos="true" lines="1965"/>
+    <busStop id="5119926443" lane="181347079#3_0" startPos="93.22" endPos="108.22" friendlyPos="true" lines="100U 197 197M"/>
+    <busStop id="5119926444" lane="181347079#3_0" startPos="93.10" endPos="108.10" friendlyPos="true" lines="100U 197 197M"/>
+    <busStop id="5130992187" lane="363468028#2_0" startPos="51.11" endPos="66.11" friendlyPos="true" lines="197 197C 197A 197R"/>
+    <busStop id="5130992188" lane="363468028#2_0" startPos="52.07" endPos="67.07" friendlyPos="true" lines="197 197C 197A 197R"/>
+    <busStop id="5135779389" lane="181326559#5_0" startPos="32.56" endPos="47.56" friendlyPos="true" lines=" 100P 100U"/>
+    <busStop id="5135779390" lane="181326559#5_0" startPos="32.83" endPos="47.83" friendlyPos="true" lines=" 100P 100U"/>
+    <busStop id="5137626633" lane="363481691#2_0" startPos="0.00" endPos="11.77" friendlyPos="true" lines=" 1961 196E 196F 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-259855078_0" pos="0.00" length="23.61" friendlyPos="1"/>
+        <access lane="256977002_0" pos="431.67" length="24.60" friendlyPos="1"/>
+        <access lane="259855078_0" pos="231.78" length="19.07" friendlyPos="1"/>
+        <access lane="503903770_0" pos="0.00" length="9.79" friendlyPos="1"/>
+        <access lane="971828253_0" pos="0.00" length="9.40" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5150946075" lane="193139471#2_0" startPos="0.25" endPos="15.25" friendlyPos="true" lines="1965 241A"/>
+    <busStop id="5150946076" lane="539338511#0_0" startPos="0.00" endPos="8.67" friendlyPos="true" lines="196B 197C ">
+        <access lane="-191114808#0_0" pos="35.68" length="38.41" friendlyPos="1"/>
+        <access lane="-479825226_0" pos="0.00" length="34.56" friendlyPos="1"/>
+        <access lane="191114808#0_0" pos="0.00" length="33.79" friendlyPos="1"/>
+        <access lane="446229614#4_0" pos="14.95" length="34.93" friendlyPos="1"/>
+        <access lane="479825226_0" pos="27.87" length="31.54" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5153004211" lane="980937242_0" startPos="57.46" endPos="72.46" friendlyPos="true" lines="591 222A"/>
+    <busStop id="5153004212" lane="980937242_0" startPos="57.52" endPos="72.52" friendlyPos="true" lines="591 222A"/>
+    <busStop id="5158087284" lane="496253716_0" startPos="39.66" endPos="54.66" friendlyPos="true"/>
+    <busStop id="5246560177" lane="305176899#4_0" startPos="11.71" endPos="26.71" friendlyPos="true" lines="221"/>
+    <busStop id="5247872957" lane="181355804#2_0" startPos="25.29" endPos="40.29" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="5247885015" lane="350103659#3_0" startPos="8.45" endPos="23.45" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="5267724127" lane="368091933#4_0" startPos="72.80" endPos="80.45" friendlyPos="true" lines=" A196 196A 1961 196E 1965 196B B196 196I 196D 100P 100U 197C"/>
+    <busStop id="5267724128" lane="368091933#4_0" startPos="72.95" endPos="80.45" friendlyPos="true" lines=" A196 196A 1961 196E 1965 196B B196 196I 196D 100P 100U 197C"/>
+    <busStop id="5272801244" lane="207227857#0_0" startPos="7.82" endPos="22.82" friendlyPos="true" lines="100A 100P 197A"/>
+    <busStop id="5274441694" lane="525268747_0" startPos="64.72" endPos="79.72" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="5274441699" lane="539662254#1_0" startPos="32.16" endPos="47.16" friendlyPos="true"/>
+    <busStop id="5286257146" lane="499726265_0" startPos="3.47" endPos="18.47" friendlyPos="true" lines="212J  541I 541M 541K 541R 541T 541Q A196 196A 1961 196E 212B 196F 196B B196 196C 196D 100P 100U 100A 197 197R 541S 212C 212X 212S 212Q 197B1 197B 197M 222 221 222D"/>
+    <busStop id="5292113058" lane="303082601#1_0" startPos="58.68" endPos="73.68" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-618372483_0" pos="55.06" length="18.63" friendlyPos="1"/>
+        <access lane="-618374362_0" pos="4.65" length="30.70" friendlyPos="1"/>
+        <access lane="-959068958_0" pos="4.03" length="26.91" friendlyPos="1"/>
+        <access lane="618372483_0" pos="13.60" length="23.43" friendlyPos="1"/>
+        <access lane="959068958_0" pos="0.00" length="31.52" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5292596025" lane="221413755#19_0" startPos="25.71" endPos="40.31" friendlyPos="true" lines=" 196E 196A 197 100P 197A Porto Alegre → Santa Maria via Cachoeira do Sul"/>
+    <busStop id="5292707710" lane="344153343#2_0" startPos="37.70" endPos="52.70" friendlyPos="true"/>
+    <busStop id="5300246711" lane="303082594#0_0" startPos="28.55" endPos="43.55" friendlyPos="true" lines="100P"/>
+    <busStop id="5310482055" lane="55354009#8_0" startPos="42.48" endPos="57.48" friendlyPos="true"/>
+    <busStop id="5310712706" lane="253047825#5_0" startPos="14.59" endPos="29.59" friendlyPos="true"/>
+    <busStop id="5310712708" lane="253047825#3_0" startPos="12.38" endPos="27.38" friendlyPos="true" lines="212A 223V 223P"/>
+    <busStop id="5310712709" lane="396378810_0" startPos="6.26" endPos="21.26" friendlyPos="true" lines="212A 223V 223P"/>
+    <busStop id="5310712711" lane="193026203#1_0" startPos="35.91" endPos="50.91" friendlyPos="true"/>
+    <busStop id="5310712713" lane="754719369#0_0" startPos="30.93" endPos="45.93" friendlyPos="true"/>
+    <busStop id="5310712715" lane="377043810#0_0" startPos="17.82" endPos="32.82" friendlyPos="true"/>
+    <busStop id="5329564395" lane="269016266#0_0" startPos="76.57" endPos="91.57" friendlyPos="true"/>
+    <busStop id="5336977811" lane="360935203#0_0" startPos="26.98" endPos="41.98" friendlyPos="true"/>
+    <busStop id="5360053524" lane="192656813#1_0" startPos="17.32" endPos="32.32" friendlyPos="true"/>
+    <busStop id="5361146052" lane="910969916#0_0" startPos="104.39" endPos="119.39" friendlyPos="true"/>
+    <busStop id="5361514763" lane="358980528#0_0" startPos="12.77" endPos="27.77" friendlyPos="true" lines="1961 196E 196F 196D"/>
+    <busStop id="5366197376" lane="358981135_0" startPos="28.90" endPos="43.90" friendlyPos="true" lines="1961 196E 196F 196D"/>
+    <busStop id="5366197383" lane="360922569#1_0" startPos="38.14" endPos="53.14" friendlyPos="true"/>
+    <busStop id="5366197388" lane="49874192_0" startPos="44.88" endPos="59.88" friendlyPos="true" lines="154A 236B"/>
+    <busStop id="5448109320" lane="459923736#0_0" startPos="151.37" endPos="166.37" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A">
+        <access lane="-197592117#0_0" pos="0.00" length="62.93" friendlyPos="1"/>
+        <access lane="-197592117#1_0" pos="0.48" length="55.05" friendlyPos="1"/>
+        <access lane="-303377507_0" pos="33.87" length="19.84" friendlyPos="1"/>
+        <access lane="197592117#1_0" pos="10.93" length="59.85" friendlyPos="1"/>
+        <access lane="303377507_0" pos="11.27" length="24.64" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5448109721" lane="459839142_0" startPos="25.69" endPos="40.69" friendlyPos="true" lines=" 196A 1966 100A 197 100P 197A">
+        <access lane="-372090175_0" pos="0.00" length="49.60" friendlyPos="1"/>
+        <access lane="193065654#3_0" pos="52.83" length="48.47" friendlyPos="1"/>
+        <access lane="478958535_0" pos="270.39" length="13.69" friendlyPos="1"/>
+        <access lane="546844929_0" pos="19.90" length="35.32" friendlyPos="1"/>
+        <access lane="777361472_0" pos="0.00" length="51.08" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5448109722" lane="459839142_0" startPos="26.42" endPos="41.42" friendlyPos="true" lines=" 196A 1966 100A 197 100P 197A">
+        <access lane="-372090175_0" pos="0.00" length="42.62" friendlyPos="1"/>
+        <access lane="372090175_0" pos="35.14" length="44.32" friendlyPos="1"/>
+        <access lane="478958535_0" pos="270.85" length="6.60" friendlyPos="1"/>
+        <access lane="546844929_0" pos="19.47" length="28.22" friendlyPos="1"/>
+        <access lane="777361472_0" pos="0.00" length="48.96" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5479253037" lane="207227859#4_0" startPos="7.03" endPos="22.03" friendlyPos="true" lines="100A 100P 197A"/>
+    <busStop id="5479253038" lane="207227859#4_0" startPos="7.04" endPos="22.04" friendlyPos="true" lines="100A 100P 197A"/>
+    <busStop id="5481418877" lane="569156528#2_0" startPos="95.00" endPos="110.00" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418878" lane="569156528#2_0" startPos="95.16" endPos="110.16" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418879" lane="204269346#3_0" startPos="189.39" endPos="204.39" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418880" lane="204269346#3_0" startPos="189.36" endPos="204.36" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418881" lane="204269346#2_0" startPos="19.65" endPos="34.65" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418882" lane="204269346#2_0" startPos="19.63" endPos="34.63" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418883" lane="204269346#3_0" startPos="3.63" endPos="18.63" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5481418884" lane="204269346#3_0" startPos="3.19" endPos="18.19" friendlyPos="true" lines="197B1 197B"/>
+    <busStop id="5483508910" lane="569142160_0" startPos="0.00" endPos="11.91" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="5503729342" lane="193218443#3_0" startPos="20.98" endPos="33.69" friendlyPos="true"/>
+    <busStop id="5503729345" lane="193218143#16_0" startPos="21.44" endPos="36.44" friendlyPos="true"/>
+    <busStop id="5557991904" lane="459839153#2_0" startPos="32.38" endPos="47.38" friendlyPos="true" lines=" 196A 1961 196F 1965 196C 100P 100U 100A 197 197M">
+        <access lane="-197592117#1_0" pos="0.00" length="63.67" friendlyPos="1"/>
+        <access lane="-372129163_0" pos="0.00" length="63.83" friendlyPos="1"/>
+        <access lane="197592117#1_0" pos="11.41" length="66.90" friendlyPos="1"/>
+        <access lane="372129163_0" pos="21.10" length="59.05" friendlyPos="1"/>
+        <access lane="459923742_0" pos="271.71" length="48.37" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5557991905" lane="459839153#2_0" startPos="34.24" endPos="49.24" friendlyPos="true" lines=" 196A 1961 196F 1965 196C 100P 100U 100A 197 197M Santa Maria → Porto Alegre via Cachoeira do Sul">
+        <access lane="-197592117#1_0" pos="0.00" length="55.81" friendlyPos="1"/>
+        <access lane="-303377507_0" pos="26.68" length="55.85" friendlyPos="1"/>
+        <access lane="197592117#1_0" pos="11.41" length="59.62" friendlyPos="1"/>
+        <access lane="303377507_0" pos="18.47" length="60.65" friendlyPos="1"/>
+        <access lane="459923742_0" pos="271.71" length="46.53" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5610568176" lane="305086980#1_0" startPos="204.83" endPos="212.33" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="5610568178" lane="368091913#1_0" startPos="41.36" endPos="56.36" friendlyPos="true"/>
+    <busStop id="5610568183" lane="350103659#3_0" startPos="8.40" endPos="23.40" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="5610568184" lane="350103656#2_0" startPos="0.00" endPos="12.54" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="5646622383" lane="487732367#3_0" startPos="24.16" endPos="39.16" friendlyPos="true">
+        <access lane="-303109575#2_0" pos="22.06" length="32.91" friendlyPos="1"/>
+        <access lane="-303109575#3_0" pos="0.00" length="48.98" friendlyPos="1"/>
+        <access lane="-408994052#2_0" pos="45.20" length="46.98" friendlyPos="1"/>
+        <access lane="303109575#2_0" pos="65.41" length="28.11" friendlyPos="1"/>
+        <access lane="303109575#3_0" pos="7.07" length="44.20" friendlyPos="1"/>
+    </busStop>
+    <busStop id="5669574419" lane="358981133#0_0" startPos="17.28" endPos="32.28" friendlyPos="true"/>
+    <busStop id="5669575322" lane="358981131#0_0" startPos="18.04" endPos="33.04" friendlyPos="true"/>
+    <busStop id="5669575323" lane="503896683#3_0" startPos="34.20" endPos="41.70" friendlyPos="true"/>
+    <busStop id="5871070196" lane="330357696_0" startPos="294.03" endPos="309.03" friendlyPos="true" lines="355A"/>
+    <busStop id="5891840945" lane="511169966#2_0" startPos="7.02" endPos="22.02" friendlyPos="true"/>
+    <busStop id="5980494250" lane="368091928#0_0" startPos="8.76" endPos="23.76" friendlyPos="true" lines="154A"/>
+    <busStop id="5984027002" lane="360922570_0" startPos="98.96" endPos="113.96" friendlyPos="true" lines="154A"/>
+    <busStop id="6076879113" lane="459923736#0_0" startPos="151.39" endPos="166.39" friendlyPos="true" lines=" 196E 196A 1966 100A 197 100P 197A">
+        <access lane="-197592117#1_0" pos="0.00" length="56.09" friendlyPos="1"/>
+        <access lane="-303377507_0" pos="33.83" length="33.03" friendlyPos="1"/>
+        <access lane="197592117#1_0" pos="11.41" length="60.78" friendlyPos="1"/>
+        <access lane="303377507_0" pos="11.31" length="37.83" friendlyPos="1"/>
+        <access lane="459923742_0" pos="271.71" length="59.57" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6077834601" lane="408993949#1_0" startPos="28.01" endPos="43.01" friendlyPos="true">
+        <access lane="-372500447#3_0" pos="0.00" length="84.22" friendlyPos="1"/>
+        <access lane="-984046515_0" pos="0.00" length="74.15" friendlyPos="1"/>
+        <access lane="193065666_0" pos="0.00" length="87.06" friendlyPos="1"/>
+        <access lane="372500447#3_0" pos="87.68" length="80.05" friendlyPos="1"/>
+        <access lane="984046515_0" pos="9.68" length="69.38" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083737957" lane="777906103#1_0" startPos="146.44" endPos="161.44" friendlyPos="true" lines="196I 221"/>
+    <busStop id="6083737958" lane="777906103#1_0" startPos="145.56" endPos="160.56" friendlyPos="true" lines="196I 221"/>
+    <busStop id="6083737959" lane="286673108#1_0" startPos="142.21" endPos="157.21" friendlyPos="true" lines="196I 222">
+        <access lane="-341485109#1_0" pos="116.89" length="16.95" friendlyPos="1"/>
+        <access lane="-341485158#2_0" pos="101.20" length="44.67" friendlyPos="1"/>
+        <access lane="341485109#1_0" pos="82.31" length="21.75" friendlyPos="1"/>
+        <access lane="341485158#2_0" pos="116.12" length="39.87" friendlyPos="1"/>
+        <access lane="910969946_0" pos="16.14" length="59.36" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083737960" lane="286673108#1_0" startPos="141.86" endPos="156.86" friendlyPos="true" lines="196I 222">
+        <access lane="-341485109#1_0" pos="117.28" length="25.32" friendlyPos="1"/>
+        <access lane="-341485158#2_0" pos="100.83" length="53.05" friendlyPos="1"/>
+        <access lane="341485109#1_0" pos="81.92" length="30.12" friendlyPos="1"/>
+        <access lane="341485158#2_0" pos="116.49" length="48.25" friendlyPos="1"/>
+        <access lane="910969946_0" pos="16.58" length="50.99" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083737962" lane="965280413#0_0" startPos="0.00" endPos="4.56" friendlyPos="true"/>
+    <busStop id="6083737963" lane="697518349#0_0" startPos="37.82" endPos="49.74" friendlyPos="true" lines="196I 221">
+        <access lane="256976996#0_0" pos="17.24" length="21.95" friendlyPos="1"/>
+        <access lane="965280413#0_0" pos="0.36" length="10.47" friendlyPos="1"/>
+        <access lane="965280413#1_0" pos="0.00" length="14.51" friendlyPos="1"/>
+        <access lane="965280414#1_0" pos="1.20" length="11.42" friendlyPos="1"/>
+        <access lane="965280414#2_0" pos="0.00" length="10.30" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083737966" lane="387565205_0" startPos="8.09" endPos="20.33" friendlyPos="true" lines="Caçapava do Sul → Santa Maria via São Sepé São Sepé → Santa Maria Santana da Boa Vista → Santa Maria Rosário do Sul → Santa Maria Livramento → Santa Maria">
+        <access lane="-204398597#0_0" pos="69.54" length="31.43" friendlyPos="1"/>
+        <access lane="-334889468#1_0" pos="0.00" length="20.41" friendlyPos="1"/>
+        <access lane="204398597#0_0" pos="0.00" length="27.33" friendlyPos="1"/>
+        <access lane="334889468#1_0" pos="31.00" length="25.18" friendlyPos="1"/>
+        <access lane="958982838_0" pos="17.59" length="13.80" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739488" lane="697518350#1_0" startPos="65.76" endPos="80.76" friendlyPos="true">
+        <access lane="-348788968_0" pos="7.13" length="31.14" friendlyPos="1"/>
+        <access lane="-348788975#0_0" pos="0.00" length="43.85" friendlyPos="1"/>
+        <access lane="-348788975#1_0" pos="6.90" length="41.49" friendlyPos="1"/>
+        <access lane="348788968_0" pos="28.61" length="35.94" friendlyPos="1"/>
+        <access lane="348788975#1_0" pos="0.00" length="45.16" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739494" lane="167025813#1_0" startPos="16.63" endPos="31.63" friendlyPos="true"/>
+    <busStop id="6083739504" lane="697518354#0_0" startPos="340.79" endPos="355.79" friendlyPos="true" lines="196I">
+        <access lane="-167025850#1_0" pos="0.00" length="84.39" friendlyPos="1"/>
+        <access lane="-167025852#0_0" pos="160.44" length="86.16" friendlyPos="1"/>
+        <access lane="-966077841#2_0" pos="64.49" length="95.10" friendlyPos="1"/>
+        <access lane="167025850#1_0" pos="53.69" length="81.63" friendlyPos="1"/>
+        <access lane="167025852#0_0" pos="0.00" length="82.93" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739505" lane="697518354#0_0" startPos="340.34" endPos="355.34" friendlyPos="true" lines="196I">
+        <access lane="-167025850#1_0" pos="0.00" length="93.40" friendlyPos="1"/>
+        <access lane="-966077841#2_0" pos="68.23" length="87.97" friendlyPos="1"/>
+        <access lane="167025850#1_0" pos="53.69" length="90.59" friendlyPos="1"/>
+        <access lane="167025852#0_0" pos="0.00" length="91.95" friendlyPos="1"/>
+        <access lane="966077841#2_0" pos="94.31" length="92.77" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739506" lane="697796429#1_0" startPos="48.40" endPos="63.40" friendlyPos="true" lines="196I">
+        <access lane="-231858534#2_0" pos="96.38" length="18.83" friendlyPos="1"/>
+        <access lane="-352050092_0" pos="0.00" length="86.19" friendlyPos="1"/>
+        <access lane="231858534#2_0" pos="98.17" length="23.63" friendlyPos="1"/>
+        <access lane="340209351_0" pos="6.88" length="108.55" friendlyPos="1"/>
+        <access lane="352050092_0" pos="28.95" length="81.39" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739507" lane="697796429#1_0" startPos="48.80" endPos="63.80" friendlyPos="true" lines="196I">
+        <access lane="-231858534#2_0" pos="98.52" length="10.22" friendlyPos="1"/>
+        <access lane="-352050092_0" pos="4.93" length="86.62" friendlyPos="1"/>
+        <access lane="231858534#2_0" pos="96.03" length="15.02" friendlyPos="1"/>
+        <access lane="352050092_0" pos="24.02" length="81.82" friendlyPos="1"/>
+        <access lane="697796431_0" pos="96.28" length="105.37" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739508" lane="352049284#1_0" startPos="20.23" endPos="35.23" friendlyPos="true" lines="196I">
+        <access lane="-199352104#0_0" pos="97.12" length="44.60" friendlyPos="1"/>
+        <access lane="-352050064#1_0" pos="0.00" length="40.06" friendlyPos="1"/>
+        <access lane="199352104#0_0" pos="3.59" length="39.80" friendlyPos="1"/>
+        <access lane="199352111#0_0" pos="0.00" length="54.80" friendlyPos="1"/>
+        <access lane="352050064#0_0" pos="28.52" length="44.77" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739509" lane="352049284#1_0" startPos="20.13" endPos="35.13" friendlyPos="true" lines="196I">
+        <access lane="-199352104#0_0" pos="93.74" length="37.64" friendlyPos="1"/>
+        <access lane="-352050064#1_0" pos="0.00" length="42.34" friendlyPos="1"/>
+        <access lane="199352104#0_0" pos="6.96" length="32.84" friendlyPos="1"/>
+        <access lane="199352111#0_0" pos="0.00" length="49.73" friendlyPos="1"/>
+        <access lane="352050064#0_0" pos="28.52" length="46.78" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739511" lane="352050084#0_0" startPos="0.00" endPos="14.67" friendlyPos="true" lines="196I">
+        <access lane="-352050064#1_0" pos="3.01" length="32.72" friendlyPos="1"/>
+        <access lane="-966077841#3_0" pos="0.00" length="69.06" friendlyPos="1"/>
+        <access lane="352050064#0_0" pos="25.51" length="27.92" friendlyPos="1"/>
+        <access lane="966077839_0" pos="12.51" length="45.65" friendlyPos="1"/>
+        <access lane="966077841#3_0" pos="90.97" length="71.04" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739513" lane="346678754#1_0" startPos="19.73" endPos="34.73" friendlyPos="true" lines="196I">
+        <access lane="-197203407#1_0" pos="3.12" length="29.48" friendlyPos="1"/>
+        <access lane="-197203436#2_0" pos="3.72" length="74.51" friendlyPos="1"/>
+        <access lane="-197203436#3_0" pos="96.70" length="77.07" friendlyPos="1"/>
+        <access lane="197203407#1_0" pos="96.01" length="24.68" friendlyPos="1"/>
+        <access lane="197203436#2_0" pos="11.14" length="79.31" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6083739514" lane="346678754#1_0" startPos="19.79" endPos="34.79" friendlyPos="true" lines="196I">
+        <access lane="-197203407#1_0" pos="7.50" length="22.19" friendlyPos="1"/>
+        <access lane="-197203436#2_0" pos="3.70" length="84.33" friendlyPos="1"/>
+        <access lane="-197203436#3_0" pos="96.70" length="86.59" friendlyPos="1"/>
+        <access lane="197203407#1_0" pos="91.63" length="17.39" friendlyPos="1"/>
+        <access lane="197203436#2_0" pos="11.16" length="89.13" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6119214730" lane="487584708#0_0" startPos="93.10" endPos="108.10" friendlyPos="true">
+        <access lane="-303109575#2_0" pos="27.16" length="53.78" friendlyPos="1"/>
+        <access lane="-408994052#2_0" pos="51.48" length="26.85" friendlyPos="1"/>
+        <access lane="303109575#2_0" pos="60.31" length="48.98" friendlyPos="1"/>
+        <access lane="303109575#3_0" pos="7.07" length="59.50" friendlyPos="1"/>
+        <access lane="408994052#2_0" pos="78.38" length="31.65" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6185140190" lane="372503127_0" startPos="26.75" endPos="41.75" friendlyPos="true" lines="241A"/>
+    <busStop id="6185140191" lane="372503127_0" startPos="28.20" endPos="43.20" friendlyPos="true" lines="241A"/>
+    <busStop id="6186958933" lane="504033183#1_0" startPos="32.91" endPos="47.91" friendlyPos="true" lines="196I 221"/>
+    <busStop id="6186958934" lane="504033183#1_0" startPos="33.39" endPos="48.39" friendlyPos="true" lines="196I 221"/>
+    <busStop id="6186976113" lane="658557313_0" startPos="58.42" endPos="73.42" friendlyPos="true" lines="196I">
+        <access lane="-256890154_0" pos="0.00" length="42.56" friendlyPos="1"/>
+        <access lane="256890154_0" pos="153.53" length="40.24" friendlyPos="1"/>
+        <access lane="256890164#1_0" pos="46.32" length="39.79" friendlyPos="1"/>
+        <access lane="256890164#2_0" pos="4.41" length="33.72" friendlyPos="1"/>
+        <access lane="709043445_0" pos="148.00" length="45.03" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6186976114" lane="658557313_0" startPos="61.20" endPos="76.20" friendlyPos="true" lines="196I">
+        <access lane="-256890154_0" pos="0.00" length="31.25" friendlyPos="1"/>
+        <access lane="256890154_0" pos="153.53" length="27.76" friendlyPos="1"/>
+        <access lane="256890164#1_0" pos="46.32" length="31.17" friendlyPos="1"/>
+        <access lane="256890164#2_0" pos="7.23" length="18.28" friendlyPos="1"/>
+        <access lane="709043445_0" pos="145.44" length="60.57" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6186976115" lane="504033181_0" startPos="22.70" endPos="37.70" friendlyPos="true" lines="196I">
+        <access lane="-256890154_0" pos="0.00" length="59.97" friendlyPos="1"/>
+        <access lane="256890154_0" pos="153.53" length="58.45" friendlyPos="1"/>
+        <access lane="256890164#1_0" pos="46.32" length="55.60" friendlyPos="1"/>
+        <access lane="256890164#2_0" pos="1.15" length="53.11" friendlyPos="1"/>
+        <access lane="709043445_0" pos="150.92" length="25.52" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6186976116" lane="504033181_0" startPos="21.72" endPos="36.72" friendlyPos="true" lines="196I">
+        <access lane="-325617929#2_0" pos="0.00" length="58.28" friendlyPos="1"/>
+        <access lane="256890164#1_0" pos="46.32" length="62.71" friendlyPos="1"/>
+        <access lane="256890164#2_0" pos="1.93" length="60.17" friendlyPos="1"/>
+        <access lane="325617929#2_0" pos="259.16" length="62.70" friendlyPos="1"/>
+        <access lane="709043445_0" pos="150.02" length="18.48" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6216442758" lane="547478013#5_0" startPos="23.81" endPos="38.81" friendlyPos="true"/>
+    <busStop id="6216442760" lane="910969924#3_0" startPos="19.09" endPos="34.09" friendlyPos="true"/>
+    <busStop id="6216442762" lane="547478011#2_0" startPos="23.36" endPos="38.36" friendlyPos="true"/>
+    <busStop id="6216948224" lane="305135153#1_0" startPos="15.62" endPos="28.30" friendlyPos="true" lines="222"/>
+    <busStop id="6216948225" lane="305135153#1_0" startPos="15.62" endPos="30.62" friendlyPos="true" lines="221"/>
+    <busStop id="6216948225@9717703" lane="305135153#1_0" startPos="15.62" endPos="28.30" friendlyPos="true" lines="221"/>
+    <busStop id="6216948226" lane="305135153#1_0" startPos="15.62" endPos="30.62" friendlyPos="true" lines="221"/>
+    <busStop id="6243404183" lane="373701315#1_0" startPos="2.23" endPos="17.23" friendlyPos="true"/>
+    <busStop id="6243409786" lane="978519138_0" startPos="0.00" endPos="8.24" friendlyPos="true" lines="355B"/>
+    <busStop id="6243409787" lane="373701300#1_0" startPos="32.90" endPos="47.90" friendlyPos="true" lines="355B"/>
+    <busStop id="6245535325" lane="358980528#0_0" startPos="12.71" endPos="27.71" friendlyPos="true" lines="1961 196E 196F 196D"/>
+    <busStop id="6245535326" lane="358981135_0" startPos="28.68" endPos="43.68" friendlyPos="true" lines="1961 196E 196F 196D"/>
+    <busStop id="6245535330" lane="368091928#0_0" startPos="9.26" endPos="24.26" friendlyPos="true" lines="154A"/>
+    <busStop id="6245535338" lane="503896684_0" startPos="63.35" endPos="78.35" friendlyPos="true" lines=" 1961 241A 236B"/>
+    <busStop id="6245535339" lane="360935211#0_0" startPos="30.13" endPos="45.13" friendlyPos="true" lines=" 241A 236B"/>
+    <busStop id="6245535340" lane="368091971#0_0" startPos="62.44" endPos="77.44" friendlyPos="true" lines=" 1961 241A 236B"/>
+    <busStop id="6271627830" lane="259401628#1_0" startPos="2.63" endPos="17.63" friendlyPos="true"/>
+    <busStop id="6379863462" lane="681285285#0_0" startPos="0.00" endPos="4.94" friendlyPos="true" lines="Circular UFSM"/>
+    <busStop id="6379886768" lane="492698113#2_0" startPos="0.00" endPos="11.08" friendlyPos="true"/>
+    <busStop id="6405213414" lane="504322129#3_0" startPos="1.42" endPos="16.42" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="6405213416" lane="539264858#3_0" startPos="31.28" endPos="42.97" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="6405213417" lane="539264858#9_0" startPos="6.00" endPos="21.00" friendlyPos="true" lines="355B 355C 1965 591"/>
+    <busStop id="6405213419" lane="301521094#0_0" startPos="5.76" endPos="20.76" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="6405213420" lane="344153327#1_0" startPos="11.89" endPos="26.89" friendlyPos="true" lines="222A"/>
+    <busStop id="6405213421" lane="301521093#4_0" startPos="18.16" endPos="33.16" friendlyPos="true" lines="355B 355C 1965"/>
+    <busStop id="6405229902" lane="327086015#2_0" startPos="9.90" endPos="24.90" friendlyPos="true" lines="221"/>
+    <busStop id="6405229903" lane="327086015#2_0" startPos="9.90" endPos="24.90" friendlyPos="true" lines="221"/>
+    <busStop id="6405229904" lane="259431917#2_0" startPos="68.97" endPos="83.97" friendlyPos="true" lines="221"/>
+    <busStop id="6405229905" lane="259431917#2_0" startPos="69.93" endPos="84.93" friendlyPos="true" lines="221"/>
+    <busStop id="6405256161" lane="193030312#2_0" startPos="14.57" endPos="29.57" friendlyPos="true" lines="241A"/>
+    <busStop id="6405256162" lane="983077648#0_0" startPos="22.50" endPos="37.50" friendlyPos="true" lines="241A"/>
+    <busStop id="6405256167" lane="50014718#4_0" startPos="20.06" endPos="35.06" friendlyPos="true" lines=""/>
+    <busStop id="6405256168" lane="50014718#1_0" startPos="89.43" endPos="104.43" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P D196 196D 196E A196 B196 196B 196A 100A 197 197C 100P 212C 212I 212X 197A E196 197R 241A 222 221"/>
+    <busStop id="6405256169" lane="225971208#3_0" startPos="15.53" endPos="23.12" friendlyPos="true" lines="541A 541B 541C  541L 541E 541P A196 B196 196B 196A 100A 197 197C 100P 212C 212I 212X 197A 197R 241A 591 222 221 222A"/>
+    <busStop id="6512254738" lane="259470103#5_0" startPos="17.33" endPos="25.95" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-207251673#2_0" pos="3.00" length="29.81" friendlyPos="1"/>
+        <access lane="207251673#2_0" pos="16.19" length="25.01" friendlyPos="1"/>
+        <access lane="335288434_0" pos="0.00" length="45.01" friendlyPos="1"/>
+        <access lane="503903775_0" pos="36.49" length="25.17" friendlyPos="1"/>
+        <access lane="971828262#1_0" pos="11.40" length="1.78" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512254739" lane="303082591#2_0" startPos="20.88" endPos="32.47" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-207251645#9_0" pos="6.33" length="34.23" friendlyPos="1"/>
+        <access lane="207251645#9_0" pos="26.22" length="29.43" friendlyPos="1"/>
+        <access lane="364661276_0" pos="15.15" length="52.96" friendlyPos="1"/>
+        <access lane="503903774_0" pos="0.00" length="57.59" friendlyPos="1"/>
+        <access lane="971828264#0_0" pos="0.00" length="2.21" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512254740" lane="569156536#0_0" startPos="72.98" endPos="87.98" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-370656173#1_0" pos="0.00" length="41.14" friendlyPos="1"/>
+        <access lane="-370656173#2_0" pos="0.00" length="33.26" friendlyPos="1"/>
+        <access lane="370656173#2_0" pos="6.20" length="38.06" friendlyPos="1"/>
+        <access lane="971828269#0_0" pos="18.63" length="42.65" friendlyPos="1"/>
+        <access lane="971828269#1_0" pos="16.54" length="3.60" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512254741" lane="303099159#2_0" startPos="0.00" endPos="14.36" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-193136464#0_0" pos="11.61" length="44.17" friendlyPos="1"/>
+        <access lane="-367115070#0_0" pos="0.00" length="39.58" friendlyPos="1"/>
+        <access lane="294066209_0" pos="5.46" length="35.60" friendlyPos="1"/>
+        <access lane="367135967_0" pos="10.90" length="16.24" friendlyPos="1"/>
+        <access lane="971828270#1_0" pos="22.02" length="1.92" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512254744" lane="363481691#12_0" startPos="46.53" endPos="61.53" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-303099175#0_0" pos="0.63" length="34.59" friendlyPos="1"/>
+        <access lane="-303099175#1_0" pos="0.20" length="35.20" friendlyPos="1"/>
+        <access lane="303099175#0_0" pos="72.19" length="39.39" friendlyPos="1"/>
+        <access lane="303099175#1_0" pos="0.00" length="39.92" friendlyPos="1"/>
+        <access lane="971828258#1_0" pos="19.64" length="4.71" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512264910" lane="303082594#0_0" startPos="29.24" endPos="44.24" friendlyPos="true" lines="100P"/>
+    <busStop id="6512264911" lane="368091908#2_0" startPos="23.87" endPos="38.87" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C">
+        <access lane="-363471586#2_0" pos="0.00" length="35.95" friendlyPos="1"/>
+        <access lane="237390955#5_0" pos="27.71" length="45.85" friendlyPos="1"/>
+        <access lane="237390956#4_0" pos="27.61" length="5.00" friendlyPos="1"/>
+        <access lane="363471586#2_0" pos="26.83" length="36.01" friendlyPos="1"/>
+        <access lane="981862995#0_0" pos="0.00" length="45.15" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512264912" lane="182397393#0_0" startPos="84.75" endPos="99.75" friendlyPos="true" lines=" 200A Circular UFSM D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196">
+        <access lane="181341700_0" pos="0.00" length="6.75" friendlyPos="1"/>
+        <access lane="237390955#5_0" pos="29.18" length="0.00" friendlyPos="1"/>
+        <access lane="237390955#6_0" pos="0.00" length="9.13" friendlyPos="1"/>
+        <access lane="981862995#1_0" pos="3.97" length="50.62" friendlyPos="1"/>
+        <access lane="981862995#2_0" pos="0.20" length="47.50" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512264913" lane="368091908#1_0" startPos="24.73" endPos="39.73" friendlyPos="true" lines=" Circular UFSM A196 196A 1961 196E 196F 1965 196B B196 196C 196I 196D 100P 100U 197C">
+        <access lane="237390955#3_0" pos="30.81" length="44.80" friendlyPos="1"/>
+        <access lane="237390956#2_0" pos="73.43" length="52.01" friendlyPos="1"/>
+        <access lane="237390956#3_0" pos="29.74" length="5.31" friendlyPos="1"/>
+        <access lane="981862994#0_0" pos="0.00" length="48.40" friendlyPos="1"/>
+        <access lane="981862994#1_0" pos="0.00" length="53.03" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512264914" lane="182397393#1_0" startPos="218.44" endPos="233.44" friendlyPos="true" lines=" 200A Circular UFSM D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196">
+        <access lane="237390955#2_0" pos="40.38" length="52.02" friendlyPos="1"/>
+        <access lane="237390955#3_0" pos="29.77" length="1.16" friendlyPos="1"/>
+        <access lane="237390956#3_0" pos="28.33" length="51.25" friendlyPos="1"/>
+        <access lane="981862994#1_0" pos="3.67" length="51.93" friendlyPos="1"/>
+        <access lane="981862994#2_0" pos="0.20" length="48.84" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512264915" lane="258407154_0" startPos="72.42" endPos="87.42" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P">
+        <access lane="-259857821_0" pos="28.91" length="39.51" friendlyPos="1"/>
+        <access lane="237390953#2_0" pos="135.63" length="4.92" friendlyPos="1"/>
+        <access lane="259857821_0" pos="0.00" length="38.31" friendlyPos="1"/>
+        <access lane="315692206#3_0" pos="18.17" length="42.38" friendlyPos="1"/>
+        <access lane="315692206#4_0" pos="3.18" length="40.60" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6512264916" lane="167596744#1_0" startPos="130.64" endPos="145.64" friendlyPos="true" lines=" 196E 196A 100P 100U 197 197A">
+        <access lane="301172041#1_0" pos="2.13" length="38.40" friendlyPos="1"/>
+        <access lane="301172045_0" pos="0.00" length="4.79" friendlyPos="1"/>
+        <access lane="315692206#2_0" pos="113.37" length="41.06" friendlyPos="1"/>
+        <access lane="315692206#3_0" pos="18.17" length="8.45" friendlyPos="1"/>
+        <access lane="315692206#4_0" pos="0.48" length="1.99" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6514095511" lane="363481691#8_0" startPos="10.03" endPos="25.03" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 100A 197 197M">
+        <access lane="-259855028#0_0" pos="0.00" length="18.88" friendlyPos="1"/>
+        <access lane="-259855028#1_0" pos="7.73" length="17.55" friendlyPos="1"/>
+        <access lane="259855028#0_0" pos="25.89" length="14.23" friendlyPos="1"/>
+        <access lane="259855028#1_0" pos="0.00" length="12.75" friendlyPos="1"/>
+        <access lane="971828256#1_0" pos="11.19" length="11.17" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6516799807" lane="303082589#2_0" startPos="29.20" endPos="44.20" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799808" lane="303082587#5_0" startPos="7.59" endPos="22.59" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P 100U 197 197M"/>
+    <busStop id="6516799809" lane="303082589#1_0" startPos="9.01" endPos="24.01" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799810" lane="303082584#2_0" startPos="20.46" endPos="35.46" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799811" lane="303107781#0_0" startPos="35.52" endPos="50.52" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P"/>
+    <busStop id="6516799812" lane="221413755#19_0" startPos="26.18" endPos="40.31" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799813" lane="221413755#16_0" startPos="9.11" endPos="24.11" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799814" lane="303082585#2_0" startPos="12.96" endPos="27.96" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P"/>
+    <busStop id="6516799815" lane="221413755#9_0" startPos="8.25" endPos="22.53" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799816" lane="303082585#6_0" startPos="0.91" endPos="15.91" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P"/>
+    <busStop id="6516799817" lane="221413755#1_0" startPos="6.50" endPos="21.50" friendlyPos="true" lines=" 196E 196A 197 100P 197A"/>
+    <busStop id="6516799818" lane="303082593#0_0" startPos="3.88" endPos="18.88" friendlyPos="true" lines=" 196A 1961 196E 196F 196C 100P"/>
+    <busStop id="6518178251" lane="363489416#5_0" startPos="78.55" endPos="91.11" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-419315426_0" pos="28.25" length="38.36" friendlyPos="1"/>
+        <access lane="-419315428#1_0" pos="0.00" length="20.31" friendlyPos="1"/>
+        <access lane="419315426_0" pos="0.00" length="43.01" friendlyPos="1"/>
+        <access lane="419315428#0_0" pos="14.52" length="47.24" friendlyPos="1"/>
+        <access lane="419315428#1_0" pos="9.56" length="18.87" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6518178253" lane="822733904#1_0" startPos="0.00" endPos="12.27" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-318229655_0" pos="65.89" length="3.67" friendlyPos="1"/>
+        <access lane="193220760#0_0" pos="2.26" length="49.30" friendlyPos="1"/>
+        <access lane="193220760#1_0" pos="10.15" length="25.16" friendlyPos="1"/>
+        <access lane="193220764#0_0" pos="0.00" length="36.01" friendlyPos="1"/>
+        <access lane="318229655_0" pos="4.33" length="6.67" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6518178254" lane="363472908#5_0" startPos="9.59" endPos="24.59" friendlyPos="true" lines="100U"/>
+    <busStop id="6518178256" lane="207243785#3_0" startPos="1.89" endPos="16.89" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="6518178257" lane="545481996_0" startPos="0.42" endPos="15.42" friendlyPos="true" lines="100U 197 197C 197A 197R"/>
+    <busStop id="6518178257@7792893" lane="545481996_0" startPos="7.84" endPos="15.34" friendlyPos="true" lines="197 197R 197B1 197B 197M"/>
+    <busStop id="6519748643" lane="360929409_0" startPos="40.56" endPos="55.56" friendlyPos="true" lines=" 196E 196F 196D"/>
+    <busStop id="6519748643@5470580" lane="360929409_0" startPos="46.16" endPos="54.18" friendlyPos="true" lines=" D196 196D 196E 1961 E196"/>
+    <busStop id="6519748644" lane="368559006#0_0" startPos="44.71" endPos="59.71" friendlyPos="true" lines="155C  160 156"/>
+    <busStop id="6519748646" lane="525268747_0" startPos="64.81" endPos="79.81" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="6519748648" lane="408999833#1_0" startPos="34.51" endPos="49.51" friendlyPos="true" lines="155C  168 160 156"/>
+    <busStop id="6519748651" lane="207227857#0_0" startPos="9.28" endPos="24.28" friendlyPos="true" lines="100A 100P 197A"/>
+    <busStop id="6519748670" lane="181347079#0_0" startPos="16.87" endPos="31.87" friendlyPos="true" lines="100U 197 197M"/>
+    <busStop id="6519748671" lane="167596736#6_0" startPos="20.93" endPos="35.93" friendlyPos="true" lines=" 200A D196 196D 196E A196 B196 196B 196A 1966 196I 100P 100U 197C E196"/>
+    <busStop id="6519748673" lane="193138280#5_0" startPos="0.18" endPos="15.18" friendlyPos="true" lines="1965"/>
+    <busStop id="6519748674" lane="193139471#2_0" startPos="0.51" endPos="15.51" friendlyPos="true" lines="1965 241A"/>
+    <busStop id="6519748675" lane="303099172#3_0" startPos="49.91" endPos="64.91" friendlyPos="true" lines="1965 241A"/>
+    <busStop id="6519748676" lane="363483827#4_0" startPos="0.00" endPos="14.37" friendlyPos="true" lines="1965"/>
+    <busStop id="6519748680" lane="363484167#2_0" startPos="83.30" endPos="91.16" friendlyPos="true" lines="196D 196B 196I 197C 197R ">
+        <access lane="-259777972_0" pos="46.85" length="60.29" friendlyPos="1"/>
+        <access lane="-259777977#2_0" pos="0.00" length="63.05" friendlyPos="1"/>
+        <access lane="-259777977#3_0" pos="0.00" length="25.71" friendlyPos="1"/>
+        <access lane="259777972_0" pos="0.00" length="56.64" friendlyPos="1"/>
+        <access lane="259777977#3_0" pos="14.51" length="27.36" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6519748681" lane="303082601#1_0" startPos="59.18" endPos="74.18" friendlyPos="true" lines="196D 196B 1966 196I 197C 197R ">
+        <access lane="-618372483_0" pos="55.92" length="32.63" friendlyPos="1"/>
+        <access lane="-618374362_0" pos="12.19" length="22.32" friendlyPos="1"/>
+        <access lane="-959068958_0" pos="4.03" length="33.03" friendlyPos="1"/>
+        <access lane="618374362_0" pos="181.28" length="27.12" friendlyPos="1"/>
+        <access lane="959068958_0" pos="0.00" length="36.74" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6522347416" lane="911320121_0" startPos="73.37" endPos="88.37" friendlyPos="true" lines="196D 196B 196I 197C 197R">
+        <access lane="-381447936#1_0" pos="0.00" length="25.00" friendlyPos="1"/>
+        <access lane="-381447937_0" pos="0.00" length="117.61" friendlyPos="1"/>
+        <access lane="-981781080_0" pos="31.26" length="33.71" friendlyPos="1"/>
+        <access lane="381447936#1_0" pos="54.41" length="23.99" friendlyPos="1"/>
+        <access lane="981781080_0" pos="9.10" length="28.91" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6522347417" lane="911320121_0" startPos="73.37" endPos="88.37" friendlyPos="true" lines="196D 196B 196I 197C 197R">
+        <access lane="-381447936#1_0" pos="0.00" length="12.67" friendlyPos="1"/>
+        <access lane="-381447937_0" pos="0.00" length="103.59" friendlyPos="1"/>
+        <access lane="-981781080_0" pos="40.35" length="35.91" friendlyPos="1"/>
+        <access lane="381447936#1_0" pos="54.41" length="9.84" friendlyPos="1"/>
+        <access lane="981781080_0" pos="0.00" length="31.12" friendlyPos="1"/>
+    </busStop>
+    <busStop id="6535732371" lane="363460869_0" startPos="88.02" endPos="103.02" friendlyPos="true" lines=" 100A"/>
+    <busStop id="6535732372" lane="303082573#4_0" startPos="15.92" endPos="30.92" friendlyPos="true" lines=" 100A"/>
+    <busStop id="6535732373" lane="303082574_0" startPos="11.88" endPos="26.88" friendlyPos="true" lines=" 100A"/>
+    <busStop id="6535732375" lane="363458497#4_0" startPos="15.57" endPos="30.57" friendlyPos="true" lines=" 100A"/>
+    <busStop id="6535732376" lane="303082572#4_0" startPos="7.69" endPos="22.69" friendlyPos="true" lines=" 100A"/>
+    <busStop id="6535732377" lane="363457760#1_0" startPos="5.70" endPos="20.70" friendlyPos="true" lines=" 100A"/>
+    <busStop id="6564953639" lane="50301275#1_0" startPos="16.60" endPos="31.60" friendlyPos="true" lines="1961"/>
+    <busStop id="6565059867" lane="259225198#2_0" startPos="17.57" endPos="32.57" friendlyPos="true"/>
+    <busStop id="6566670398" lane="305176901#2_0" startPos="3.44" endPos="18.44" friendlyPos="true" lines="221"/>
+    <busStop id="6568973647" lane="231972349#1_0" startPos="45.48" endPos="60.48" friendlyPos="true" lines="541B 541R"/>
+    <busStop id="6568973648" lane="231972349#1_0" startPos="47.42" endPos="62.42" friendlyPos="true" lines="541B 541R"/>
+    <busStop id="6568973649" lane="200661201#0_0" startPos="8.71" endPos="23.71" friendlyPos="true" lines="541B 541R"/>
+    <busStop id="6568973650" lane="200661201#0_0" startPos="8.93" endPos="23.93" friendlyPos="true" lines="541B 541R"/>
+    <busStop id="6586472900" lane="199341723_0" startPos="61.63" endPos="76.63" friendlyPos="true"/>
+    <busStop id="6757893111" lane="720014528_0" startPos="5.99" endPos="13.49" friendlyPos="true"/>
+    <busStop id="6757893113" lane="720014529_0" startPos="3.23" endPos="10.73" friendlyPos="true"/>
+    <busStop id="6757893115" lane="720014530_0" startPos="4.11" endPos="11.61" friendlyPos="true"/>
+    <busStop id="6757893117" lane="720014531_0" startPos="5.05" endPos="12.55" friendlyPos="true"/>
+    <busStop id="6757893118" lane="720014532_0" startPos="5.59" endPos="13.10" friendlyPos="true"/>
+    <busStop id="6757893119" lane="720014533_0" startPos="5.89" endPos="13.39" friendlyPos="true"/>
+    <busStop id="6757893120" lane="720014534_0" startPos="5.56" endPos="13.05" friendlyPos="true"/>
+    <busStop id="6757893121" lane="720014535_0" startPos="8.20" endPos="15.70" friendlyPos="true"/>
+    <busStop id="6757893122" lane="720014536_0" startPos="7.70" endPos="15.20" friendlyPos="true"/>
+    <busStop id="6757893123" lane="720014537_0" startPos="5.99" endPos="13.49" friendlyPos="true"/>
+    <busStop id="6757893124" lane="720014538_0" startPos="4.00" endPos="11.50" friendlyPos="true"/>
+    <busStop id="6757893126" lane="720014539_0" startPos="3.80" endPos="11.30" friendlyPos="true"/>
+    <busStop id="6757893127" lane="720014540_0" startPos="3.18" endPos="10.68" friendlyPos="true"/>
+    <busStop id="6757893129" lane="720014541_0" startPos="2.28" endPos="9.78" friendlyPos="true"/>
+    <busStop id="6757893130" lane="720014542_0" startPos="1.40" endPos="8.89" friendlyPos="true"/>
+    <busStop id="6757893132" lane="720014543_0" startPos="4.96" endPos="12.46" friendlyPos="true"/>
+    <busStop id="6757893133" lane="720014544_0" startPos="4.22" endPos="11.72" friendlyPos="true"/>
+    <busStop id="6757893134" lane="720014545_0" startPos="4.25" endPos="11.74" friendlyPos="true"/>
+    <busStop id="6757893136" lane="720014546_0" startPos="3.25" endPos="10.75" friendlyPos="true"/>
+    <busStop id="6757893138" lane="720014547_0" startPos="1.95" endPos="9.44" friendlyPos="true"/>
+    <busStop id="6757893139" lane="720014548_0" startPos="3.20" endPos="10.70" friendlyPos="true"/>
+    <busStop id="6757893141" lane="720014549_0" startPos="3.68" endPos="11.18" friendlyPos="true"/>
+    <busStop id="6757893143" lane="720014550_0" startPos="3.61" endPos="11.11" friendlyPos="true"/>
+    <busStop id="6757893145" lane="720014551_0" startPos="3.48" endPos="10.98" friendlyPos="true"/>
+    <busStop id="6757893147" lane="720014552_0" startPos="2.60" endPos="10.10" friendlyPos="true"/>
+    <busStop id="6757893149" lane="720014553_0" startPos="3.18" endPos="10.69" friendlyPos="true"/>
+    <busStop id="6757893152" lane="720014555_0" startPos="2.84" endPos="10.34" friendlyPos="true"/>
+    <busStop id="6757893154" lane="720014556_0" startPos="2.93" endPos="10.43" friendlyPos="true"/>
+    <busStop id="6757893156" lane="720014557_0" startPos="3.32" endPos="10.81" friendlyPos="true"/>
+    <busStop id="6757893158" lane="720014558_0" startPos="4.19" endPos="11.69" friendlyPos="true"/>
+    <busStop id="6913399711" lane="303099171#2_0" startPos="90.36" endPos="105.36" friendlyPos="true"/>
+    <busStop id="6913399712" lane="462094343#4_0" startPos="18.80" endPos="33.80" friendlyPos="true"/>
+    <busStop id="6913399713" lane="462094343#2_0" startPos="8.89" endPos="23.89" friendlyPos="true"/>
+    <busStop id="6913399714" lane="462094343#0_0" startPos="0.21" endPos="15.21" friendlyPos="true"/>
+    <busStop id="6913399715" lane="704171177_0" startPos="79.86" endPos="94.86" friendlyPos="true"/>
+    <busStop id="6913399716" lane="193139480_0" startPos="3.69" endPos="18.69" friendlyPos="true"/>
+    <busStop id="7122254541" lane="193030327#1_0" startPos="7.10" endPos="22.10" friendlyPos="true"/>
+    <busStop id="7176220998" lane="475192922#0_0" startPos="43.51" endPos="58.51" friendlyPos="true"/>
+    <busStop id="7641805689" lane="193302650#0_0" startPos="30.26" endPos="45.26" friendlyPos="true"/>
+    <busStop id="7744520544" lane="296181223#6_0" startPos="4.13" endPos="19.13" friendlyPos="true"/>
+    <busStop id="7873290331" lane="232064218#0_0" startPos="110.04" endPos="125.04" friendlyPos="true" lines="591 590"/>
+    <busStop id="7873290332" lane="474821610_0" startPos="23.39" endPos="38.39" friendlyPos="true" lines="A196 196A 1961 196B B196 196C 100P 100U 100A 197 197R 197B1 197B 197M"/>
+    <busStop id="7873290333" lane="474821610_0" startPos="23.39" endPos="38.39" friendlyPos="true" lines="A196 196A 1961 196B B196 196C 100P 100U 100A 197 197R 197B1 197B 197M"/>
+    <busStop id="8102192790" lane="205672785#0_0" startPos="21.37" endPos="36.37" friendlyPos="true"/>
+    <busStop id="8142820737" lane="260232099#0_0" startPos="49.85" endPos="64.85" friendlyPos="true">
+        <access lane="-204398598#0_0" pos="47.81" length="39.86" friendlyPos="1"/>
+        <access lane="-204398689#7_0" pos="16.17" length="91.33" friendlyPos="1"/>
+        <access lane="-348788968_0" pos="8.92" length="87.42" friendlyPos="1"/>
+        <access lane="204398598#0_0" pos="0.00" length="35.27" friendlyPos="1"/>
+        <access lane="348788968_0" pos="27.07" length="92.23" friendlyPos="1"/>
+    </busStop>
+    <busStop id="8419483708" lane="462094343#1_0" startPos="11.83" endPos="26.83" friendlyPos="true"/>
+    <busStop id="8419646092" lane="697796434_0" startPos="74.59" endPos="89.59" friendlyPos="true"/>
+    <busStop id="8539158488" lane="194700541#3_0" startPos="33.79" endPos="48.79" friendlyPos="true"/>
+    <busStop id="8952280104" lane="372486232#1_0" startPos="2.61" endPos="17.61" friendlyPos="true">
+        <access lane="-231877658#0_0" pos="5.02" length="16.97" friendlyPos="1"/>
+        <access lane="-231877661#1_0" pos="0.00" length="25.34" friendlyPos="1"/>
+        <access lane="-231877661#2_0" pos="0.00" length="16.03" friendlyPos="1"/>
+        <access lane="231877658#0_0" pos="0.00" length="20.92" friendlyPos="1"/>
+        <access lane="231877661#2_0" pos="8.53" length="20.05" friendlyPos="1"/>
+    </busStop>
+    <busStop id="9056396168" lane="352049294#4_0" startPos="9.21" endPos="24.21" friendlyPos="true"/>
+    <busStop id="9056396170" lane="352049294#2_0" startPos="0.00" endPos="10.52" friendlyPos="true"/>
+    <busStop id="9063224841" lane="389758030#1_0" startPos="32.86" endPos="47.86" friendlyPos="true"/>
+    <busStop id="9099011443" lane="350463977#5_0" startPos="185.72" endPos="199.67" friendlyPos="true"/>
+    <busStop id="9101354809" lane="205672785#1_0" startPos="352.98" endPos="365.55" friendlyPos="true"/>
+    <busStop id="9101436957" lane="205672760#0_0" startPos="3.81" endPos="18.81" friendlyPos="true"/>
+</additional>
