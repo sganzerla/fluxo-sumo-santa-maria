@@ -1,0 +1,38 @@
+# rota-1_bombeiros-ufsm
+
+- Rua Barão do Triunfo (Parada direita) -> Rua Coronel Niederauer (Conversão Esquerda)
+- Rua Coronel Niederauer (2 Quadras, 2 Paradas Direita) -> Avenida Duque de Caxias (Conversão Direita)
+- Avenida Duque de Caxias (3 Quadras) -> Avenida Presidente Vargas
+- Avenida Presidente Vargas (Parada Direita) -> Rua José Bonifácio
+- Rua José Bonifácio -> Rua do Acampamento (Conversão a direita)
+- Rua do Acampamento (Parada Direita, 2 Quadras) -> Avenida Nossa Senhora Medianeira
+- Avenida Nossa Senhora (Parada Vivo, Parada Antes do Posto Bambino, Parada no Royal, Parada Beltrame Ferragens ) -> Avenida João Luiz Pozzobon
+- Avenida João Luiz Pozzobon (Parada depois da rótula, Parada Pizzaria, Parada Felice, Parada Cauzzo ) -> Avenida Prefeito Evandro Behr
+- Avenida Prefeito Evandro Behr (
+  - Parada depois da rótula -
+  - Parada depois do Ed BomFilho Ali
+  - Parada depois R Oscar Ferreira  
+  - Parada depois da rua Joao Baptista  
+  - Parada na De France  
+  - Parada depois floricultura
+  - Parada antes da SM Multimarcas
+  - Parada antes da rua pedro figueira
+  - Parada na rua Baden Powell
+  - Parada antes da alameda di capri
+  - Parada Seminario maior
+  - Parada depois rua anselmo machado
+  - Parada depois da Rua Antao
+  - Parada antes do beco itaipu
+  - Parada depois do posto camobi III
+  - Parada na frente lojas becker
+  - Parada depois da rua dessete de maio
+  - Parada depois da rua joao bosco penido
+  - Parada depois da rua vicente do prado lima
+- Avenida Roraima (
+  - Parada depois da rótula
+  - Parada depois da rótula da faixa nova
+  - Parada antes do portico
+  - Parada depois do portico
+  - Parada na frente do Hospital
+  - Parada na frente da casa do estudante
+  - Parada no planetario
