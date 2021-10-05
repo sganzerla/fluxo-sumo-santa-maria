@@ -8,7 +8,6 @@
 - Avenida Duque de Caxias  
 - Avenida Presidente Vargas
   - P4 - Antes do Peruzzo
-- Rua José Bonifácio
 - Rua do Acampamento  
   - P5 - Parada meio da quadra
 - Avenida Nossa Senhora Medianeira
