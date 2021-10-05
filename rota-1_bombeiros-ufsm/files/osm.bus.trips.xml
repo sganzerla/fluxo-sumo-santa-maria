@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
-    <vType id="bus_bus" vClass="bus"/>
-    <!-- Rua Barão do Triunfo - Avenida Duque de Caxias  -->
-    <trip id="bus0" type="bus_bus" depart="0.00" departLane="best" from="360929409" to="269016270"/>
-    <!-- Avenida Duque de Caxias - Avenida Presidente Vargas -->
-    <trip id="bus1" type="bus_bus" depart="0.00" departLane="best" from="269016270" to="368091905#1"/>
-    <!-- Avenida Presidente Vargas - Rua do Acampamento -->
-    <trip id="bus2" type="bus_bus" depart="0.00" departLane="best" from="368091905#1" to="499726265"/>
-    <!-- Rua do Acampamento - Avenida Nossa Senhora Medianeira -->
-    <trip id="bus3" type="bus_bus" depart="0.00" departLane="best" from="499726265" to="49793804#2"/>
-    <!-- Avenida Nossa Senhora Medianeira - Avenida Prefeito Evandro Behr -->
-    <trip id="bus4" type="bus_bus" depart="0.00" departLane="best" from="49793804#2" to="547917912#4"/>
-    <!-- Avenida Prefeito Evandro Behr - Rua Sul 35 -->
-    <trip id="bus5" type="bus_bus" depart="0.00" departLane="best" from="547917912#4" to="301981265#0"/> 
-
-    
+    <vType id="bus_bus" vClass="bus" />
+    <trip id="bus0" type="bus_bus" depart="0.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus1" type="bus_bus" depart="10.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus2" type="bus_bus" depart="20.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus3" type="bus_bus" depart="30.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus4" type="bus_bus" depart="40.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus5" type="bus_bus" depart="50.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus6" type="bus_bus" depart="60.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+    <trip id="bus7" type="bus_bus" depart="70.00" departLane="best" from="360929409" to="301981265#0" via="269016270 368091905#1 499726265 49793804#2 777361473#1 662251444#2 459923742 259734495 258407154 911408239#0 302762415#1 301981257#1 -167699927 167699930#3 301981265#0 " /> 
+  
 </routes>
