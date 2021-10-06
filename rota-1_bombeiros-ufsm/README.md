@@ -47,4 +47,3 @@
   - P36 - Parada depois do portico
   - P37 - Parada na frente do Hospital
   - P38 - Parada na frente da casa do estudante
-  - P39 - Parada no planetario
