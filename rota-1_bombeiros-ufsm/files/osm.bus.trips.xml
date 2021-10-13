@@ -3,44 +3,44 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
     <vType id="bus_bus" vClass="bus" />
     <flow id="flow_bombeiros-ufsm" begin="0" end="3600" period="200" type="bus_bus" departLane="best" from="360929409" to="301981265#0" via="982058337 358980528#0 980959028#0 978487722#0  49793804#1 372500759#0  199426663 919386387#1 181326563  181326569 303107781#5 258407154 911408239#0 302762415#1 301981257#1 167699928 167699930#3 301981265#0 ">
-        <stop busStop="4083982305" until ="100"/>
-        <stop busStop="5366197376" until ="100"/>
-        <stop busStop="5361514763" until ="100"/>
-        <stop busStop="4945877795" until ="100"/>
-        <stop busStop="4696675292" until ="100"/>
-        <stop busStop="5286257146" until ="100"/>
-        <stop busStop="3729684442" until ="100"/>
-        <stop busStop="2435446332" until ="100"/>
-        <stop busStop="2435446333" until ="100"/>
-        <stop busStop="2435470839" until ="100"/>
-        <stop busStop="2035590397" until ="100"/>
-        <stop busStop="2449072192" until ="100"/>
-        <stop busStop="2449072194" until ="100"/>
-        <stop busStop="2449072196" until ="100"/>
-        <stop busStop="2647914597" until ="100"/>
-        <stop busStop="5557991904" until ="100"/>
-        <stop busStop="4945812529" until ="100"/>
-        <stop busStop="4945812528" until ="100"/>
-        <stop busStop="2976399351" until ="100"/>        
-        <stop busStop="2976399348" until ="100"/>
-        <stop busStop="2976418641" until ="100"/>
-        <stop busStop="4181552955" until ="100"/>
-        <stop busStop="2071578441" until ="100"/>
-        <stop busStop="3135882098" until ="100"/>
-        <stop busStop="6512254738" until ="100"/>
-        <stop busStop="3393237218" until ="100"/>
-        <stop busStop="4544750287" until ="100"/>
-        <stop busStop="1917492638" until ="100"/>
-        <stop busStop="3743485949" until ="100"/>
-        <stop busStop="3135882108" until ="100"/>
-        <stop busStop="2976551190" until ="100"/>
-        <stop busStop="2452978092" until ="100"/>
-        <stop busStop="2452978323" until ="100"/>
-        <stop busStop="2452978396" until ="100"/>
-        <stop busStop="4210138292" until ="100"/>
-        <stop busStop="3061763319" until ="100"/>
-        <stop busStop="2400147129" until ="100"/>
-        <stop busStop="3061763287" until ="100"/>
+        <stop busStop="4083982305" duration="30"/>
+        <stop busStop="5366197376" duration="30"/>
+        <stop busStop="5361514763" duration="30"/>
+        <stop busStop="4945877795" duration="30"/>
+        <stop busStop="4696675292" duration="30"/>
+        <stop busStop="5286257146" duration="30"/>
+        <stop busStop="3729684442" duration="30"/>
+        <stop busStop="2435446332" duration="30"/>
+        <stop busStop="2435446333" duration="30"/>
+        <stop busStop="2435470839" duration="30"/>
+        <stop busStop="2035590397" duration="30"/>
+        <stop busStop="2449072192" duration="30"/>
+        <stop busStop="2449072194" duration="30"/>
+        <stop busStop="2449072196" duration="30"/>
+        <stop busStop="2647914597" duration="30"/>
+        <stop busStop="5557991904" duration="30"/>
+        <stop busStop="4945812529" duration="30"/>
+        <stop busStop="4945812528" duration="30"/>
+        <stop busStop="2976399351" duration="30"/>        
+        <stop busStop="2976399348" duration="30"/>
+        <stop busStop="2976418641" duration="30"/>
+        <stop busStop="4181552955" duration="30"/>
+        <stop busStop="2071578441" duration="30"/>
+        <stop busStop="3135882098" duration="30"/>
+        <stop busStop="6512254738" duration="30"/>
+        <stop busStop="3393237218" duration="30"/>
+        <stop busStop="4544750287" duration="30"/>
+        <stop busStop="1917492638" duration="30"/>
+        <stop busStop="3743485949" duration="30"/>
+        <stop busStop="3135882108" duration="30"/>
+        <stop busStop="2976551190" duration="30"/>
+        <stop busStop="2452978092" duration="30"/>
+        <stop busStop="2452978323" duration="30"/>
+        <stop busStop="2452978396" duration="30"/>
+        <stop busStop="4210138292" duration="30"/>
+        <stop busStop="3061763319" duration="30"/>
+        <stop busStop="2400147129" duration="30"/>
+        <stop busStop="3061763287" duration="30"/>
 
     </flow>
 </routes>
