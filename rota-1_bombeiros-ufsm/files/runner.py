@@ -14,10 +14,8 @@ else:
     sys.exit("please declare environment variable 'SUMO_HOME'")
 
 from sumolib import checkBinary  # noqa
-import traci  # noqa
 
-
-def generate_routefile():
+def generate_busStops():
     busstops = [
     "   <busStop id=\"4083982305\" lane=\"360929409_0\" startPos=\"40.93\" endPos=\"55.93\" name friendlyPos=\"1\" lines=\"196E 196F 196D\"/>",
     "   <busStop id=\"5366197376\" lane=\"358981135_0\" startPos=\"28.90\" endPos=\"43.90\" name friendlyPos=\"1\" lines=\"196E 196F 196D 154A 236B\"/>",
@@ -93,8 +91,7 @@ if __name__ == "__main__":
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    generate_routefile()
+    generate_busStops()
 
-    traci.start([sumoBinary, "-c", "osm.sumocfg",
-                             "--tripinfo-output", "osm.bus.trips2.xml"])
-   
+    
+     
