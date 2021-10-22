@@ -16,7 +16,7 @@
   - P8 - Parada no Royal
   - P9 - Parada Beltrame Ferragens
 - Avenida João Luiz Pozzobon
-  - P10 - Parada depois da rótula
+  - P10 - Parada depois da rótula Icaro
   - P11 - Parada Pizzaria
   - P12 - Parada Felice
   - P13 - Parada Cauzzo
@@ -47,3 +47,4 @@
   - P36 - Parada depois do portico
   - P37 - Parada na frente do Hospital
   - P38 - Parada na frente da casa do estudante
+  - P39 - Parada na frente Observatório
