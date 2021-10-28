@@ -65,12 +65,12 @@ def generate_busStops():
         a = 6 # default value for busstop
         for busstop  in busstops:
                 if (i < 10): # busstop antes do Icaro
-                    a = random.uniform(5, 20)
+                    a = random.randint(5, 20)
                 if (i >= 10 and i < 36): # paradas na faixa
-                    a = random.uniform(0, 10)
+                    a = random.randint(0, 10)
                 if (i >= 35): # paradas proximas a UFSM
-                    a = random.uniform(0, 2)
-                print(busstop.replace("name", "name=\"p%i\" personCapacity=\"%a\" ") %(i, int(a)) , file=routes)
+                    a = random.randint(0, 2)
+                print(busstop.replace("name", "name=\"p%i\" personCapacity=\"%a\" ") %(i, a) , file=routes)
                 i+=1
         print("</additional>", file=routes)
        
