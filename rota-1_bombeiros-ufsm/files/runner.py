@@ -15,6 +15,8 @@ else:
 
 from sumolib import checkBinary  # noqa
 
+import traci
+
 def generate_busStops():
     busstops = [
     "   <busStop id=\"4083982305\" lane=\"360929409_0\" startPos=\"40.93\" endPos=\"55.93\" name friendlyPos=\"1\" lines=\"196E 196F 196D\"/>",
@@ -84,6 +86,9 @@ def get_options():
     return options
 
 if __name__ == "__main__":
+    
+    generate_busStops()
+    
     options = get_options()
 
     if options.nogui:
@@ -91,7 +96,16 @@ if __name__ == "__main__":
     else:
         sumoBinary = checkBinary('sumo-gui')
 
-    generate_busStops()
+    sumoCmd = [sumoBinary, "-c", "osm.sumocfg"]
+    
+    traci.start(sumoCmd)
+    
+    busstops = traci.busstop.getIDList()
+    for i in busstops:
+        print("busStopId:" + i + " name:" + str(traci.busstop.getName(i)) + " passenger:" + str(traci.busstop.getPersonCount(i)))
+    
+    traci.close()
+
 
     
      
