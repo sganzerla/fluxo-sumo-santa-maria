@@ -67,11 +67,11 @@ def generate_busStops():
         a = 6 # default value for busstop
         for busstop  in busstops:
                 if (i < 10): # busstop antes do Icaro
-                    a = random.randint(5, 20)
+                    a = random.randint(6, 20)
                 if (i >= 10 and i < 36): # paradas na faixa
-                    a = random.randint(0, 10)
+                    a = random.randint(6, 10)
                 if (i >= 35): # paradas proximas a UFSM
-                    a = random.randint(0, 2)
+                    a = random.randint(6, 6)
                 print(busstop.replace("name", "name=\"p%i\" personCapacity=\"%a\" ") %(i, a) , file=routes)
                 i+=1
         print("</additional>", file=routes)
@@ -108,11 +108,15 @@ if __name__ == "__main__":
         traci.simulationStep()
         
         for i in busstops:
-            print("busStopId:" + i + 
-                  " name:" + str(traci.busstop.getName(i)) +
-                  " passenger:" + str(traci.busstop.getPersonCount(i)) +
-                  " wait bus: " + str(traci.busstop.getVehicleCount(i)) + 
-                  " busID:" + str(traci.busstop.getVehicleIDs(i)))
+           
+            if(traci.busstop.getPersonCount(i)>0):
+                print("busStopId:" + i + 
+                    " name:" + str(traci.busstop.getName(i)) +
+                    " passenger:" + str(traci.busstop.getPersonCount(i)) +
+                    " wait bus: " + str(traci.busstop.getVehicleCount(i)) + 
+                    " busID:" + str(traci.busstop.getVehicleIDs(i))
+                    )
+            
                  
         step += 1
     traci.close()
