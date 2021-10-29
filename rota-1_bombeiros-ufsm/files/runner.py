@@ -101,9 +101,20 @@ if __name__ == "__main__":
     traci.start(sumoCmd)
     
     busstops = traci.busstop.getIDList()
-    for i in busstops:
-        print("busStopId:" + i + " name:" + str(traci.busstop.getName(i)) + " passenger:" + str(traci.busstop.getPersonCount(i)))
+   
     
+    step = 0
+    while step < 1000:
+        traci.simulationStep()
+        
+        for i in busstops:
+            print("busStopId:" + i + 
+                  " name:" + str(traci.busstop.getName(i)) +
+                  " passenger:" + str(traci.busstop.getPersonCount(i)) +
+                  " wait bus: " + str(traci.busstop.getVehicleCount(i)) + 
+                  " busID:" + str(traci.busstop.getVehicleIDs(i)))
+                 
+        step += 1
     traci.close()
 
 
