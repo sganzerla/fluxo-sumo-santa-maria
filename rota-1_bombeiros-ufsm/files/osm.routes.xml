@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="bus_bus" vClass="bus" />
+
+    <flow id="flow_bombeiros-ufsm" begin="0" end="3600" period="200" type="bus_bus" line="bus" departLane="best" from="360929409" to="301981265#0" via="982058337 358980528#0 980959028#0 978487722#0  49793804#1 372500759#0  199426663 919386387#1 181326563  181326569 303107781#5 258407154 911408239#0 302762415#1 301981257#1 167699928 167699930#3 301981265#0 ">
+        <stop busStop="4083982305" until="100"/>
+        <stop busStop="5366197376" until="200"/>
+        <stop busStop="5361514763" until="300"/>
+        <!-- <stop busStop="4945877795" until="400"/>
+        <stop busStop="4696675292" until="500"/>
+        <stop busStop="5286257146" until="600"/>
+        <stop busStop="3729684442" until="700"/>
+        <stop busStop="2435446332" until="800"/>
+        <stop busStop="2435446333" until="900"/>
+        <stop busStop="2435470839" until="1000"/>
+        <stop busStop="2035590397" until="1100"/>
+        <stop busStop="2449072192" until="1200"/>
+        <stop busStop="2449072194" until="1300"/>
+        <stop busStop="2449072196" until="1400"/>
+        <stop busStop="2647914597" until="1500"/>
+        <stop busStop="5557991904" until="1600"/>
+        <stop busStop="4945812529" until="1700"/>
+        <stop busStop="4945812528" until="1800"/>
+        <stop busStop="2976399351" until="1900"/>        
+        <stop busStop="2976399348" until="2000"/>
+        <stop busStop="2976418641" until="2100"/>
+        <stop busStop="4181552955" until="2200"/>
+        <stop busStop="2071578441" until="2300"/>
+        <stop busStop="3135882098" until="2400"/>
+        <stop busStop="6512254738" until="2500"/>
+        <stop busStop="3393237218" until="2600"/>
+        <stop busStop="4544750287" until="2700"/>
+        <stop busStop="1917492638" until="2800"/>
+        <stop busStop="3743485949" until="2900"/>
+        <stop busStop="3135882108" until="3000"/>
+        <stop busStop="2976551190" until="3100"/>
+        <stop busStop="2452978092" until="3200"/>
+        <stop busStop="2452978323" until="3300"/>
+        <stop busStop="2452978396" until="3400"/>
+        <stop busStop="4210138292" until="3500"/>
+        <stop busStop="3061763319" until="3600"/>
+        <stop busStop="2400147129" until="3700"/>
+        <stop busStop="3061763287" until="3800"/> -->
+
+    </flow>
+
+    <!-- <person departPos="0" id="1" depart="0">
+        <personTrip from="360929409" to="358980528#0" modes="public" busStop="5361514763"/>
+    </person> -->
+
+    <!--
+
+        PERSON
+              https://sumo.dlr.de/docs/Specification/Persons.html
+        id	                string	    valid XML ids	    -	
+        depart	            float(s)    ≥0 or 'triggered'	-	                See ride for an explanation of 'triggered'
+        departPos	        float(s)    ≥0	                -	                the distance along the edge that the person is created
+        type	            string	    any declared vType	DEFAULT_PEDTYPE	    the type should have vClass pedestrian
+        width	            float (s)   ≥0	                0,48	            The person's width [m]
+        lenght	            float (s)   ≥0	                0,21	            The person's netto-length (length) (in m)
+        mingap	            float (s)   ≥0	                0,25	            Empty space after leader [m]
+        maxSpeed	        float (s)   ≥0	                1,39	            The person's maximum velocity (in m/s)
+        jmDriveAfterRedTime	float (s)   ≥0	                -1	                This value causes persons to violate a red light if the duration of the red phase is lower than the given threshold. When set to 0, persons will always walk at yellow but will try to stop at red. If this behavior causes a person to walk so fast that stopping is not possible any more it will not attempt to stop.
+
+
+        PERSON-TRIP
+           https://sumo.dlr.de/docs/Specification/Persons.html
+        Attribute	Type	    Range	                                                Default	        Remark
+        from	    string	    valid edge ids	                                        -	            id of the start edge
+        to	        string	    valid edge ids                                          -	            id of the destination edge
+        via	        string	    valid edge ids                                          -	            ids of the intermediate edges (not implemented yet)
+        busStop	    string	    valid bus stop ids	                                    -	            id of the destination stop
+        vTypes	    list	    valid vType ids	                                        -	            list of possible vehicle types to take
+        modes	    list	    any combination of "public", "car", "bicycle", "taxi"	-	            list of possible traffic modes (separated by ' '). Walking is always possible regardless of this value.
+        departPos	float(m)		                                                    0	            initial position on the starting edge (deprecated, determined by the departPos of the person or the arrival pos of the previous step)
+        arrivalPos	float(m)	
+
+    -->
+   <!-- https://sumo.dlr.de/docs/Tools/Trip.html#randomtripspy
+   ferramenta para gerar viagens aleatorias 
+    -->
+    <personFlow id="p2"   color="red" number="4">
+        <personTrip from="360929409" to="358980528#0" modes="public" />
+    </personFlow>
+
+
+
+    <!--
+
+
+        PERSON-FLOW
+          https://sumo.dlr.de/docs/Specification/Persons.html
+        Attribute Name	            Value Type	    Description
+        begin	                    float(s)	    first person departure time
+        end	                        float(s)	    end of departure interval (if undefined, defaults to 24 hours)
+        personsPerHour* or perHour*	float(#/h)	    number of persons per hour, equally spaced
+        period*	                    float(s)	    insert equally spaced persons at that period
+        probability*	            float([0,1])	probability for emitting a person each second, see also Simulation/Randomness
+        number*	                    int(#)	        total number of persons, equally spaced
+
+
+        RIDE
+            https://sumo.dlr.de/docs/Specification/Rides.html
+        Attribute	Type	    Range	                            Default	        Remark
+        from	    string	    valid edge ids	                    -	            id of the start edge (optional, if it is a subsequent movement or starts in a vehicle)
+        to	        string	    valid edge ids	                    -	            id of the destination edge
+        busStop	    string	    valid bus stop ids	                -	            id of the destination stop
+        lines	    list	    valid line or vehicle ids or ANY	-	            list of vehicle alternatives to take for the ride
+        arrivalPos	float(m)		                                end of edge	    arrival position on the destination edge
+
+
+        WALK
+          https://sumo.dlr.de/docs/Specification/Persons.html
+        Attribute	    Type	    Range	            Default	                            Remark
+        route	        string	    valid route id	    -	                                the id of the route to walk
+        edges	        list	    valid edge ids	    -	                                id of the edges to walk
+        from	        string	    valid edge ids	    -	                                id of the start edge (optional, if it is a subsequent movement)
+        to	            string	    valid edge ids	    -	                                id of the destination edge
+        busStop	        string	    valid bus stop ids	-	                                id of the destination stop
+        duration	    float(s)    >0	                -	                                override walk duration (otherwise determined by the person type and the pedestrian dynamics)
+        speed	        float(m/s)	>0	                -	                                override walking speed (otherwise determined by the person type and individual speed factor)
+        arrivalPos	    float(m)		                middle of edge	                    arrival position on the destination edge
+        departPosLat	float(m)		                right side in walking direction	    custom lateral position on lane at departure
+
+    -->
+
+
+
+</routes>
