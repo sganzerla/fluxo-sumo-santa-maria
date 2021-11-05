@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!-- generated on 2021-11-05 01:47:23.436506 by $Id$ v1_10_0+0000-83496a5972
+  options: -n .\osm.net.xml -e 50 -o .\osm.routes.xml <doubleminus>persontrips <doubleminus>trip-attributes modes=public
+-->
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
     <vType id="bus_bus" vClass="bus" />
 
     <flow id="flow_bombeiros-ufsm" begin="0" end="3600" period="200" type="bus_bus" line="bus" departLane="best" from="360929409" to="301981265#0" via="982058337 358980528#0 980959028#0 978487722#0  49793804#1 372500759#0  199426663 919386387#1 181326563  181326569 303107781#5 258407154 911408239#0 302762415#1 301981257#1 167699928 167699930#3 301981265#0 ">
         <stop busStop="4083982305" until="100"/>
         <stop busStop="5366197376" until="200"/>
         <stop busStop="5361514763" until="300"/>
-        <!-- <stop busStop="4945877795" until="400"/>
+        <stop busStop="4945877795" until="400"/>
         <stop busStop="4696675292" until="500"/>
         <stop busStop="5286257146" until="600"/>
         <stop busStop="3729684442" until="700"/>
@@ -41,90 +44,157 @@
         <stop busStop="4210138292" until="3500"/>
         <stop busStop="3061763319" until="3600"/>
         <stop busStop="2400147129" until="3700"/>
-        <stop busStop="3061763287" until="3800"/> -->
+        <stop busStop="3061763287" until="3800"/>
 
     </flow>
-
-    <!-- <person departPos="0" id="1" depart="0">
-        <personTrip from="360929409" to="358980528#0" modes="public" busStop="5361514763"/>
-    </person> -->
-
-    <!--
-
-        PERSON
-              https://sumo.dlr.de/docs/Specification/Persons.html
-        id	                string	    valid XML ids	    -	
-        depart	            float(s)    ≥0 or 'triggered'	-	                See ride for an explanation of 'triggered'
-        departPos	        float(s)    ≥0	                -	                the distance along the edge that the person is created
-        type	            string	    any declared vType	DEFAULT_PEDTYPE	    the type should have vClass pedestrian
-        width	            float (s)   ≥0	                0,48	            The person's width [m]
-        lenght	            float (s)   ≥0	                0,21	            The person's netto-length (length) (in m)
-        mingap	            float (s)   ≥0	                0,25	            Empty space after leader [m]
-        maxSpeed	        float (s)   ≥0	                1,39	            The person's maximum velocity (in m/s)
-        jmDriveAfterRedTime	float (s)   ≥0	                -1	                This value causes persons to violate a red light if the duration of the red phase is lower than the given threshold. When set to 0, persons will always walk at yellow but will try to stop at red. If this behavior causes a person to walk so fast that stopping is not possible any more it will not attempt to stop.
-
-
-        PERSON-TRIP
-           https://sumo.dlr.de/docs/Specification/Persons.html
-        Attribute	Type	    Range	                                                Default	        Remark
-        from	    string	    valid edge ids	                                        -	            id of the start edge
-        to	        string	    valid edge ids                                          -	            id of the destination edge
-        via	        string	    valid edge ids                                          -	            ids of the intermediate edges (not implemented yet)
-        busStop	    string	    valid bus stop ids	                                    -	            id of the destination stop
-        vTypes	    list	    valid vType ids	                                        -	            list of possible vehicle types to take
-        modes	    list	    any combination of "public", "car", "bicycle", "taxi"	-	            list of possible traffic modes (separated by ' '). Walking is always possible regardless of this value.
-        departPos	float(m)		                                                    0	            initial position on the starting edge (deprecated, determined by the departPos of the person or the arrival pos of the previous step)
-        arrivalPos	float(m)	
-
-    -->
-   <!-- https://sumo.dlr.de/docs/Tools/Trip.html#randomtripspy
-   ferramenta para gerar viagens aleatorias 
-    -->
-    <personFlow id="p2"   color="red" number="4">
-        <personTrip from="360929409" to="358980528#0" modes="public" />
-    </personFlow>
-
-
-
-    <!--
-
-
-        PERSON-FLOW
-          https://sumo.dlr.de/docs/Specification/Persons.html
-        Attribute Name	            Value Type	    Description
-        begin	                    float(s)	    first person departure time
-        end	                        float(s)	    end of departure interval (if undefined, defaults to 24 hours)
-        personsPerHour* or perHour*	float(#/h)	    number of persons per hour, equally spaced
-        period*	                    float(s)	    insert equally spaced persons at that period
-        probability*	            float([0,1])	probability for emitting a person each second, see also Simulation/Randomness
-        number*	                    int(#)	        total number of persons, equally spaced
-
-
-        RIDE
-            https://sumo.dlr.de/docs/Specification/Rides.html
-        Attribute	Type	    Range	                            Default	        Remark
-        from	    string	    valid edge ids	                    -	            id of the start edge (optional, if it is a subsequent movement or starts in a vehicle)
-        to	        string	    valid edge ids	                    -	            id of the destination edge
-        busStop	    string	    valid bus stop ids	                -	            id of the destination stop
-        lines	    list	    valid line or vehicle ids or ANY	-	            list of vehicle alternatives to take for the ride
-        arrivalPos	float(m)		                                end of edge	    arrival position on the destination edge
-
-
-        WALK
-          https://sumo.dlr.de/docs/Specification/Persons.html
-        Attribute	    Type	    Range	            Default	                            Remark
-        route	        string	    valid route id	    -	                                the id of the route to walk
-        edges	        list	    valid edge ids	    -	                                id of the edges to walk
-        from	        string	    valid edge ids	    -	                                id of the start edge (optional, if it is a subsequent movement)
-        to	            string	    valid edge ids	    -	                                id of the destination edge
-        busStop	        string	    valid bus stop ids	-	                                id of the destination stop
-        duration	    float(s)    >0	                -	                                override walk duration (otherwise determined by the person type and the pedestrian dynamics)
-        speed	        float(m/s)	>0	                -	                                override walking speed (otherwise determined by the person type and individual speed factor)
-        arrivalPos	    float(m)		                middle of edge	                    arrival position on the destination edge
-        departPosLat	float(m)		                right side in walking direction	    custom lateral position on lane at departure
-
-    -->
-
-
-
+    <person id="0" depart="0.00">
+        <personTrip from="296181223#3" to="-184515332#0" modes="public"/>
+    </person>
+    <person id="1" depart="1.00">
+        <personTrip from="-366475265#1" to="-342569111" modes="public"/>
+    </person>
+    <person id="2" depart="2.00">
+        <personTrip from="360378386" to="307757213" modes="public"/>
+    </person>
+    <person id="3" depart="3.00">
+        <personTrip from="488147269#2" to="-204398628#4" modes="public"/>
+    </person>
+    <person id="4" depart="4.00">
+        <personTrip from="181347078#4" to="-191714268#0" modes="public"/>
+    </person>
+    <person id="5" depart="5.00">
+        <personTrip from="-338152095#0" to="204266510#0" modes="public"/>
+    </person>
+    <person id="6" depart="6.00">
+        <personTrip from="-186395191#1" to="-305135149" modes="public"/>
+    </person>
+    <person id="7" depart="7.00">
+        <personTrip from="301981264#1" to="207243785#1" modes="public"/>
+    </person>
+    <person id="8" depart="8.00">
+        <personTrip from="-340484918#1" to="256538610#0" modes="public"/>
+    </person>
+    <person id="9" depart="9.00">
+        <personTrip from="378361510" to="-181341696#1" modes="public"/>
+    </person>
+    <person id="10" depart="10.00">
+        <personTrip from="377878781" to="338508389#1" modes="public"/>
+    </person>
+    <person id="11" depart="11.00">
+        <personTrip from="-417718979" to="-256986083#3" modes="public"/>
+    </person>
+    <person id="12" depart="12.00">
+        <personTrip from="767403270#0" to="-408994052#2" modes="public"/>
+    </person>
+    <person id="13" depart="13.00">
+        <personTrip from="-204398687#8" to="-205672776#1" modes="public"/>
+    </person>
+    <person id="14" depart="14.00">
+        <personTrip from="410964596" to="259692596#2" modes="public"/>
+    </person>
+    <person id="15" depart="15.00">
+        <personTrip from="378315942" to="357502824#1" modes="public"/>
+    </person>
+    <person id="16" depart="16.00">
+        <personTrip from="207227890#11" to="961796328" modes="public"/>
+    </person>
+    <person id="17" depart="17.00">
+        <personTrip from="-621017926#0" to="207251667#2" modes="public"/>
+    </person>
+    <person id="18" depart="18.00">
+        <personTrip from="390523327" to="271493448#3" modes="public"/>
+    </person>
+    <person id="19" depart="19.00">
+        <personTrip from="437198914#2" to="253086316" modes="public"/>
+    </person>
+    <person id="20" depart="20.00">
+        <personTrip from="344153337#2" to="-193136468#0" modes="public"/>
+    </person>
+    <person id="21" depart="21.00">
+        <personTrip from="-348788935" to="-371518494" modes="public"/>
+    </person>
+    <person id="22" depart="22.00">
+        <personTrip from="-204269348#1" to="-349938489" modes="public"/>
+    </person>
+    <person id="23" depart="23.00">
+        <personTrip from="-207227871#3" to="-367115049" modes="public"/>
+    </person>
+    <person id="24" depart="24.00">
+        <personTrip from="295166447" to="-494070336#0" modes="public"/>
+    </person>
+    <person id="25" depart="25.00">
+        <personTrip from="-529508275" to="-324284058" modes="public"/>
+    </person>
+    <person id="26" depart="26.00">
+        <personTrip from="-363462601#0" to="629289301#1" modes="public"/>
+    </person>
+    <person id="27" depart="27.00">
+        <personTrip from="301521094#2" to="259855028#1" modes="public"/>
+    </person>
+    <person id="28" depart="28.00">
+        <personTrip from="-281346355#0" to="357502815" modes="public"/>
+    </person>
+    <person id="29" depart="29.00">
+        <personTrip from="-259855028#1" to="-623867806#0" modes="public"/>
+    </person>
+    <person id="30" depart="30.00">
+        <personTrip from="978487723#0" to="296183690" modes="public"/>
+    </person>
+    <person id="31" depart="31.00">
+        <personTrip from="223671067#0" to="324284062" modes="public"/>
+    </person>
+    <person id="32" depart="32.00">
+        <personTrip from="401044439" to="367135969" modes="public"/>
+    </person>
+    <person id="33" depart="33.00">
+        <personTrip from="-348788958#0" to="-193030324#2" modes="public"/>
+    </person>
+    <person id="34" depart="34.00">
+        <personTrip from="-380986239" to="-363468029#3" modes="public"/>
+    </person>
+    <person id="35" depart="35.00">
+        <personTrip from="-325558942" to="651568229#1" modes="public"/>
+    </person>
+    <person id="36" depart="36.00">
+        <personTrip from="465691789#0" to="-379721661" modes="public"/>
+    </person>
+    <person id="37" depart="37.00">
+        <personTrip from="303082593#0" to="-954810762#0" modes="public"/>
+    </person>
+    <person id="38" depart="38.00">
+        <personTrip from="521960031#1" to="193032316#5" modes="public"/>
+    </person>
+    <person id="39" depart="39.00">
+        <personTrip from="-363345717" to="-358981138#0" modes="public"/>
+    </person>
+    <person id="40" depart="40.00">
+        <personTrip from="231666003#5" to="-363058715#0" modes="public"/>
+    </person>
+    <person id="41" depart="41.00">
+        <personTrip from="256388584#7" to="494070346#1" modes="public"/>
+    </person>
+    <person id="42" depart="42.00">
+        <personTrip from="-963535462#1" to="-338152098#17" modes="public"/>
+    </person>
+    <person id="43" depart="43.00">
+        <personTrip from="986915361" to="204269348#6" modes="public"/>
+    </person>
+    <person id="44" depart="44.00">
+        <personTrip from="-204398678#3" to="-193138288#4" modes="public"/>
+    </person>
+    <person id="45" depart="45.00">
+        <personTrip from="-207227929" to="279980148#1" modes="public"/>
+    </person>
+    <person id="46" depart="46.00">
+        <personTrip from="372090176" to="181347080#0" modes="public"/>
+    </person>
+    <person id="47" depart="47.00">
+        <personTrip from="-197203391#5" to="-648288488#0" modes="public"/>
+    </person>
+    <person id="48" depart="48.00">
+        <personTrip from="984372915" to="205672798#1" modes="public"/>
+    </person>
+    <person id="49" depart="49.00">
+        <personTrip from="957244973#2" to="436986923" modes="public"/>
+    </person>
 </routes>

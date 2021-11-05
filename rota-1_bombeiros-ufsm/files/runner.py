@@ -112,9 +112,8 @@ if __name__ == "__main__":
             if(traci.busstop.getPersonCount(i)>0):
                 print("busStopId:" + i + 
                     " name:" + str(traci.busstop.getName(i)) +
-                    " pessoas na parada:" + str(traci.busstop.getPersonCount(i)) +
-                    " onibus parados  : " + str(traci.busstop.getVehicleCount(i)) + 
-                    " busID:" + str(traci.busstop.getVehicleIDs(i))
+                    " pessoas na parada:" + str(traci.busstop.getPersonCount(i))
+                   
                     )
             
                  
