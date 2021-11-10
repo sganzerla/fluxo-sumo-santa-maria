@@ -23,6 +23,26 @@ def get_options():
     options, args = optParser.parse_args()
     return options
 
+def orderBusStopByName(busstops):
+    row = len(busstops)
+    col = 2
+    orderBusStops = [[0 for j in range(col)] for i in range(row)]
+    
+    i=0
+    for bus in busstops:
+        orderBusStops[i][0] = bus
+        orderBusStops[i][1] = traci.busstop.getName(bus).split("p")[1]
+        i+=1
+    
+    # for b in orderBusStops:
+    #     print(b[0],b[1])
+    # ordenar as paradas pelo nome
+    orderBusStops.sort(key=lambda x: (int(x[1]), int(x[0])))
+  
+    # for b in orderBusStops:
+    #     print(b[0],b[1])
+    return orderBusStops
+
 if __name__ == "__main__":
         
     options = get_options()
@@ -38,20 +58,27 @@ if __name__ == "__main__":
     
     busstops = traci.busstop.getIDList()
     
+    orderBusStops = orderBusStopByName(busstops)
+        
+        
     step = 0
     while step < 1000:
         traci.simulationStep()
         
-        for i in busstops:
+        for i in orderBusStops:
            
-            if(traci.busstop.getPersonCount(i)>0):
-                print("busStopId:" + i + 
-                    " name:" + str(traci.busstop.getName(i)) +
-                    " pessoas na parada:" + str(traci.busstop.getPersonCount(i))
+            # if(traci.busstop.getPersonCount(i[0])>0):
+                print(
+                    "step: " + str(step) + "    " +
+                    "busStopName: " + str(traci.busstop.getName(i[0])) + "    " +
+                    "busStopId: " + i[0] + "    " +
+                    "countPersons: " + str(traci.busstop.getPersonCount(i[0])) + "    " +
+                    ""
                     )
             
                  
         step += 1
+        
     traci.close()
 
 
