@@ -45,11 +45,13 @@ def orderBusStopByName(busstops):
 
 def getBus(step):
     allBus = traci.vehicle.getIDList()
-    
+    txt = "step: " + str(step)
     for bus in allBus:
         if traci.vehicle.getTypeID(bus) == "bus":
             # concatenar e printar numa linha unica
-            print(step, bus, traci.vehicle.getPersonNumber(bus))
+            txt += " bus: " + bus + " personNumber: " + str(traci.vehicle.getPersonNumber(bus))
+           
+    print(txt)
         
     
 
@@ -71,7 +73,7 @@ if __name__ == "__main__":
     orderBusStops = orderBusStopByName(busstops)
         
     step = 0
-    while step < 1000:
+    while step <= 1000:
         traci.simulationStep()
         
         # for i in orderBusStops:
@@ -85,7 +87,7 @@ if __name__ == "__main__":
         #             ""
         #             )
                 
-        if (step % 100 == 0):    
+        if (step % 50 == 0):    
             getBus(step)
                  
         step += 1
