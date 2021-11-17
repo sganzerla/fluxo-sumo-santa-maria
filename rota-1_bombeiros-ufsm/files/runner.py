@@ -17,13 +17,17 @@ from sumolib import checkBinary  # noqa
 import traci
 
 
+def noGUI():
+    # define se exibe interface grafica ou nao do SUMO
+    return True
+
+
 def get_options():
     optParser = optparse.OptionParser()
     optParser.add_option("--nogui", action="store_true",
-                         default=False, help="run the commandline version of sumo")
+                         default=noGUI(), help="run the commandline version of sumo")
     options, args = optParser.parse_args()
     return options
-
 
 def orderBusStopByName(busstops):
     row = len(busstops)
@@ -39,29 +43,38 @@ def orderBusStopByName(busstops):
     # ordenar as paradas pelo nome
     orderBusStops.sort(key=lambda x: (int(x[1]), int(x[0])))
 
-    
     return orderBusStops
 
 
-def print_bus_persons(step):
+def print_bus_persons(step, busSpeed):
     allBus = traci.vehicle.getIDList()
-    txt = "step: " + str(step)
+    txt = "bus " + str(step)
     for bus in allBus:
         if traci.vehicle.getTypeID(bus) == "bus":
-            # concatenar e printar numa linha unica
-            txt += " bus: " + bus + " personNumber: " + \
-                str(traci.vehicle.getPersonNumber(bus))
+            if (bus == "flow_bombeiros-ufsm.2" or bus == "flow_bombeiros-ufsm.3" or bus == "flow_bombeiros-ufsm.4"):
+                traci.vehicle.setSpeed(bus, busSpeed)
+
+             # concatenar e printar numa linha unica
+        txt += " " + bus + " : " + \
+            str(traci.vehicle.getPersonNumber(bus))
 
     print(txt)
 
 
 def print_busStopPersons(orderBusStops, step):
-    txt = "step: " + str(step)
+    txt = "busStops " + str(step)
+    aux = 0
     for i in orderBusStops:
-        txt += " busStopName: " + \
+        if aux >= 5 and aux <= 30:
+            # txt += " busStopName: " + \
+            txt += " " + \
                 str(traci.busstop.getName(
-                    i[0])) + " personCount: " + str(traci.busstop.getPersonCount(i[0]))
-        print(txt)
+                    # i[0])) + " personCount: " + str(traci.busstop.getPersonCount(i[0]))
+                    i[0])) + " : " + str(traci.busstop.getPersonCount(i[0]))
+        aux += 1
+
+    print(txt)
+
 
 if __name__ == "__main__":
 
@@ -80,14 +93,26 @@ if __name__ == "__main__":
 
     orderBusStops = orderBusStopByName(busstops)
 
-    step = 0
-    while step <= 1000:
-        traci.simulationStep()
+    # traci.trafficlight.setPhaseDuration("GS_637770324", 200)
 
+    step = 0
+    while step <= 2000:
+        traci.simulationStep()
 
         if (step % 50 == 0):
             # print_busStopPersons(orderBusStops, step)
-            print_bus_persons(step)
+            print_bus_persons(step, 20.0)
+
+        step += 1
+        
+    step = 0
+    
+    while step <= 2000:
+        traci.simulationStep()
+
+        if (step % 50 == 0):
+            # print_busStopPersons(orderBusStops, step)
+            print_bus_persons(step, 80.0)
 
         step += 1
 
