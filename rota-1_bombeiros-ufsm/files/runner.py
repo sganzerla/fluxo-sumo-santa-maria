@@ -29,35 +29,40 @@ def get_options():
     return options
 
 
-def order_bus_stop_by_name(bus_stop_id):
-    row = len(bus_stop_id)
+def order_bus_stop_by_name():
+    row = len(bus_stops_ids)
     col = 2
-    order_bus_stops = [[0 for j in range(col)] for i in range(row)]
+    order_bus_stops_by_name = [[0 for j in range(col)] for i in range(row)]
 
     i = 0
-    for bus in bus_stop_id:
-        order_bus_stops[i][0] = bus
-        order_bus_stops[i][1] = traci.busstop.getName(bus).split("p")[1]
+    for bus in bus_stops_ids:
+        order_bus_stops_by_name[i][0] = bus
+        order_bus_stops_by_name[i][1] = traci.busstop.getName(bus).split("p")[1]
         i += 1
 
     # ordenar as paradas pelo nome
-    order_bus_stops.sort(key=lambda x: (int(x[1]), int(x[0])))
+    order_bus_stops_by_name.sort(key=lambda x: (int(x[1]), int(x[0])))
 
-    return order_bus_stops
+    return order_bus_stops_by_name
 
 
 def print_persons_in_bus(step_value, bus_speed):
-    all_bus = traci.vehicle.getIDList()
+    all_bus = get_all_bus_ids()
     txt = str(step_value)
     for bus in all_bus:
         if traci.vehicle.getTypeID(bus) == "bus":
             if bus == "flow_bombeiros-ufsm.2" or bus == "flow_bombeiros-ufsm.3" or bus == "flow_bombeiros-ufsm.4":
                 traci.vehicle.setSpeed(bus, bus_speed)
 
-        txt += ", " + bus + ", " + \
-               str(traci.vehicle.getPersonNumber(bus))
+        txt += ", " + str(traci.vehicle.getPersonNumber(bus))
 
+    print(txt)
     return txt + "\n"
+
+
+def get_all_bus_ids():
+    all_bus = traci.vehicle.getIDList()
+    return all_bus
 
 
 def print_persons_in_bus_stop(step_value):
@@ -88,14 +93,13 @@ if __name__ == "__main__":
 
     traci.start(sumo_cmd)
 
-    bus_stops = traci.busstop.getIDList()
+    bus_stops_ids = traci.busstop.getIDList()
 
-    ordered_bus_stops = order_bus_stop_by_name(bus_stops)
+    ordered_bus_stops = order_bus_stop_by_name()
 
     # traci.trafficlight.setPhaseDuration("GS_637770324", 200)
 
     newFile = open("bus_persons20.csv", "w")
-    newFile.write("step, bus_id, count_people \n")
     step = 0
     while step <= 2000:
         traci.simulationStep()
@@ -104,20 +108,15 @@ if __name__ == "__main__":
             newFile.write(print_persons_in_bus(step, 20.0))
 
         step += 1
+    newFile.seek(0)
+    head_bus_ids = ""
+    aux = 0
+    for i in get_all_bus_ids():
+        aux += 1
+        is_last_item = aux == len(get_all_bus_ids())
+        head_bus_ids += i + (", " if not is_last_item else "")
 
-    newFile.close()
-
-    newFile = open("bus_persons80.csv", "w")
-    newFile.write("step, bus_id, count_people \n")
-    step = 0
-    while step <= 2000:
-        traci.simulationStep()
-
-        if step % 50 == 0:
-            newFile.write(print_persons_in_bus(step, 80.0))
-
-        step += 1
-
+    newFile.write("step," + head_bus_ids + "\n")
     newFile.close()
 
     traci.close()
