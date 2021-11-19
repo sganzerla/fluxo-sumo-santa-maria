@@ -56,7 +56,6 @@ def print_persons_in_bus(step_value, bus_speed):
 
         txt += ", " + str(traci.vehicle.getPersonNumber(bus))
 
-    print(txt)
     return txt + "\n"
 
 
@@ -108,7 +107,6 @@ if __name__ == "__main__":
             newFile.write(print_persons_in_bus(step, 20.0))
 
         step += 1
-    newFile.seek(0)
     head_bus_ids = ""
     aux = 0
     for i in get_all_bus_ids():
