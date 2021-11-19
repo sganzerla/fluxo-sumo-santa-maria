@@ -16,15 +16,16 @@ from sumolib import checkBinary  # noqa
 
 import traci
 
-
-def no_gui():
-    return True
+change_speed = 40
+time_step = 2000
+each_time_step_log = 50
+no_gui = True
 
 
 def get_options():
     opt_parser = optparse.OptionParser()
     opt_parser.add_option("--nogui", action="store_true",
-                          default=no_gui(), help="run the commandline version of sumo")
+                          default=no_gui, help="run the commandline version of sumo")
     options, args = opt_parser.parse_args()
     return options
 
@@ -65,22 +66,22 @@ def get_all_bus_ids():
     return all_bus
 
 
-def print_persons_in_bus_stop(step_value):
-    txt = "busStops " + str(step_value)
-    aux = 0
-    for i in ordered_bus_stops:
-        if 5 <= aux <= 30:
-            # txt += " busStopName: " + \
-            txt += " " + \
-                   str(traci.busstop.getName(
-                       # i[0])) + " personCount: " + str(traci.busstop.getPersonCount(i[0]))
-                       i[0])) + " : " + str(traci.busstop.getPersonCount(i[0]))
-        aux += 1
+# def print_persons_in_bus_stop(step_value):
+#     txt = "busStops " + str(step_value)
+#     aux = 0
+#     for i in ordered_bus_stops:
+#         if 5 <= aux <= 30:
+#             # txt += " busStopName: " + \
+#             txt += " " + \
+#                    str(traci.busstop.getName(
+#                        # i[0])) + " personCount: " + str(traci.busstop.getPersonCount(i[0]))
+#                        i[0])) + " : " + str(traci.busstop.getPersonCount(i[0]))
+#         aux += 1
 
-    print(txt)
+#     print(txt)
 
 
-def generate_header_file_csv(get_all_bus_ids):
+def generate_header_file_csv():
     head_bus_ids = ""
     aux = 0
     for i in get_all_bus_ids():
@@ -90,21 +91,22 @@ def generate_header_file_csv(get_all_bus_ids):
     return head_bus_ids
 
 
-def generate_simulation_with_change_speed_bus(print_persons_in_bus, get_all_bus_ids, generate_header_file_csv, newFile, speed_bus):
-
+def generate_simulation_with_change_speed_bus():
+    new_file = open("bus_persons_change_speed_" + str(change_speed) +
+                    "_km_in_" + str(time_step) + "_steps.csv", "w")
     step = 0
-    while step <= 2000:
+    while step <= time_step:
         traci.simulationStep()
 
-        if step % 50 == 0:
-            newFile.write(print_persons_in_bus(step, speed_bus))
+        if step % each_time_step_log == 0:
+            new_file.write(print_persons_in_bus(step, change_speed))
 
         step += 1
 
-    head_bus_ids = generate_header_file_csv(get_all_bus_ids)
+    head_bus_ids = generate_header_file_csv()
 
-    newFile.write("step," + head_bus_ids + "\n")
-    newFile.close()
+    new_file.write("step," + head_bus_ids + "\n")
+    new_file.close()
 
 
 if __name__ == "__main__":
@@ -124,16 +126,6 @@ if __name__ == "__main__":
 
     ordered_bus_stops = order_bus_stop_by_name()
 
-    # traci.trafficlight.setPhaseDuration("GS_637770324", 200)
-
-    newFile = open("bus_persons20.csv", "w")
-
-    generate_simulation_with_change_speed_bus(
-        print_persons_in_bus, get_all_bus_ids, generate_header_file_csv, newFile, 20.0)
-
-    newFile = open("bus_persons80.csv", "w")
-
-    generate_simulation_with_change_speed_bus(
-        print_persons_in_bus, get_all_bus_ids, generate_header_file_csv, newFile, 80.0)
+    generate_simulation_with_change_speed_bus()
 
     traci.close()
