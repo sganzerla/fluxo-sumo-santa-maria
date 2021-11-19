@@ -37,7 +37,8 @@ def order_bus_stop_by_name():
     i = 0
     for bus in bus_stops_ids:
         order_bus_stops_by_name[i][0] = bus
-        order_bus_stops_by_name[i][1] = traci.busstop.getName(bus).split("p")[1]
+        order_bus_stops_by_name[i][1] = traci.busstop.getName(bus).split("p")[
+            1]
         i += 1
 
     # ordenar as paradas pelo nome
@@ -79,6 +80,33 @@ def print_persons_in_bus_stop(step_value):
     print(txt)
 
 
+def generate_header_file_csv(get_all_bus_ids):
+    head_bus_ids = ""
+    aux = 0
+    for i in get_all_bus_ids():
+        aux += 1
+        is_last_item = aux == len(get_all_bus_ids())
+        head_bus_ids += i + (", " if not is_last_item else "")
+    return head_bus_ids
+
+
+def generate_simulation_with_change_speed_bus(print_persons_in_bus, get_all_bus_ids, generate_header_file_csv, newFile, speed_bus):
+
+    step = 0
+    while step <= 2000:
+        traci.simulationStep()
+
+        if step % 50 == 0:
+            newFile.write(print_persons_in_bus(step, speed_bus))
+
+        step += 1
+
+    head_bus_ids = generate_header_file_csv(get_all_bus_ids)
+
+    newFile.write("step," + head_bus_ids + "\n")
+    newFile.close()
+
+
 if __name__ == "__main__":
 
     options = get_options()
@@ -99,22 +127,13 @@ if __name__ == "__main__":
     # traci.trafficlight.setPhaseDuration("GS_637770324", 200)
 
     newFile = open("bus_persons20.csv", "w")
-    step = 0
-    while step <= 2000:
-        traci.simulationStep()
 
-        if step % 50 == 0:
-            newFile.write(print_persons_in_bus(step, 20.0))
+    generate_simulation_with_change_speed_bus(
+        print_persons_in_bus, get_all_bus_ids, generate_header_file_csv, newFile, 20.0)
 
-        step += 1
-    head_bus_ids = ""
-    aux = 0
-    for i in get_all_bus_ids():
-        aux += 1
-        is_last_item = aux == len(get_all_bus_ids())
-        head_bus_ids += i + (", " if not is_last_item else "")
+    newFile = open("bus_persons80.csv", "w")
 
-    newFile.write("step," + head_bus_ids + "\n")
-    newFile.close()
+    generate_simulation_with_change_speed_bus(
+        print_persons_in_bus, get_all_bus_ids, generate_header_file_csv, newFile, 80.0)
 
     traci.close()
