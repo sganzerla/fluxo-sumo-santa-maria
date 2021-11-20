@@ -16,9 +16,10 @@ from sumolib import checkBinary  # noqa
 
 import traci
 
-change_speed = 40
-time_step = 2000
-each_time_step_log = 50
+# TODO receber valores por linha de comando como argumentos
+change_speed = 80
+time_step = 7000
+time_each_step_log = 60
 no_gui = True
 
 
@@ -57,7 +58,6 @@ def print_persons_in_bus(step_value, bus_speed):
                 traci.vehicle.setSpeed(bus, bus_speed)
 
         txt += ", " + str(traci.vehicle.getPersonNumber(bus))
-
     return txt + "\n"
 
 
@@ -84,10 +84,13 @@ def get_all_bus_ids():
 def generate_header_file_csv():
     head_bus_ids = ""
     aux = 0
-    for i in get_all_bus_ids():
+    amount_bus = len(get_all_bus_ids())
+    while aux < amount_bus:
+        head_bus_ids += "bus_" + str(aux) + ","
         aux += 1
-        is_last_item = aux == len(get_all_bus_ids())
-        head_bus_ids += i + (", " if not is_last_item else "")
+
+    head_bus_ids += "bus_" + str(amount_bus)
+
     return head_bus_ids
 
 
@@ -98,7 +101,7 @@ def generate_simulation_with_change_speed_bus():
     while step <= time_step:
         traci.simulationStep()
 
-        if step % each_time_step_log == 0:
+        if step % time_each_step_log == 0:
             new_file.write(print_persons_in_bus(step, change_speed))
 
         step += 1
