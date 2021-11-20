@@ -18,7 +18,7 @@ import traci
 
 # TODO receber valores por linha de comando como argumentos
 change_speed = 80
-time_step = 7000
+time_step = 1000
 time_each_step_log = 60
 no_gui = True
 
@@ -49,16 +49,15 @@ def order_bus_stop_by_name():
     return order_bus_stops_by_name
 
 
-def print_persons_in_bus(step_value, bus_speed):
-    all_bus = get_all_bus_ids()
-    txt = str(step_value)
-    for bus in all_bus:
+def get_count_persons_in_bus(bus_speed):
+    txt = ""
+    for bus in get_all_bus_ids():
         if traci.vehicle.getTypeID(bus) == "bus":
             if bus == "flow_bombeiros-ufsm.2" or bus == "flow_bombeiros-ufsm.3" or bus == "flow_bombeiros-ufsm.4":
                 traci.vehicle.setSpeed(bus, bus_speed)
 
-        txt += ", " + str(traci.vehicle.getPersonNumber(bus))
-    return txt + "\n"
+        txt += ", " + bus + ":" + str(traci.vehicle.getPersonNumber(bus))
+    return txt
 
 
 def get_all_bus_ids():
@@ -102,7 +101,8 @@ def generate_simulation_with_change_speed_bus():
         traci.simulationStep()
 
         if step % time_each_step_log == 0:
-            new_file.write(print_persons_in_bus(step, change_speed))
+            new_file.write(
+                str(step) + get_count_persons_in_bus(change_speed) + "\n")
 
         step += 1
 
