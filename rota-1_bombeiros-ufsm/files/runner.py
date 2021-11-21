@@ -18,9 +18,9 @@ import traci
 
 # TODO receber valores por linha de comando como argumentos
 change_speed = 80
-time_step = 1000
+time_step = 1020
 time_each_step_log = 60
-no_gui = True
+no_gui = False
 
 
 def get_options():
@@ -94,7 +94,7 @@ def generate_header_file_csv():
 
 
 def generate_simulation_with_change_speed_bus():
-    new_file = open("bus_persons_change_speed_" + str(change_speed) +
+    new_file = open("./dist/bus_persons_change_speed_" + str(change_speed) +
                     "_km_in_" + str(time_step) + "_steps.csv", "w")
     step = 0
     while step <= time_step:
