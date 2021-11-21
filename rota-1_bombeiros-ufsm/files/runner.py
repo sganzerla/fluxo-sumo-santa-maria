@@ -57,9 +57,9 @@ def get_count_persons_in_bus(bus_speed: int):
 
 
 def get_all_bus_ids():
+    # ordena o id dos onibus pelo nome retirando apenas o numero
     all_bus = traci.vehicle.getIDList()
-    return all_bus
-
+    return sorted(all_bus, key=lambda x: int(x.split(".")[1]))
 
 # def print_persons_in_bus_stop(step_value):
 #     txt = "busStops " + str(step_value)
@@ -128,6 +128,6 @@ if __name__ == "__main__":
     # ordered_bus_stops = order_bus_stop_by_name()
 
     generate_simulation_with_change_speed_bus(
-        time_step=1000, time_each_step_log=60, change_speed=80)
+        change_speed=30, time_step=7000, time_each_step_log=60)
 
     traci.close()
