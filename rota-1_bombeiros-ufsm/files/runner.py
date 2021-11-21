@@ -16,11 +16,7 @@ from sumolib import checkBinary  # noqa
 
 import traci
 
-# TODO receber valores por linha de comando como argumentos
-change_speed = 80
-time_step = 1020
-time_each_step_log = 60
-no_gui = False
+no_gui = True
 
 
 def get_options():
@@ -31,25 +27,25 @@ def get_options():
     return options
 
 
-def order_bus_stop_by_name():
+def sort_bus_stop_by_name():
+    bus_stops_ids = get_bus_stops_id_list()
     row = len(bus_stops_ids)
     col = 2
-    order_bus_stops_by_name = [[0 for j in range(col)] for i in range(row)]
+    bus_stop_by_name = [[0 for j in range(col)] for i in range(row)]
 
     i = 0
     for bus in bus_stops_ids:
-        order_bus_stops_by_name[i][0] = bus
-        order_bus_stops_by_name[i][1] = traci.busstop.getName(bus).split("p")[
-            1]
+        bus_stop_by_name[i][0] = bus
+        bus_stop_by_name[i][1] = traci.busstop.getName(bus).split("p")[1]
         i += 1
 
     # ordenar as paradas pelo nome
-    order_bus_stops_by_name.sort(key=lambda x: (int(x[1]), int(x[0])))
+    bus_stop_by_name.sort(key=lambda x: (int(x[1]), int(x[0])))
 
-    return order_bus_stops_by_name
+    return bus_stop_by_name
 
 
-def get_count_persons_in_bus(bus_speed):
+def get_count_persons_in_bus(bus_speed: int):
     txt = ""
     for bus in get_all_bus_ids():
         if traci.vehicle.getTypeID(bus) == "bus":
@@ -78,9 +74,11 @@ def get_all_bus_ids():
 #         aux += 1
 
 #     print(txt)
+def get_bus_stops_id_list():
+    traci.busstop.getIDList()
 
 
-def generate_header_file_csv():
+def generate_report_header():
     head_bus_ids = ""
     aux = 0
     amount_bus = len(get_all_bus_ids())
@@ -93,7 +91,9 @@ def generate_header_file_csv():
     return head_bus_ids
 
 
-def generate_simulation_with_change_speed_bus():
+def generate_simulation_with_change_speed_bus(change_speed: int = 80,
+                                              time_step: int = 1020,
+                                              time_each_step_log: int = 60):
     new_file = open("./dist/bus_persons_change_speed_" + str(change_speed) +
                     "_km_in_" + str(time_step) + "_steps.csv", "w")
     step = 0
@@ -106,7 +106,7 @@ def generate_simulation_with_change_speed_bus():
 
         step += 1
 
-    head_bus_ids = generate_header_file_csv()
+    head_bus_ids = generate_report_header()
 
     new_file.write("step," + head_bus_ids + "\n")
     new_file.close()
@@ -125,10 +125,9 @@ if __name__ == "__main__":
 
     traci.start(sumo_cmd)
 
-    bus_stops_ids = traci.busstop.getIDList()
+    # ordered_bus_stops = order_bus_stop_by_name()
 
-    ordered_bus_stops = order_bus_stop_by_name()
-
-    generate_simulation_with_change_speed_bus()
+    generate_simulation_with_change_speed_bus(
+        time_step=1000, time_each_step_log=60, change_speed=80)
 
     traci.close()
