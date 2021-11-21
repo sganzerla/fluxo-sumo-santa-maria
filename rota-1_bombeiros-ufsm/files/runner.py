@@ -44,7 +44,6 @@ def sort_bus_stop_by_name():
 
     return bus_stop_by_name
 
-
 def get_count_persons_in_bus(bus_speed: int):
     txt = ""
     for bus in get_all_bus_ids():
@@ -74,9 +73,9 @@ def get_all_bus_ids():
 #         aux += 1
 
 #     print(txt)
+
 def get_bus_stops_id_list():
     traci.busstop.getIDList()
-
 
 def generate_report_header():
     head_bus_ids = ""
@@ -90,19 +89,16 @@ def generate_report_header():
 
     return head_bus_ids
 
-
-def generate_simulation_with_change_speed_bus(change_speed: int = 80,
-                                              time_step: int = 1020,
-                                              time_each_step_log: int = 60):
-    new_file = open("./dist/bus_persons_change_speed_" + str(change_speed) +
-                    "_km_in_" + str(time_step) + "_steps.csv", "w")
+def generate_simulation_with_change_speed_bus(new_speed: int, total_time_in_seconds: int, time_interval_between_logs: int):
+    new_file = open("./dist/bus_persons_change_speed_" + str(new_speed) +
+                    "_km_in_" + str(total_time_in_seconds) + "_steps.csv", "w")
     step = 0
-    while step <= time_step:
+    while step <= total_time_in_seconds:
         traci.simulationStep()
 
-        if step % time_each_step_log == 0:
+        if step % time_interval_between_logs == 0:
             new_file.write(
-                str(step) + get_count_persons_in_bus(change_speed) + "\n")
+                str(step) + get_count_persons_in_bus(new_speed) + "\n")
 
         step += 1
 
@@ -128,6 +124,8 @@ if __name__ == "__main__":
     # ordered_bus_stops = order_bus_stop_by_name()
 
     generate_simulation_with_change_speed_bus(
-        change_speed=30, time_step=7000, time_each_step_log=60)
-
+        new_speed=20,
+        total_time_in_seconds=1000,
+        time_interval_between_logs=60
+    )
     traci.close()
