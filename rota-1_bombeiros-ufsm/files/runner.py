@@ -124,8 +124,8 @@ if __name__ == "__main__":
     # ordered_bus_stops = order_bus_stop_by_name()
 
     generate_simulation_with_change_speed_bus(
-        new_speed=20,
-        total_time_in_seconds=1000,
+        new_speed=50,
+        total_time_in_seconds=3600,
         time_interval_between_logs=60
     )
     traci.close()
