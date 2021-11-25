@@ -105,9 +105,9 @@ if __name__ == "__main__":
     #     total_time_in_seconds=3600,
     #     time_interval_between_logs=60
     # )
-    from runner import My_Simulation
+    from runner import MySimulation
 
-    s: My_Simulation = My_Simulation(traci)
+    s: MySimulation = MySimulation(traci)
 
     step = 0
     while step < 500:
@@ -120,26 +120,19 @@ if __name__ == "__main__":
     traci.close()
 
 
-class My_Simulation:
-    def __init__(self, traci):
-        self.traci = traci
-
-    all_bus_stop_simulation = []
-    all_bus_simulation = []
-    all_bus_simulation_running = []
+class MySimulation:
+    def __init__(self, traci_instance):
+        self.traci = traci_instance
 
     def get_all_bus_stops(self):  # retorna todas as paradas de onibus
-        self.all_bus_stop_simulation = self._sort_bus_stops_by_name(
-            self.traci.busstop.getIDList())
-        return self.all_bus_stop_simulation
+        all_bus_stop = self.traci.busstop.getIDList()
+        return self._sort_bus_stop_by_name(all_bus_stop)
 
     def get_all_bus(self):
-        self.all_bus_stop_simulation = sorted(
-            self.traci.vehicle.getIDList(), key=lambda x: int(x.split(".")[1]))
-        return self.all_bus_stop_simulation
+        all_bus = self.traci.vehicle.getIDList()
+        return self._sort_bus_by_name(all_bus)
 
-    # metodos privados
-    def _sort_bus_stops_by_name(self, bus_stops_ids):
+    def _sort_bus_stop_by_name(self, bus_stops_ids):
         row = len(bus_stops_ids)
         col = 2
         array_2d = [[0 for j in range(col)] for i in range(row)]
@@ -150,7 +143,21 @@ class My_Simulation:
             array_2d[i][1] = self.traci.busstop.getName(bus).split("p")[1]
             i += 1
 
-        # ordenar as paradas pelo nome
         array_2d.sort(key=lambda x: (int(x[1]), int(x[0])))
+
+        return array_2d
+
+    def _sort_bus_by_name(self, bus_ids):
+        row = len(bus_ids)
+        col = 2
+        array_2d = [[0 for j in range(col)] for i in range(row)]
+
+        i = 0
+        for bus in bus_ids:
+            array_2d[i][0] = bus
+            array_2d[i][1] = bus.split(".")[1]
+            i += 1
+
+        array_2d.sort(key=lambda x: (int(x[1]), (x[0])))
 
         return array_2d
