@@ -27,23 +27,6 @@ def get_options():
     return options
 
 
-def sort_bus_stop_by_name():
-    bus_stops_ids = get_bus_stops_id_list()
-    row = len(bus_stops_ids)
-    col = 2
-    bus_stop_by_name = [[0 for j in range(col)] for i in range(row)]
-
-    i = 0
-    for bus in bus_stops_ids:
-        bus_stop_by_name[i][0] = bus
-        bus_stop_by_name[i][1] = traci.busstop.getName(bus).split("p")[1]
-        i += 1
-
-    # ordenar as paradas pelo nome
-    bus_stop_by_name.sort(key=lambda x: (int(x[1]), int(x[0])))
-
-    return bus_stop_by_name
-
 def get_count_persons_in_bus(bus_speed: int):
     txt = ""
     for bus in get_all_bus_ids():
@@ -54,11 +37,6 @@ def get_count_persons_in_bus(bus_speed: int):
         txt += ", " + bus + ":" + str(traci.vehicle.getPersonNumber(bus))
     return txt
 
-
-def get_all_bus_ids():
-    # ordena o id dos onibus pelo nome retirando apenas o numero
-    all_bus = traci.vehicle.getIDList()
-    return sorted(all_bus, key=lambda x: int(x.split(".")[1]))
 
 # def print_persons_in_bus_stop(step_value):
 #     txt = "busStops " + str(step_value)
@@ -74,8 +52,6 @@ def get_all_bus_ids():
 
 #     print(txt)
 
-def get_bus_stops_id_list():
-    traci.busstop.getIDList()
 
 def generate_report_header():
     head_bus_ids = ""
@@ -88,6 +64,7 @@ def generate_report_header():
     head_bus_ids += "bus_" + str(amount_bus)
 
     return head_bus_ids
+
 
 def generate_simulation_with_change_speed_bus(new_speed: int, total_time_in_seconds: int, time_interval_between_logs: int):
     new_file = open("./dist/bus_persons_change_speed_" + str(new_speed) +
@@ -123,9 +100,57 @@ if __name__ == "__main__":
 
     # ordered_bus_stops = order_bus_stop_by_name()
 
-    generate_simulation_with_change_speed_bus(
-        new_speed=50,
-        total_time_in_seconds=3600,
-        time_interval_between_logs=60
-    )
+    # generate_simulation_with_change_speed_bus(
+    #     new_speed=50,
+    #     total_time_in_seconds=3600,
+    #     time_interval_between_logs=60
+    # )
+    from runner import My_Simulation
+
+    s: My_Simulation = My_Simulation(traci)
+
+    step = 0
+    while step < 500:
+        traci.simulationStep()
+        step += 1
+
+    print(s.get_all_bus())
+    print(s.get_all_bus_stops())
+
     traci.close()
+
+
+class My_Simulation:
+    def __init__(self, traci):
+        self.traci = traci
+
+    all_bus_stop_simulation = []
+    all_bus_simulation = []
+    all_bus_simulation_running = []
+
+    def get_all_bus_stops(self):  # retorna todas as paradas de onibus
+        self.all_bus_stop_simulation = self._sort_bus_stops_by_name(
+            self.traci.busstop.getIDList())
+        return self.all_bus_stop_simulation
+
+    def get_all_bus(self):
+        self.all_bus_stop_simulation = sorted(
+            self.traci.vehicle.getIDList(), key=lambda x: int(x.split(".")[1]))
+        return self.all_bus_stop_simulation
+
+    # metodos privados
+    def _sort_bus_stops_by_name(self, bus_stops_ids):
+        row = len(bus_stops_ids)
+        col = 2
+        array_2d = [[0 for j in range(col)] for i in range(row)]
+
+        i = 0
+        for bus in bus_stops_ids:
+            array_2d[i][0] = bus
+            array_2d[i][1] = self.traci.busstop.getName(bus).split("p")[1]
+            i += 1
+
+        # ordenar as paradas pelo nome
+        array_2d.sort(key=lambda x: (int(x[1]), int(x[0])))
+
+        return array_2d
