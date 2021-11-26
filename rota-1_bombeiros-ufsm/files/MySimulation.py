@@ -27,6 +27,17 @@ class MySimulation:
 
         return array_2d
 
+    def get_average_all_people_on_each_bus(self, total_step: int, step_interval: int):
+
+        step = 0
+        self.people_on_each_bus_all_simulation = []
+        while step <= total_step:
+            self.traci.simulationStep()
+            if (step % step_interval == 0):
+                self.get_all_people_on_bus()
+            step += 1
+        for i in self.people_on_each_bus_all_simulation:
+            print(i)
 
     def change_max_speed_bus(self, speed: float, bus_id: list[str]):
         buses = self.get_all_bus()
