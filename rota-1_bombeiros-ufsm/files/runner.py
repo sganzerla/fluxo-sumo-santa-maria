@@ -50,7 +50,6 @@ if __name__ == "__main__":
             print(str(step) + '-' + str(simulation.get_all_people_on_bus()))
         step += 1
 
-    report.gen
     # print(simulation.all_bus_stops)
 
     traci.close()
