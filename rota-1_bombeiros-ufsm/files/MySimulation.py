@@ -15,6 +15,18 @@ class MySimulation:
         all_vehicles = self.traci.vehicle.getIDList()
         return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
 
+    def get_all_people_on_bus(self):
+        buses = self.get_all_bus()
+        row = len(buses)
+        col = 2
+        array_2d = [[0 for j in range(col)] for i in range(row)]
+        i = 0
+        for bus in self.get_all_bus():
+            array_2d[i][0] = bus[0]
+            array_2d[i][1] = self.traci.vehicle.getPersonNumber(
+                bus[0])
+            i += 1
+        return array_2d
 
     # metodos privados
 

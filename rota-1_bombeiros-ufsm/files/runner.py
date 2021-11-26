@@ -113,7 +113,7 @@ if __name__ == "__main__":
     while step < 500:
         traci.simulationStep()
         if(step % 100 == 0):
-            print(simulation.get_all_bus())
+            print(simulation.get_all_people_on_bus())
         step += 1
 
     # print(simulation.all_bus_stops)
