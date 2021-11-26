@@ -107,17 +107,15 @@ if __name__ == "__main__":
     #     time_interval_between_logs=60
     # )
 
-    s: MySimulation = MySimulation(traci)
-
+    simulation = MySimulation(traci)
 
     step = 0
     while step < 500:
         traci.simulationStep()
+        if(step % 100 == 0):
+            print(simulation.get_all_bus())
         step += 1
 
-    print(s.all_bus_stops)
-    print(s.get_all_bus())
+    # print(simulation.all_bus_stops)
 
     traci.close()
-
-

@@ -6,7 +6,7 @@ class MySimulation:
         self.all_buses_simulation = []
         self.all_buses_circulation = []
 
-    def get_all_bus_stops(self):  # retorna todas as paradas de onibus
+    def get_all_bus_stops(self):
         all_bus_stop = self.traci.busstop.getIDList()
         return self._sort_bus_stop_by_name(all_bus_stop)
 
