@@ -2,12 +2,13 @@ class MySimulation:
 
     def __init__(self, traci_instance):
         self.traci = traci_instance
+        self.people_on_each_bus_all_simulation = []
 
     def get_all_bus_stops(self):
         all_bus_stop = self.traci.busstop.getIDList()
         return self._sort_bus_stop_by_name(all_bus_stop)
 
-    def hget_all_bus(self):
+    def get_all_bus(self):
         all_vehicles = self.traci.vehicle.getIDList()
         return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
 
@@ -21,8 +22,11 @@ class MySimulation:
             array_2d[i][0] = bus[0]
             array_2d[i][1] = self.traci.vehicle.getPersonNumber(
                 bus[0])
+            self.people_on_each_bus_all_simulation.append(array_2d)
             i += 1
+
         return array_2d
+
 
     def change_max_speed_bus(self, speed: float, bus_id: list[str]):
         buses = self.get_all_bus()
