@@ -7,7 +7,7 @@ class MySimulation:
         all_bus_stop = self.traci.busstop.getIDList()
         return self._sort_bus_stop_by_name(all_bus_stop)
 
-    def get_all_bus(self):
+    def hget_all_bus(self):
         all_vehicles = self.traci.vehicle.getIDList()
         return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
 
