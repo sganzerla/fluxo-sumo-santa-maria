@@ -110,10 +110,13 @@ if __name__ == "__main__":
     simulation = MySimulation(traci)
 
     step = 0
-    while step < 500:
+    while step < 2000:
         traci.simulationStep()
         if(step % 100 == 0):
-            print(simulation.get_all_people_on_bus())
+            # simulation.change_bus_speed(
+            #     10.0, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
+            print(str(step) + '-' + str(simulation.get_all_bus()))
+            print(str(step) + '-' + str(simulation.get_all_people_on_bus()))
         step += 1
 
     # print(simulation.all_bus_stops)

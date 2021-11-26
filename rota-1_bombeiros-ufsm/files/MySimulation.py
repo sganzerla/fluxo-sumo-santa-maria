@@ -2,10 +2,6 @@ class MySimulation:
 
     def __init__(self, traci_instance):
         self.traci = traci_instance
-        self.all_bus_stops = self.get_all_bus_stops()
-        self.all_buses_simulation = []
-        self.all_buses_circulation = []
-        self.all_people_on_bus = []
 
     def get_all_bus_stops(self):
         all_bus_stop = self.traci.busstop.getIDList()
@@ -27,6 +23,12 @@ class MySimulation:
                 bus[0])
             i += 1
         return array_2d
+
+    def change_max_speed_bus(self, speed: float, bus_id: list[str]):
+        buses = self.get_all_bus()
+        for bus in buses:
+            if bus[0] in bus_id:
+                self.traci.vehicle.setMaxSpeed(bus[0], speed)
 
     # metodos privados
 
@@ -63,6 +65,6 @@ class MySimulation:
     def _filter_once_buses(self, vehicle_ids):
         filtered = []
         for v in vehicle_ids:
-            if (self.traci.vehicle.getTypeID(v) == "bus"):
+            if self.traci.vehicle.getTypeID(v) == "bus":
                 filtered.append(v)
         return filtered
