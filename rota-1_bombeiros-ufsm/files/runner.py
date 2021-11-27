@@ -16,7 +16,7 @@ from sumolib import checkBinary  # noqa
 
 import traci
 from MySimulation import MySimulation
-no_gui = True
+no_gui = False
 
 
 def get_options():
@@ -41,17 +41,18 @@ if __name__ == "__main__":
     traci.start(sumo_cmd)
 
     simulation = MySimulation(traci)
-    # step = 0
-    # while step <= 3600:
-    #     traci.simulationStep()
-    #     if(step % 60 == 0):
-    #         # simulation.change_max_speed_bus(
-    #         #     10.0, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
-    #         # print(str(step) + '-' + str(simulation.get_all_bus()))
 
-    #     step += 1
+    step = 0
+    while step <= 3600:
+        traci.simulationStep()
+        if(step % 60 == 0):
+            simulation.change_max_speed_bus(
+                10.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
+            print(str(step) + '-' + str(simulation.get_all_bus()))
 
-    print(simulation.get_average_all_people_on_each_bus(3600, 120))
+        step += 1
+
+    # print(simulation.get_average_all_people_on_each_bus(3600, 600))
     # print(simulation.all_bus_stops)
 
     traci.close()

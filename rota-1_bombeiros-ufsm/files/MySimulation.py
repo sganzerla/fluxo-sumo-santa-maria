@@ -36,14 +36,18 @@ class MySimulation:
             if (step % step_interval == 0):
                 self.get_all_people_on_bus()
             step += 1
+
+        # agrupar todos os itens somando e dividindo por quantidade de itens
         for i in self.people_on_each_bus_all_simulation:
             print(i)
 
-    def change_max_speed_bus(self, speed: float, bus_id: list[str]):
+    def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list[str]):
         buses = self.get_all_bus()
         for bus in buses:
             if bus[0] in bus_id:
                 self.traci.vehicle.setMaxSpeed(bus[0], speed)
+                self.traci.vehicle.setColor(bus[0], (255, 0, 242))
+                self.traci.vehicle.setAccel(bus[0], accel)
 
     # metodos privados
 
