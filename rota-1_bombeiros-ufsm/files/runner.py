@@ -42,8 +42,8 @@ if __name__ == "__main__":
 
     traci.start(sumo_cmd)
 
-    simulation = MySimulation(traci)
-    report = MyReport("report.csv")
+    simulation: MySimulation = MySimulation(traci)
+    report: MyReport = MyReport("report.csv")
     # step = 0
     # while step <= 3600:
     #     traci.simulationStep()
@@ -53,11 +53,13 @@ if __name__ == "__main__":
     #         print(str(step) + '-' + str(simulation.get_all_bus()))
 
     #     step += 1
-    list_of_people_by_bus = simulation.get_all_people_on_simulation_buses(
-        1000, 250)
+    list_of_people_by_bus: list = simulation.get_all_people_on_simulation_buses(
+        total_step=1000,
+        step_interval=250
+    )
     header = "bus_id, people_on_bus, step_log"
     report.write_file(list_of_people_by_bus, header)
-    # print(report.print_initial_register_csv(10).to_string)
+    print(report.get_head_register_csv(100).to_string)
     # print(report.print_last_register_csv().to_string)
-    print(report.print_average_people_on_bus_by_interval_step())
+    # print(report.get_value_counts("bus_id"))
     traci.close()
