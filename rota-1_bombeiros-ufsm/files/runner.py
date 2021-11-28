@@ -59,7 +59,9 @@ if __name__ == "__main__":
     )
     header = "bus_id, people_on_bus, step_log"
     report.write_file(list_of_people_by_bus, header)
-    print(report.get_head_register_csv(100).to_string)
-    # print(report.print_last_register_csv().to_string)
-    # print(report.get_value_counts("bus_id"))
+    print(report.get_head_register_csv(50))
+    print(report.get_tail_register_csv(50))
+    print(report.get_value_counts("bus_id"))
+    print(report.get_shape())
+    print(report.get_info())
     traci.close()

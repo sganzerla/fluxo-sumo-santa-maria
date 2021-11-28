@@ -1,8 +1,6 @@
 from io import TextIOWrapper
 # pip install pandas
 import pandas as pd
-
-
 class MyReport:
 
     def __init__(self, file: str):
@@ -16,20 +14,26 @@ class MyReport:
                 "[").removesuffix("]") + "\n")
         new_file.close()
 
-    def get_head_register_csv(self, number: int = None):
-        if(number is None):
-            return self._read_file().head()
-        else:
-            return self._read_file().head(n=number)
+    def get_head_register_csv(self, number: int = 5):
+        return self._read_file().head(n=number).to_string()
 
-    def get_tail_register_csv(self, number: int = None):
-        if(number is None):
-            return self._read_file().tail()
-        else:
-            return self._read_file().tail(n=number)
+    def get_tail_register_csv(self, number: int = 5):
+        return self._read_file().tail(n=number).to_string()
 
     def get_value_counts(self, column_name: str):
         return self._read_file()[column_name].value_counts()
+
+    def get_shape(self):
+        return self._read_file().shape
+
+    def get_info(self):
+        return self._read_file().info()
+
+    def get_describe(self):
+        return self._read_file().describe(include=['object'])
+
+    def get_mean(self, axis: int = 0):
+        return self._read_file().median(axis=axis)
 
     def _read_file(self):
         return pd.read_csv(self.file)
