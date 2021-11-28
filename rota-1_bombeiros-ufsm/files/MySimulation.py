@@ -17,12 +17,11 @@ class MySimulation:
         self.people_on_each_bus_all_simulation = []
         while step <= total_step:
             self.traci.simulationStep()
-            if (step % step_interval == 0):
+            if step % step_interval == 0:
                 self._get_all_people_on_bus_by_interval_step(step)
             step += 1
 
         list_of_people_by_bus = []
-        # agrupar todos os itens somando e dividindo por quantidade de itens
         for all_people_each_interval in self.people_on_each_bus_all_simulation:
             for people_each_bus in all_people_each_interval:
                 list_of_people_by_bus.append(people_each_bus)

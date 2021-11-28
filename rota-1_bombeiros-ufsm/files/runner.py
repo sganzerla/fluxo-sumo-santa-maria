@@ -57,6 +57,7 @@ if __name__ == "__main__":
         1000, 250)
     header = "bus_id, people_on_bus, step_log"
     report.write_file(list_of_people_by_bus, header)
-    # print(simulation.all_bus_stops)
-
+    # print(report.print_initial_register_csv(10).to_string)
+    # print(report.print_last_register_csv().to_string)
+    print(report.print_average_people_on_bus_by_interval_step())
     traci.close()
