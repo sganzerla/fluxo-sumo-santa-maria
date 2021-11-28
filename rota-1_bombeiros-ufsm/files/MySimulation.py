@@ -12,34 +12,22 @@ class MySimulation:
         all_vehicles = self.traci.vehicle.getIDList()
         return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
 
-    def get_all_people_on_bus(self):
-        buses = self.get_all_bus()
-        row = len(buses)
-        col = 2
-        array_2d = [[0 for j in range(col)] for i in range(row)]
-        i = 0
-        for bus in self.get_all_bus():
-            array_2d[i][0] = bus[0]
-            array_2d[i][1] = self.traci.vehicle.getPersonNumber(
-                bus[0])
-            self.people_on_each_bus_all_simulation.append(array_2d)
-            i += 1
-
-        return array_2d
-
-    def get_average_all_people_on_each_bus(self, total_step: int, step_interval: int):
-
+    def get_all_people_on_simulation_buses(self, total_step: int, step_interval: int):
         step = 0
         self.people_on_each_bus_all_simulation = []
         while step <= total_step:
             self.traci.simulationStep()
             if (step % step_interval == 0):
-                self.get_all_people_on_bus()
+                self._get_all_people_on_bus_by_interval_step(step)
             step += 1
 
+        list_of_people_by_bus = []
         # agrupar todos os itens somando e dividindo por quantidade de itens
-        for i in self.people_on_each_bus_all_simulation:
-            print(i)
+        for all_people_each_interval in self.people_on_each_bus_all_simulation:
+            for people_each_bus in all_people_each_interval:
+                list_of_people_by_bus.append(people_each_bus)
+
+        return list_of_people_by_bus
 
     def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list[str]):
         buses = self.get_all_bus()
@@ -50,6 +38,22 @@ class MySimulation:
                 self.traci.vehicle.setAccel(bus[0], accel)
 
     # metodos privados
+
+    def _get_all_people_on_bus_by_interval_step(self, step):
+        buses = self.get_all_bus()
+        row = len(buses)
+        col = 3
+        all_people_on_bus_by_step = [[0 for j in range(col)] for i in range(row)]
+        i = 0
+        for bus in buses:
+            all_people_on_bus_by_step[i][0] = bus[0]
+            all_people_on_bus_by_step[i][1] = self.traci.vehicle.getPersonNumber(
+                bus[0])
+            all_people_on_bus_by_step[i][2] = step
+            self.people_on_each_bus_all_simulation.append(all_people_on_bus_by_step)
+            i += 1
+
+        return all_people_on_bus_by_step
 
     def _sort_bus_stop_by_name(self, bus_stops_ids):
         row = len(bus_stops_ids)
