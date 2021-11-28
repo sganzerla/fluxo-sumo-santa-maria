@@ -8,11 +8,11 @@ class MySimulation:
         self.people_on_each_bus_all_simulation: list = []
 
     def get_all_bus_stops(self):
-        all_bus_stop: list = self.traci.busstop.getIDList()
+        all_bus_stop: list[str] = self.traci.busstop.getIDList()
         return self._sort_bus_stop_by_name(all_bus_stop)
 
     def get_all_bus(self):
-        all_vehicles: list = self.traci.vehicle.getIDList()
+        all_vehicles: list[str] = self.traci.vehicle.getIDList()
         return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
 
     def get_all_people_on_simulation_buses(self, total_step: int, step_interval: int):
@@ -32,7 +32,7 @@ class MySimulation:
         return list_of_people_by_bus
 
     def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list[str]):
-        buses = self.get_all_bus()
+        buses: list[str] = self.get_all_bus()
         for bus in buses:
             if bus[0] in bus_id:
                 self.traci.vehicle.setMaxSpeed(bus[0], speed)
@@ -59,26 +59,27 @@ class MySimulation:
 
         return all_people_on_bus_by_step
 
-    def _sort_bus_stop_by_name(self, bus_stops_ids):
+    def _sort_bus_stop_by_name(self, bus_stops_ids: list[str]):
         row: int = len(bus_stops_ids)
         col: int = 2
-        array_2d: list[list[int]] = [
+        bus_stop_list_to_sort: list[str] = [
             [0 for j in range(col)] for i in range(row)]
 
         i = 0
-        for bus in bus_stops_ids:
-            array_2d[i][0] = bus
-            array_2d[i][1] = self.traci.busstop.getName(bus).split("p")[1]
+        for bus_stop in bus_stops_ids:
+            bus_stop_list_to_sort[i][0] = bus_stop
+            bus_stop_list_to_sort[i][1] = self.traci.busstop.getName(bus_stop).split("p")[
+                1]
             i += 1
 
-        array_2d.sort(key=lambda x: (int(x[1]), int(x[0])))
+        bus_stop_list_to_sort.sort(key=lambda x: (int(x[1]), int(x[0])))
 
-        return array_2d
+        return bus_stop_list_to_sort
 
     def _sort_bus_by_name(self, vehicle_ids: list[str]):
         row: int = len(vehicle_ids)
         col: int = 2
-        array_2d: list[list[int]] = [
+        array_2d: list = [
             [0 for j in range(col)] for i in range(row)]
 
         i = 0

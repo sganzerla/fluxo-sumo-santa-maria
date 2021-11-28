@@ -1,3 +1,4 @@
+from io import TextIOWrapper
 # pip install pandas
 import pandas as pd
 
@@ -8,19 +9,20 @@ class MyReport:
         self.file = file
 
     def write_file(self, list_items: list, header: str = ""):
-        new_file = open(self.file, "w")
+        new_file: TextIOWrapper = open(self.file, "w")
         new_file.write(header + "\n")
-        for i in list_items:
-            new_file.write(str(i).removeprefix("[").removesuffix("]") + "\n")
+        for item in list_items:
+            new_file.write(str(item).removeprefix(
+                "[").removesuffix("]") + "\n")
         new_file.close()
 
-    def get_head_register_csv(self, number=None):
+    def get_head_register_csv(self, number: int = None):
         if(number is None):
             return self._read_file().head()
         else:
             return self._read_file().head(n=number)
 
-    def get_tail_register_csv(self, number=None):
+    def get_tail_register_csv(self, number: int = None):
         if(number is None):
             return self._read_file().tail()
         else:
