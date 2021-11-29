@@ -57,13 +57,12 @@ if __name__ == "__main__":
         total_step=500,
         step_interval=250
     )
-    header = "bus_id, people_on_bus, step_log"
-    report.write_file(list_of_people_by_bus, header)
+    report.write_file(list_of_people_by_bus)
     # print(report.get_head_register_csv(50))
     # print(report.get_tail_register_csv(50))
     # print(report.get_value_counts("bus_id"))
     # print(report.get_shape())
     # print(report.get_info())
     # print(report.get_describe())
-    print(report.get_group_by("bus_id"))
+    print(report.get_group_mean("bus_id", "step_log"))
     traci.close()

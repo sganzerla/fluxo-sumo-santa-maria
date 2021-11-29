@@ -8,9 +8,8 @@ class MyReport:
     def __init__(self, file: str):
         self.file = file
 
-    def write_file(self, list_items: list, header: str = ""):
+    def write_file(self, list_items: list):
         new_file: TextIOWrapper = open(self.file, "w")
-        new_file.write(header + "\n")
         for item in list_items:
             new_file.write(str(item).removeprefix(
                 "[").removesuffix("]") + "\n")
@@ -34,15 +33,13 @@ class MyReport:
     def get_describe(self):
         return self._read_file().describe()
 
-    def get_group_by(self, column_name: str, print_log: bool = False):
-        list_sum = self._read_file().groupby(column_name).sum()
-        list_count = self._read_file().groupby(column_name).count()
-        list_mean = self._read_file().groupby(column_name).mean()
-        if print_log:
-            print('sum', list_sum)
-            print('count', list_count)
-            print('media', list_mean)
-        return(list_mean)
+        # TODO - tratar bus_id para ordenar pelo indice do numero do onibus e nao pela string
+    def get_group_mean(self, column_name: str, secondary_column_name: str = None):
+        if (secondary_column_name is None):
+            return self._read_file().groupby([column_name]).mean()
+        else:
+            return self._read_file().groupby([column_name, secondary_column_name]).mean()
 
     def _read_file(self):
-        return pd.read_csv(self.file)
+        # TODO - implementar o read_file receber o header dinamicamente
+        return pd.read_csv(self.file, names=['bus_id', 'people_on_bus', 'step_log'], header=None)
