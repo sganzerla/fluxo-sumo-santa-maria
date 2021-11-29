@@ -1,6 +1,8 @@
 from io import TextIOWrapper
 # pip install pandas
 import pandas as pd
+
+
 class MyReport:
 
     def __init__(self, file: str):
@@ -30,7 +32,17 @@ class MyReport:
         return self._read_file().info()
 
     def get_describe(self):
-        return self._read_file().describe(["step_log"])
+        return self._read_file().describe()
+
+    def get_group_by(self, column_name: str, print_log: bool = False):
+        list_sum = self._read_file().groupby(column_name).sum()
+        list_count = self._read_file().groupby(column_name).count()
+        list_mean = self._read_file().groupby(column_name).mean()
+        if print_log:
+            print('sum', list_sum)
+            print('count', list_count)
+            print('media', list_mean)
+        return(list_mean)
 
     def _read_file(self):
         return pd.read_csv(self.file)

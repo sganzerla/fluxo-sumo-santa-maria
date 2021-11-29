@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     #     step += 1
     list_of_people_by_bus: list = simulation.get_all_people_on_simulation_buses(
-        total_step=1000,
+        total_step=500,
         step_interval=250
     )
     header = "bus_id, people_on_bus, step_log"
@@ -64,5 +64,6 @@ if __name__ == "__main__":
     # print(report.get_value_counts("bus_id"))
     # print(report.get_shape())
     # print(report.get_info())
-    print(report.get_describe())
+    # print(report.get_describe())
+    print(report.get_group_by("bus_id"))
     traci.close()
