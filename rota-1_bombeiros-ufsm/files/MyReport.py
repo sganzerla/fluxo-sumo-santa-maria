@@ -30,10 +30,7 @@ class MyReport:
         return self._read_file().info()
 
     def get_describe(self):
-        return self._read_file().describe(include=['object'])
-
-    def get_mean(self, axis: int = 0):
-        return self._read_file().median(axis=axis)
+        return self._read_file().describe(["step_log"])
 
     def _read_file(self):
         return pd.read_csv(self.file)
