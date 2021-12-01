@@ -31,7 +31,7 @@ class MySimulation:
 
         return list_of_people_by_bus
 
-    def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list[str]):
+    def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list):
         buses: list[str] = self.get_all_bus()
         for bus in buses:
             if bus[0] in bus_id:
@@ -59,7 +59,7 @@ class MySimulation:
 
         return all_people_on_bus_by_step
 
-    def _sort_bus_stop_by_name(self, bus_stops_ids: list[str]):
+    def _sort_bus_stop_by_name(self, bus_stops_ids: list):
         row: int = len(bus_stops_ids)
         col: int = 2
         bus_stop_list_to_sort: list[str] = [
@@ -76,7 +76,7 @@ class MySimulation:
 
         return bus_stop_list_to_sort
 
-    def _sort_bus_by_name(self, vehicle_ids: list[str]):
+    def _sort_bus_by_name(self, vehicle_ids: list):
         row: int = len(vehicle_ids)
         col: int = 2
         array_2d: list = [
