@@ -3,4 +3,11 @@
 if (Test-Path 'dist') {
     Get-ChildItem 'dist' | Remove-Item -Recurse -Force
   }
-python .\runner.py
+
+if($PSVersionTable.Platform -eq "Unix")
+{
+  python ./runner.py
+
+} else{
+  python .\runner.py
+}
