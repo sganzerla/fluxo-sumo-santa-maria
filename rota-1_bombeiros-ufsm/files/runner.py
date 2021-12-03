@@ -44,25 +44,23 @@ if __name__ == "__main__":
 
     simulation: MySimulation = MySimulation(traci)
     report: MyReport = MyReport("report.csv")
-    # step = 0
-    # while step <= 3600:
-    #     traci.simulationStep()
-    #     if(step % 60 == 0):
-    #         simulation.change_max_speed_bus(
-    #             10.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
-    #         print(str(step) + '-' + str(simulation.get_all_bus()))
-
-    #     step += 1
-    list_of_people_by_bus: list = simulation.get_all_people_on_simulation_buses(
-        total_step=500,
-        step_interval=250
-    )
-    report.write_file(list_of_people_by_bus)
+    step = 0
+    while step <= 1000:
+        traci.simulationStep()
+        if(step % 60 == 0):
+            simulation.change_max_speed_bus(
+                10.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
+            simulation.get_all_people_on_simulation_buses(step)
+        step += 1
+    report.write_file(simulation.get_report_person_by_bus())
     # print(report.get_head_register_csv(50))
     # print(report.get_tail_register_csv(50))
     # print(report.get_value_counts("bus_id"))
     # print(report.get_shape())
     # print(report.get_info())
     # print(report.get_describe())
+
+    report2 = MyReport("report2.csv")
     print(report.get_group_mean("bus_id", "step_log"))
+
     traci.close()

@@ -6,6 +6,10 @@ class MySimulation:
     def __init__(self, traci_instance: modules):
         self.traci: modules = traci_instance
         self.people_on_each_bus_all_simulation: list = []
+        self.people_by_buses: list = []
+
+    def get_report_person_by_bus(self):
+        return self.people_by_buses
 
     def get_all_bus_stops(self):
         all_bus_stop: list[str] = self.traci.busstop.getIDList()
@@ -15,21 +19,12 @@ class MySimulation:
         all_vehicles: list[str] = self.traci.vehicle.getIDList()
         return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
 
-    def get_all_people_on_simulation_buses(self, total_step: int, step_interval: int):
-        step: int = 0
-        self.people_on_each_bus_all_simulation: list = []
-        while step <= total_step:
-            self.traci.simulationStep()
-            if step % step_interval == 0:
-                self._get_all_people_on_bus_by_interval_step(step)
-            step += 1
-
-        list_of_people_by_bus: list = []
+    def get_all_people_on_simulation_buses(self, step: int):
+        self._get_all_people_on_bus_by_interval_step(step)
+           
         for all_people_each_interval in self.people_on_each_bus_all_simulation:
             for people_each_bus in all_people_each_interval:
-                list_of_people_by_bus.append(people_each_bus)
-
-        return list_of_people_by_bus
+                self.people_by_buses.append(people_each_bus)
 
     def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list):
         buses: list[str] = self.get_all_bus()
@@ -40,7 +35,7 @@ class MySimulation:
                 self.traci.vehicle.setAccel(bus[0], accel)
 
     # metodos privados
-
+    # pega todas as pessoas que estão nos veículos rodando na simulação naquele instante
     def _get_all_people_on_bus_by_interval_step(self, step):
         buses = self.get_all_bus()
         row = len(buses)
@@ -50,11 +45,10 @@ class MySimulation:
         i = 0
         for bus in buses:
             all_people_on_bus_by_step[i][0] = bus[0]
-            all_people_on_bus_by_step[i][1] = self.traci.vehicle.getPersonNumber(
-                bus[0])
+            all_people_on_bus_by_step[i][1] = self.traci.vehicle.getPersonNumber(bus[0])
             all_people_on_bus_by_step[i][2] = step
-            self.people_on_each_bus_all_simulation.append(
-                all_people_on_bus_by_step)
+            # adiciona lista daquele instante na lista de todas as pessoas que estão nos veículos rodando na simulação
+            self.people_on_each_bus_all_simulation.append( all_people_on_bus_by_step)
             i += 1
 
         return all_people_on_bus_by_step
