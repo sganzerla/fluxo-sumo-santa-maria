@@ -11,8 +11,7 @@ class MyReport:
     def write_file(self, list_items: list):
         new_file: TextIOWrapper = open(self.file, "w")
         for item in list_items:
-            new_file.write(str(item).removeprefix(
-                "[").removesuffix("]") + "\n")
+            new_file.write(str(item) + "\n")
         new_file.close()
 
     def get_head_register_csv(self, number: int = 5):
