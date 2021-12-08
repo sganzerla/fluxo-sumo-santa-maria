@@ -11,7 +11,8 @@ class MyReport:
     def write_file(self, list_items: list):
         new_file: TextIOWrapper = open(self.file, "w")
         for item in list_items:
-            new_file.write(str(item) + "\n")
+            # TODO evitar ter que fazer esse tipo de tratamento, linha já poderia vir sem
+            new_file.write(str(item).replace("(", "").replace(")", "") + "\n")
         new_file.close()
 
     def get_head_register_csv(self, number: int = 5):
