@@ -29,6 +29,21 @@ def get_options():
     return options
 
 
+def concatenate_zeros_when_less_than_100(itemCol):
+    text = itemCol.split('.')[0]
+    number = itemCol.split('.')[1]
+    if(number.__len__() == 1):
+        return text + ".00" + str(number)
+    else:
+        if(number.__len__() == 2):
+            return text + ".0" + str(number)
+    return itemCol
+
+
+def reorder_strings_as_integers(col):
+    return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
+
+
 if __name__ == "__main__":
 
     options = get_options()
@@ -45,7 +60,7 @@ if __name__ == "__main__":
     simulation: MySimulation = MySimulation(traci)
     report: MyReport = MyReport("report.csv")
     step = 0
-    while step <= 8000:
+    while step <= 7500:
         traci.simulationStep()
         if(step > 2000):
             if(step % 360 == 0):
@@ -53,18 +68,20 @@ if __name__ == "__main__":
                     20.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
                 simulation.get_all_people_on_simulation_buses(step)
         step += 1
-    
-    report.write_file(simulation.get_report_person_by_bus())
 
-    report2 = MyReport("report2.csv")
+    dataset = simulation.get_report_person_by_bus()
+
+    dataset_rearranged = map(reorder_strings_as_integers, dataset)
+
+    report.write_file(dataset_rearranged)
     response = report.get_group_mean("bus_id", "step_log")
+    print("Media de pessoas por ônibus e intervalo de tempo: \n")
     print(response)
-    report2.write_file(response)
-    
     print("-------------------")
     response = report.get_group_mean("bus_id")
+    print("Media de pessoas por ônibus: \n")
     print(response)
-    
+
     # print(report.get_head_register_csv(50))
     # print(report.get_tail_register_csv(50))
     # print(report.get_value_counts("bus_id"))
