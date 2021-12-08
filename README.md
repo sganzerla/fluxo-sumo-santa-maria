@@ -4,6 +4,17 @@
 
 ![image](resources/rotaA.png)
 
-## Rota 2
+## TO DO
 
-## Rota 3
+### Simulação
+
+    * [ ] Extrair resultado do pandas para um arquivo CSV
+    * [ ] Gerar gráficos da simulação de acordo com o resultado do pandas:
+      * [ ]  com atraso nos ônibus
+      * [ ]  sem atrasos nos ônibus
+
+### Refatoração do código
+
+    * [ ] Refatorar o código para melhorar a legibilidade
+    * [ ] Refatorar o código para receber parâmetros de entrada com params
+    * [ ] Formatar a chave dos ônibus para ser um valor sequêncial numérico ou acrescentar duas casas 00 na frente
