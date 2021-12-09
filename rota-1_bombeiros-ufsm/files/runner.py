@@ -43,6 +43,14 @@ def concatenate_zeros_when_less_than_100(itemCol):
 def reorder_strings_as_integers(col):
     return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
 
+def format_in_3dimensional_array(matrix_multi_dimension):
+
+    matriz3d = []
+    for x in matrix_multi_dimension:
+        for y in x:
+            matriz3d.append(y)
+    
+    return matriz3d
 
 if __name__ == "__main__":
 
@@ -69,11 +77,11 @@ if __name__ == "__main__":
             simulation.get_all_people_on_simulation_buses(step)
         step += 1
 
-   # dataset = simulation.get_report_person_by_bus()
+    dataset = format_in_3dimensional_array(simulation.get_report_person_by_bus())
 
-    # dataset_rearranged = map(reorder_strings_as_integers, dataset)
+    dataset_rearranged = map(reorder_strings_as_integers, dataset)
 
-    report.write_file(simulation.get_report_person_by_bus())
+    report.write_file(dataset_rearranged)
     response = report.get_group_mean("bus_id", "step_log")
     print("Media de pessoas por ônibus e intervalo de tempo: \n")
     print(response)
