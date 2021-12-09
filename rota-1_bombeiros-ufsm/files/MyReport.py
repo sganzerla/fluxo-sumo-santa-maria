@@ -35,9 +35,9 @@ class MyReport:
 
     def get_group_mean(self, column_name: str, secondary_column_name: str = None):
         if (secondary_column_name is None):
-            return self._read_file().groupby([column_name])[['people_on_bus']].mean()
+            return self._read_file().groupby([column_name])[['people_on_bus']].agg(['mean', 'sum', 'count'])
         else:
-            return self._read_file().groupby([column_name, secondary_column_name])[['people_on_bus']].mean()
+            return self._read_file().groupby([column_name, secondary_column_name])[['people_on_bus']].agg(['mean', 'sum', 'count'])
 
     def _read_file(self):
         # TODO - implementar o read_file receber o header dinamicamente
