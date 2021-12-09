@@ -6,10 +6,9 @@ class MySimulation:
     def __init__(self, traci_instance: modules):
         self.traci: modules = traci_instance
         self.people_on_each_bus_all_simulation: list = []
-        self.people_by_buses: list = []
 
     def get_report_person_by_bus(self):
-        return self.people_by_buses
+        return self.people_on_each_bus_all_simulation
 
     def get_all_bus_stops(self):
         all_bus_stop: list[str] = self.traci.busstop.getIDList()
@@ -17,14 +16,10 @@ class MySimulation:
 
     def get_all_bus(self):
         all_vehicles: list[str] = self.traci.vehicle.getIDList()
-        return self._sort_bus_by_name(self._filter_once_buses(all_vehicles))
+        return self._sort_bus_by_name(self._filter_only_buses(all_vehicles))
 
     def get_all_people_on_simulation_buses(self, step: int):
         self._get_all_people_on_bus_by_interval_step(step)
-           
-        for all_people_each_interval in self.people_on_each_bus_all_simulation:
-            for people_each_bus in all_people_each_interval:
-                self.people_by_buses.append(people_each_bus)
 
     def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list):
         buses: list[str] = self.get_all_bus()
@@ -40,17 +35,16 @@ class MySimulation:
         buses = self.get_all_bus()
         row = len(buses)
         col = 3
-        all_people_on_bus_by_step = [
-            [0 for j in range(col)] for i in range(row)]
+        all_people_on_bus_by_step = [[0 for j in range(col)] for i in range(row)]
         i = 0
         for bus in buses:
             all_people_on_bus_by_step[i][0] = bus[0]
             all_people_on_bus_by_step[i][1] = self.traci.vehicle.getPersonNumber(bus[0])
             all_people_on_bus_by_step[i][2] = step
             # adiciona lista daquele instante na lista de todas as pessoas que estão nos veículos rodando na simulação
-            self.people_on_each_bus_all_simulation.append( all_people_on_bus_by_step)
             i += 1
 
+        self.people_on_each_bus_all_simulation.append( all_people_on_bus_by_step)
         return all_people_on_bus_by_step
 
     def _sort_bus_stop_by_name(self, bus_stops_ids: list):
@@ -86,7 +80,7 @@ class MySimulation:
 
         return array_2d
 
-    def _filter_once_buses(self, vehicle_ids):
+    def _filter_only_buses(self, vehicle_ids):
         filtered: list = []
         for vehicle in vehicle_ids:
             if self.traci.vehicle.getTypeID(vehicle) == "bus":
