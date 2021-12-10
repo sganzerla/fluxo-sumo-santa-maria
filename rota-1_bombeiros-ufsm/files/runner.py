@@ -17,6 +17,7 @@ from sumolib import checkBinary  # noqa
 import traci
 from MySimulation import MySimulation
 from MyReport import MyReport
+import pandas as pd
 
 no_gui = True
 
@@ -43,15 +44,20 @@ def concatenate_zeros_when_less_than_100(itemCol):
 def reorder_strings_as_integers(col):
     return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
 
-def format_in_3dimensional_array(matrix_multi_dimension):
+def convert_in_matrix_3d(matrix_multi):
 
-    matriz3d = []
-    for x in matrix_multi_dimension:
+    matrix = []
+    for x in matrix_multi:
         for y in x:
-            matriz3d.append(y)
-    
-    return matriz3d
+            matrix.append(y)
 
+    return matrix
+
+
+def create_file(dataset, name_file):
+    df = pd.DataFrame(dataset)
+    df.to_csv(name_file + '.csv', index=True, header=True)
+ 
 if __name__ == "__main__":
 
     options = get_options()
@@ -68,28 +74,28 @@ if __name__ == "__main__":
     simulation: MySimulation = MySimulation(traci)
     report: MyReport = MyReport("report.csv")
     step = 0
-    while step <= 8500:
+    while step <= 14400:
         traci.simulationStep()
         if(step % 600 == 0):
-            #if(step > 2000):
+            # if(step > 2000):
             #        simulation.change_max_speed_bus(
             #        20.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
             simulation.get_all_people_on_simulation_buses(step)
         step += 1
 
-    dataset = format_in_3dimensional_array(simulation.get_report_person_by_bus())
+    dataset = convert_in_matrix_3d(simulation.get_report_person_by_bus())
 
     dataset_rearranged = map(reorder_strings_as_integers, dataset)
-
     report.write_file(dataset_rearranged)
+    
     response = report.get_group_mean("bus_id", "step_log")
-    print("Media de pessoas por ônibus e intervalo de tempo: \n")
-    print(response)
-    print("-------------------")
-    response2 = report.get_group_mean("bus_id")
-    print("Media de pessoas por ônibus: \n")
-    print(response2)
+    create_file(response, "report_people_bus_by_step")
 
+    # print("Media de pessoas por ônibus e intervalo de tempo: \n")
+    # print(response)
+    
+    response2 = report.get_group_mean("bus_id")
+    create_file(response2, "report_people_by_bus")
     # print(report.get_head_register_csv(50))
     # print(report.get_tail_register_csv(50))
     # print(report.get_value_counts("bus_id"))
