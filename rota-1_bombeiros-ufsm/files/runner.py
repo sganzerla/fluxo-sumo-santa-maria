@@ -77,9 +77,9 @@ if __name__ == "__main__":
     while step <= 14400:
         traci.simulationStep()
         if(step % 600 == 0):
-            # if(step > 2000):
-            #        simulation.change_max_speed_bus(
-            #        20.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
+            if(step > 2000):
+                   simulation.change_max_speed_bus(
+                   20.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
             simulation.get_all_people_on_simulation_buses(step)
         step += 1
 
