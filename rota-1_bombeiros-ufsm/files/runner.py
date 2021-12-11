@@ -74,7 +74,7 @@ if __name__ == "__main__":
     simulation: MySimulation = MySimulation(traci)
     report: MyReport = MyReport("report.csv")
     step = 0
-    while step <= 7200:
+    while step <= 3200:
         traci.simulationStep()
         if(step % 600 == 0):
             if(step > 1800):
@@ -88,13 +88,13 @@ if __name__ == "__main__":
     dataset_rearranged = map(reorder_strings_as_integers, dataset)
     report.write_file(dataset_rearranged)
     
-    response = report.get_group_mean("bus_id", "step_log")
-    create_file(response, "report_people_bus_by_step")
+    # response = report.get_group_mean("bus_id", "step_log", True)
+    # create_file(response, "report_people_bus_by_step")
 
-    print("Media de pessoas por ônibus e intervalo de tempo: \n")
-    print(response)
+    # print("Media de pessoas por ônibus e intervalo de tempo: \n")
+    # print(response)
     
-    response2 = report.get_group_mean("bus_id")
+    response2 = report.get_group_mean("bus_id", True)
     create_file(response2, "report_people_by_bus")
     print("Media de pessoas por ônibus: \n")
     print(response2)

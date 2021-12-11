@@ -2,6 +2,8 @@ from io import TextIOWrapper
 # pip install pandas
 import pandas as pd
 
+import matplotlib.pyplot as plt
+
 
 class MyReport:
 
@@ -35,9 +37,15 @@ class MyReport:
 
     def get_group_mean(self, column_name: str, secondary_column_name: str = None):
         if (secondary_column_name is None):
-            return self._read_file().groupby([column_name])[['people_on_bus']].agg(['mean', 'sum', 'count']).round(2)
+            dataset = self._read_file().groupby([column_name])[['people_on_bus']].agg(['mean', 'count']).round(2)
+            dataset.plot(kind='bar', x='bus_id', y='people_on_bus', legend=False)
+            plt.show()
+            return dataset
         else:
-            return self._read_file().groupby([column_name, secondary_column_name])[['people_on_bus']].agg(['mean']).round(2)
+            dataset = self._read_file().groupby([column_name])[['people_on_bus']].agg(['mean', 'count']).round(2)
+            dataset.plot.bar()
+            plt.show()
+            return dataset
 
     def _read_file(self):
         # TODO - implementar o read_file receber o header dinamicamente

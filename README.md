@@ -18,3 +18,4 @@
     * [ ] Refatorar o código para melhorar a legibilidade
     * [ ] Refatorar o código para receber parâmetros de entrada com params
     * [x] Formatar a chave dos ônibus para ser um valor sequêncial numérico ou acrescentar duas casas 00 na frente
+    * [ ] Separar toda a parte do relatório como criar arquivos, printar logs e gerar gráficos
