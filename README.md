@@ -9,9 +9,9 @@
 ### Simulação
 
     * [x] Extrair resultado do pandas para um arquivo CSV
-    * [ ] Gerar gráficos da simulação de acordo com o resultado do pandas:
-      * [ ]  com atraso nos ônibus
-      * [ ]  sem atrasos nos ônibus
+    * [x] Gerar gráficos da simulação de acordo com o resultado do pandas:
+      * [x]  com atraso nos ônibus
+      * [x]  sem atrasos nos ônibus
 
 ### Refatoração do código
 

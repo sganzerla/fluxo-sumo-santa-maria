@@ -74,12 +74,12 @@ if __name__ == "__main__":
     simulation: MySimulation = MySimulation(traci)
     report: MyReport = MyReport("report.csv")
     step = 0
-    while step <= 14400:
+    while step <= 7200:
         traci.simulationStep()
         if(step % 600 == 0):
-            if(step > 2000):
+            if(step > 1800):
                    simulation.change_max_speed_bus(
-                   20.0, 0.1, ['flow_bombeiros-ufsm.1', 'flow_bombeiros-ufsm.3', 'flow_bombeiros-ufsm.5', 'flow_bombeiros-ufsm.7'])
+                   20.0, 0.1, ['flow_bombeiros-ufsm.10', 'flow_bombeiros-ufsm.12', 'flow_bombeiros-ufsm.14', 'flow_bombeiros-ufsm.16'])
             simulation.get_all_people_on_simulation_buses(step)
         step += 1
 
@@ -91,16 +91,12 @@ if __name__ == "__main__":
     response = report.get_group_mean("bus_id", "step_log")
     create_file(response, "report_people_bus_by_step")
 
-    # print("Media de pessoas por ônibus e intervalo de tempo: \n")
-    # print(response)
+    print("Media de pessoas por ônibus e intervalo de tempo: \n")
+    print(response)
     
     response2 = report.get_group_mean("bus_id")
     create_file(response2, "report_people_by_bus")
-    # print(report.get_head_register_csv(50))
-    # print(report.get_tail_register_csv(50))
-    # print(report.get_value_counts("bus_id"))
-    # print(report.get_shape())
-    # print(report.get_info())
-    # print(report.get_describe())
+    print("Media de pessoas por ônibus: \n")
+    print(response2)
 
     traci.close()
