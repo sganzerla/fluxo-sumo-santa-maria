@@ -1,8 +1,10 @@
 from io import TextIOWrapper
+import dis
 # pip install pandas
 import pandas as pd
 
 import matplotlib.pyplot as plt
+from datetime import datetime
 
 
 class MyReport:
@@ -42,6 +44,9 @@ class MyReport:
         if(print_log):
             print(dataset)
 
+        if(create_file):
+            self.create_file(dataset, self.get_group_mean.__name__)
+
         if(show_plot):
             dataset.plot.bar()
             plt.show(block=False)
@@ -56,3 +61,12 @@ class MyReport:
     def _read_file(self):
         # TODO - implementar o read_file receber o header dinamicamente
         return pd.read_csv(self.file, names=['bus_id', 'people_on_bus', 'step_log'], header=None)
+
+    def create_file(self, dataset, name_file):
+         
+        df = pd.DataFrame(dataset)
+        df.to_csv("dist/" + name_file + '_' + self._get_now() +
+                  '.csv', index=True, header=True)
+
+    def _get_now(self):
+        return datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
