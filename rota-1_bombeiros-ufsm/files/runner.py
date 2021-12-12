@@ -44,6 +44,7 @@ def concatenate_zeros_when_less_than_100(itemCol):
 def reorder_strings_as_integers(col):
     return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
 
+
 def convert_in_matrix_3d(matrix_multi):
 
     matrix = []
@@ -57,7 +58,8 @@ def convert_in_matrix_3d(matrix_multi):
 def create_file(dataset, name_file):
     df = pd.DataFrame(dataset)
     df.to_csv(name_file + '.csv', index=True, header=True)
- 
+
+
 if __name__ == "__main__":
 
     options = get_options()
@@ -78,8 +80,8 @@ if __name__ == "__main__":
         traci.simulationStep()
         if(step % 600 == 0):
             if(step > 1800):
-                   simulation.change_max_speed_bus(
-                   20.0, 0.1, ['flow_bombeiros-ufsm.10', 'flow_bombeiros-ufsm.12', 'flow_bombeiros-ufsm.14', 'flow_bombeiros-ufsm.16'])
+                simulation.change_max_speed_bus(
+                    20.0, 0.1, ['flow_bombeiros-ufsm.10', 'flow_bombeiros-ufsm.12', 'flow_bombeiros-ufsm.14', 'flow_bombeiros-ufsm.16'])
             simulation.get_all_people_on_simulation_buses(step)
         step += 1
 
@@ -87,16 +89,17 @@ if __name__ == "__main__":
 
     dataset_rearranged = map(reorder_strings_as_integers, dataset)
     report.write_file(dataset_rearranged)
-    
+
     # response = report.get_group_mean("bus_id", "step_log", True)
     # create_file(response, "report_people_bus_by_step")
 
     # print("Media de pessoas por ônibus e intervalo de tempo: \n")
     # print(response)
-    
-    response2 = report.get_group_mean("bus_id", True)
-    create_file(response2, "report_people_by_bus")
-    print("Media de pessoas por ônibus: \n")
-    print(response2)
+
+    response2 = report.get_group_mean(
+        column_name="bus_id", print_log=True, show_plot=True)
+    # create_file(response2, "report_people_by_bus")
+    # print("Media de pessoas por ônibus: \n")
+    # print(response2)
 
     traci.close()

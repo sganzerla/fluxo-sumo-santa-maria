@@ -35,17 +35,23 @@ class MyReport:
     def get_describe(self):
         return self._read_file().describe()
 
-    def get_group_mean(self, column_name: str, secondary_column_name: str = None):
-        if (secondary_column_name is None):
-            dataset = self._read_file().groupby([column_name])[['people_on_bus']].agg(['mean', 'count']).round(2)
-            dataset.plot(kind='bar', x='bus_id', y='people_on_bus', legend=False)
-            plt.show()
-            return dataset
-        else:
-            dataset = self._read_file().groupby([column_name])[['people_on_bus']].agg(['mean', 'count']).round(2)
+    def get_group_mean(self, column_name: str, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
+        dataset = self._read_file().groupby([column_name])[
+            ['people_on_bus']].mean().round(2)
+
+        if(print_log):
+            print(dataset)
+
+        if(show_plot):
             dataset.plot.bar()
-            plt.show()
-            return dataset
+            plt.show(block=False)
+
+    # def get_group_mean_multi_columns(self, *columns_name: str, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
+    #     dataset = self._read_file().groupby(columns_name).mean().round(2)
+    #     dataset.plot.pie(y='people_on_bus', figsize=(
+    #         5, 5), autopct='%1.1f%%', shadow=True, startangle=90)
+    #     plt.show()
+    #     return dataset
 
     def _read_file(self):
         # TODO - implementar o read_file receber o header dinamicamente
