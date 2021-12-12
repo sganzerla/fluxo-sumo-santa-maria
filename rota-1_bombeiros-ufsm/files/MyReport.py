@@ -48,8 +48,7 @@ class MyReport:
             self._create_file(dataset, self.get_group_mean.__name__)
 
         if(show_plot):
-            dataset.plot.bar()
-            plt.show(block=False)
+            self._create_plot(dataset)
 
     # def get_group_mean_multi_columns(self, *columns_name: str, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
     #     dataset = self._read_file().groupby(columns_name).mean().round(2)
@@ -69,3 +68,11 @@ class MyReport:
 
     def _get_now(self):
         return datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    
+    def _create_plot(self, dataset):
+        dataset.plot.bar()
+        plt.ion()
+        plt.show()
+        plt.draw()
+        plt.pause(0.001)
+        input("Press Enter to continue...")

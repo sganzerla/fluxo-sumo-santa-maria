@@ -6,7 +6,7 @@ if (Test-Path 'dist') {
 
 if($PSVersionTable.Platform -eq "Unix")
 {
-  python -i ./runner.py
+  python ./runner.py
 } else{
-  python -i .\runner.py
+  python .\runner.py
 }
