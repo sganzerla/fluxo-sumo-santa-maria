@@ -78,6 +78,7 @@ if __name__ == "__main__":
         step += 1
 
     dataset = convert_in_matrix_3d(simulation.get_report_person_by_bus())
+    traci.close()
 
     dataset_rearranged = map(reorder_strings_as_integers, dataset)
     report.write_file(dataset_rearranged)
@@ -86,4 +87,3 @@ if __name__ == "__main__":
         column_name="bus_id", print_log=True, show_plot=True, create_file=True)
    
 
-    traci.close()
