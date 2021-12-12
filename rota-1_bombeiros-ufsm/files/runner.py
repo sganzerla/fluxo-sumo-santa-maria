@@ -27,7 +27,6 @@ def get_options():
     options, args = opt_parser.parse_args()
     return options
 
-
 def concatenate_zeros_when_less_than_100(itemCol):
     text = itemCol.split('.')[0]
     number = itemCol.split('.')[1]
@@ -38,13 +37,10 @@ def concatenate_zeros_when_less_than_100(itemCol):
             return text + ".0" + str(number)
     return itemCol
 
-
 def reorder_strings_as_integers(col):
     return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
 
-
 def convert_in_matrix_3d(matrix_multi):
-
     matrix = []
     for x in matrix_multi:
         for y in x:
@@ -66,7 +62,7 @@ if __name__ == "__main__":
     traci.start(sumo_cmd)
 
     simulation: MySimulation = MySimulation(traci)
-    report: MyReport = MyReport("report.csv")
+    report: MyReport = MyReport()
     step = 0
     while step <= 3200:
         traci.simulationStep()
@@ -78,9 +74,9 @@ if __name__ == "__main__":
         step += 1
 
     dataset = convert_in_matrix_3d(simulation.get_report_person_by_bus())
+    dataset_rearranged = map(reorder_strings_as_integers, dataset)
     traci.close()
 
-    dataset_rearranged = map(reorder_strings_as_integers, dataset)
     report.write_file(dataset_rearranged)
 
     report.get_group_mean(

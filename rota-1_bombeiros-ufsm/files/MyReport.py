@@ -1,5 +1,4 @@
 from io import TextIOWrapper
-import dis
 # pip install pandas
 import pandas as pd
 
@@ -9,8 +8,8 @@ from datetime import datetime
 
 class MyReport:
 
-    def __init__(self, file: str):
-        self.file = file
+    def __init__(self):
+        self.file = "dist/" + self.__class__.__name__ + '_' + self._get_now() + '.csv' 
 
     def write_file(self, list_items: list):
         new_file: TextIOWrapper = open(self.file, "w")
