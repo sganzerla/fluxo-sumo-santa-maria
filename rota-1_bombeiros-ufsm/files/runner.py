@@ -27,6 +27,7 @@ def get_options():
     options, args = opt_parser.parse_args()
     return options
 
+
 def concatenate_zeros_when_less_than_100(itemCol):
     text = itemCol.split('.')[0]
     number = itemCol.split('.')[1]
@@ -37,8 +38,10 @@ def concatenate_zeros_when_less_than_100(itemCol):
             return text + ".0" + str(number)
     return itemCol
 
+
 def reorder_strings_as_integers(col):
     return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
+
 
 def convert_in_matrix_3d(matrix_multi):
     matrix = []
@@ -47,6 +50,7 @@ def convert_in_matrix_3d(matrix_multi):
             matrix.append(y)
 
     return matrix
+
 
 if __name__ == "__main__":
 
@@ -79,7 +83,13 @@ if __name__ == "__main__":
 
     report.write_file(dataset_rearranged)
 
-    report.get_group_mean(
-        column_name="bus_id", print_log=True, show_plot=True, create_file=True)
-   
-
+    group_columns = ['bus_id']
+    select_columns = ['people_on_bus']
+    functions_pandas = ['mean', 'count', 'std', 'min', 'max']
+    report.extract_information(
+        group_by_columns=group_columns, 
+        select_by_columns=select_columns, 
+        functions_name_pandas=functions_pandas,
+        print_log=True, 
+        show_plot=True, 
+        create_file=True)

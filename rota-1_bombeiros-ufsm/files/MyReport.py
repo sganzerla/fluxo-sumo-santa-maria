@@ -9,7 +9,7 @@ from datetime import datetime
 class MyReport:
 
     def __init__(self):
-        self.file = "dist/" + self.__class__.__name__ + '_' + self._get_now() + '.csv' 
+        self.file = "dist/" + self.__class__.__name__ + '_' + self._get_now() + '.csv'
 
     def write_file(self, list_items: list):
         new_file: TextIOWrapper = open(self.file, "w")
@@ -36,25 +36,19 @@ class MyReport:
     def get_describe(self):
         return self._read_file().describe()
 
-    def get_group_mean(self, column_name: str, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
-        dataset = self._read_file().groupby([column_name])[
-            ['people_on_bus']].mean().round(2)
+    def extract_information(self, group_by_columns, select_by_columns, functions_name_pandas, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
+
+        dataset = self._read_file().groupby(group_by_columns)[select_by_columns
+                                                                ].agg(functions_name_pandas).reset_index().round(2)
 
         if(print_log):
             print(dataset)
 
         if(create_file):
-            self._create_file(dataset, self.get_group_mean.__name__)
+            self._create_file(dataset, self.extract_information.__name__)
 
         if(show_plot):
             self._create_plot(dataset)
-
-    # def get_group_mean_multi_columns(self, *columns_name: str, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
-    #     dataset = self._read_file().groupby(columns_name).mean().round(2)
-    #     dataset.plot.pie(y='people_on_bus', figsize=(
-    #         5, 5), autopct='%1.1f%%', shadow=True, startangle=90)
-    #     plt.show()
-    #     return dataset
 
     def _read_file(self):
         # TODO - implementar o read_file receber o header dinamicamente
@@ -67,7 +61,7 @@ class MyReport:
 
     def _get_now(self):
         return datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    
+
     def _create_plot(self, dataset):
         dataset.plot.bar()
         plt.ion()
