@@ -19,14 +19,12 @@ from MySimulation import MySimulation
 from MyReport import MyReport
 no_gui = True
 
-
 def get_options():
     opt_parser = optparse.OptionParser()
     opt_parser.add_option("--nogui", action="store_true",
                           default=no_gui, help="run the commandline version of sumo")
     options, args = opt_parser.parse_args()
     return options
-
 
 def concatenate_zeros_when_less_than_100(itemCol):
     text = itemCol.split('.')[0]
@@ -38,35 +36,28 @@ def concatenate_zeros_when_less_than_100(itemCol):
             return text + ".0" + str(number)
     return itemCol
 
-
 def reorder_strings_as_integers(col):
     return (concatenate_zeros_when_less_than_100(col[0]), col[1], col[2])
-
 
 def convert_in_matrix_3d(matrix_multi):
     matrix = []
     for x in matrix_multi:
         for y in x:
             matrix.append(y)
-
     return matrix
 
-
 if __name__ == "__main__":
-
     options = get_options()
-
     if options.nogui:
         sumoBinary = checkBinary('sumo')
     else:
         sumoBinary = checkBinary('sumo-gui')
-
     sumo_cmd = [sumoBinary, "-c", "osm.sumocfg"]
-
+   
     traci.start(sumo_cmd)
-
     simulation: MySimulation = MySimulation(traci)
-    report: MyReport = MyReport()
+    header_name_columns = ['bus_id', 'people_on_bus', 'step_log']
+    report: MyReport = MyReport(header_name_columns)
     step = 0
     while step <= 3200:
         traci.simulationStep()
@@ -87,8 +78,8 @@ if __name__ == "__main__":
     select_columns = ['people_on_bus']
     functions_pandas = ['mean', 'count', 'std', 'min', 'max']
     report.extract_information(
-        group_by_columns=group_columns, 
-        select_by_columns=select_columns, 
+        columns_to_group_by=group_columns, 
+        columns_to_select_by=select_columns, 
         functions_name_pandas=functions_pandas,
         print_log=True, 
         show_plot=True, 

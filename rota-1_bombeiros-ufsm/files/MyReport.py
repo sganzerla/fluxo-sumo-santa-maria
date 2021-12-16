@@ -4,13 +4,14 @@ import pandas as pd
 
 import matplotlib.pyplot as plt
 from datetime import datetime
-
+from itertools import cycle, islice
 
 class MyReport:
 
-    def __init__(self):
+    def __init__(self,  header_name_columns: list):
         self.file = "dist/" + self.__class__.__name__ + '_' + self._get_now() + '.csv'
-
+        self.header_name_columns = header_name_columns
+        
     def write_file(self, list_items: list):
         new_file: TextIOWrapper = open(self.file, "w")
         for item in list_items:
@@ -36,10 +37,9 @@ class MyReport:
     def get_describe(self):
         return self._read_file().describe()
 
-    def extract_information(self, group_by_columns, select_by_columns, functions_name_pandas, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
+    def extract_information(self, columns_to_group_by, columns_to_select_by, functions_name_pandas, print_log: bool = False, show_plot: bool = False, create_file: bool = False):
 
-        dataset = self._read_file().groupby(group_by_columns)[select_by_columns
-                                                                ].agg(functions_name_pandas).reset_index().round(2)
+        dataset = self._read_file().groupby(columns_to_group_by)[columns_to_select_by].agg(functions_name_pandas).reset_index().round(2)
 
         if(print_log):
             print(dataset)
@@ -51,8 +51,7 @@ class MyReport:
             self._create_plot(dataset)
 
     def _read_file(self):
-        # TODO - implementar o read_file receber o header dinamicamente
-        return pd.read_csv(self.file, names=['bus_id', 'people_on_bus', 'step_log'], header=None)
+        return pd.read_csv(self.file, names=self.header_name_columns, header=None)
 
     def _create_file(self, dataset, name_file):
         df = pd.DataFrame(dataset)
@@ -63,7 +62,9 @@ class MyReport:
         return datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 
     def _create_plot(self, dataset):
-        dataset.plot.bar()
+        # TODO color  
+        my_colors = list(islice(cycle(['b', 'r', 'g', 'y', 'k']), None, len(dataset)))
+        dataset.plot(kind='bar',  color=my_colors)
         plt.ion()
         plt.show()
         plt.draw()
