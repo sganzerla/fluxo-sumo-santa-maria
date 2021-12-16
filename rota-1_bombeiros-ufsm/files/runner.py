@@ -83,4 +83,6 @@ if __name__ == "__main__":
         functions_name_pandas=functions_pandas,
         print_log=True, 
         show_plot=True, 
-        create_file=True)
+        create_file=True,
+        kind_plot_name='bar'
+        )
