@@ -59,7 +59,7 @@ if __name__ == "__main__":
     header_name_columns = ['bus_id', 'people_on_bus', 'step_log']
     report: MyReport = MyReport(header_name_columns)
     step = 0
-    while step <= 3200:
+    while step <= 5200:
         traci.simulationStep()
         if(step % 600 == 0):
             if(step > 1800):
