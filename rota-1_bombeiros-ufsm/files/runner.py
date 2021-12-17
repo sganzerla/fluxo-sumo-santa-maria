@@ -17,7 +17,7 @@ from sumolib import checkBinary  # noqa
 import traci
 from MySimulation import MySimulation
 from MyReport import MyReport
-no_gui = True
+no_gui = False
 
 def get_options():
     opt_parser = optparse.OptionParser()
@@ -63,8 +63,9 @@ if __name__ == "__main__":
         traci.simulationStep()
         if(step % 600 == 0):
             if(step > 1800):
-                simulation.change_max_speed_bus(
-                    20.0, 0.1, ['flow_bombeiros-ufsm.10', 'flow_bombeiros-ufsm.12', 'flow_bombeiros-ufsm.14', 'flow_bombeiros-ufsm.16'])
+                buses_to_delay = ['flow_bombeiros-ufsm.2', 'flow_bombeiros-ufsm.4', 'flow_bombeiros-ufsm.6', 'flow_bombeiros-ufsm.8']
+                color_delay = (255, 0, 0)
+                simulation.change_max_speed_bus(speed = 20.0, accel = 0.1, bus_ids_delay = buses_to_delay, color = color_delay)
             simulation.get_all_people_on_simulation_buses(step)
         step += 1
 

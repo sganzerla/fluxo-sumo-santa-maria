@@ -21,13 +21,13 @@ class MySimulation:
     def get_all_people_on_simulation_buses(self, step: int):
         self._get_all_people_on_bus_by_interval_step(step)
 
-    def change_max_speed_bus(self, speed: float, accel: float,  bus_id: list):
-        buses: list[str] = self.get_all_bus()
+    def change_max_speed_bus(self, speed: float, accel: float, bus_ids_delay, color):
+        buses = self.get_all_bus()
         for bus in buses:
-            if bus[0] in bus_id:
+            if bus[0] in bus_ids_delay:
                 self.traci.vehicle.setMaxSpeed(bus[0], speed)
-                self.traci.vehicle.setColor(bus[0], (255, 0, 242))
                 self.traci.vehicle.setAccel(bus[0], accel)
+                self.traci.vehicle.setColor(bus[0], color)
 
     # metodos privados
     # pega todas as pessoas que estão nos veículos rodando na simulação naquele instante
