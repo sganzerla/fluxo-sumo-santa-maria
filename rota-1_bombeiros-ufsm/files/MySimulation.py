@@ -1,11 +1,12 @@
 from sys import modules
-
+import requests
 
 class MySimulation:
 
-    def __init__(self, traci_instance: modules):
+    def __init__(self, traci_instance: modules, url_api_base):
         self.traci: modules = traci_instance
         self.people_on_each_bus_all_simulation: list = []
+        self.url_api_base = url_api_base
 
     def get_report_person_by_bus(self):
         return self.people_on_each_bus_all_simulation

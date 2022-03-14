@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
-
+import tkinter as tk
 import optparse
 import os
 import sys
@@ -47,6 +47,9 @@ def convert_in_matrix_3d(matrix_multi):
     return matrix
 
 if __name__ == "__main__":
+    
+    window = tk.Tk()
+    
     options = get_options()
     if options.nogui:
         sumoBinary = checkBinary('sumo')
@@ -55,11 +58,12 @@ if __name__ == "__main__":
     sumo_cmd = [sumoBinary, "-c", "osm.sumocfg"]
    
     traci.start(sumo_cmd)
-    simulation: MySimulation = MySimulation(traci)
+    simulation: MySimulation = MySimulation(traci, url_api_base= "http://localhost:3000")
     header_name_columns = ['bus_id', 'people_on_bus', 'step_log']
     report: MyReport = MyReport(header_name_columns)
     step = 0
-    while step <= 5200:
+    
+    while step <= 200:
         traci.simulationStep()
         if(step % 600 == 0):
             if(step > 1800):
