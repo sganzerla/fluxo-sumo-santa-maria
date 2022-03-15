@@ -4,7 +4,7 @@
 
 ![image](resources/rotaA.png)
 
-A mágica acontece aqui nesse trecho do código
+Trecho do código manipulação via Traci
 
     while step <= 5200:
             traci.simulationStep()
@@ -27,21 +27,21 @@ A mágica acontece aqui nesse trecho do código
       * [x]  com atraso nos ônibus
       * [x]  sem atrasos nos ônibus
 
- Relatório gerado a cada 600seg do número de pessoas transportadas em cada ônibus
+#### Relatório gerado a cada 600seg do número de pessoas transportadas em cada ônibus
 ![image](resources/report.png)
 
-Log da quantidade de pessoas nas paradas a cada 10 segundos
+#### Log da quantidade de pessoas nas paradas a cada 10 segundos
 ![image](resources/bus-stop.png)
 
-### TODO
+## TODO
 
-## Informações sobre paradas de ônibus
+### Informações sobre paradas de ônibus
   
     * [ ] Implementar painel para exibir em tempo real
       * [ ] Quantidade de pessoas nas paradas a cada 10seg
       * [ ] Chegada de um ônibus na parada
 
-## Informações sobre os ônibus
+### Informações sobre os ônibus
 
     * [ ] Implementar painel para exibir em tempo real
       * [ ] Quantidade de pessoas no ônibus
