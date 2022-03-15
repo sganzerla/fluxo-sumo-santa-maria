@@ -1,12 +1,10 @@
 from sys import modules
-import requests
 
 class MySimulation:
 
-    def __init__(self, traci_instance: modules, url_api_base):
+    def __init__(self, traci_instance: modules):
         self.traci: modules = traci_instance
         self.people_on_each_bus_all_simulation: list = []
-        self.url_api_base = url_api_base
 
     def get_report_person_by_bus(self):
         return self.people_on_each_bus_all_simulation
@@ -14,6 +12,9 @@ class MySimulation:
     def get_all_bus_stops(self):
         all_bus_stop: list[str] = self.traci.busstop.getIDList()
         return self._sort_bus_stop_by_name(all_bus_stop)
+
+    def get_all_people_in_bus_stop(self, bus_stop_id: str):
+        return self.traci.busstop.getPersonCount(bus_stop_id)
 
     def get_all_bus(self):
         all_vehicles: list[str] = self.traci.vehicle.getIDList()
@@ -29,6 +30,11 @@ class MySimulation:
                 self.traci.vehicle.setMaxSpeed(bus[0], speed)
                 self.traci.vehicle.setAccel(bus[0], accel)
                 self.traci.vehicle.setColor(bus[0], color)
+
+    def log_count_people_in_bus_stop(self, bus_stops_list):
+        for i in bus_stops_list:
+            print(i[0], self.get_all_people_in_bus_stop(i[0]))
+
 
     # metodos privados
     # pega todas as pessoas que estão nos veículos rodando na simulação naquele instante
