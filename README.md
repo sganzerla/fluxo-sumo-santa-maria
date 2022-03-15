@@ -4,7 +4,21 @@
 
 ![image](resources/rotaA.png)
 
-## TO DO
+A mágica acontece aqui nesse trecho do código
+
+    while step <= 5200:
+            traci.simulationStep()
+            # log de pessoas em todas as paradas a cada 10 passos
+            if(step % 10 == 0):
+                simulation.log_count_people_in_bus_stop(bus_stops_list)
+            # a partir de 1800 passos inicio o delay em alguns onibus
+            if(step > 1800):
+                simulation.change_max_speed_bus(
+                    speed=20.0, accel=0.1, bus_ids_delay=buses_to_delay, color=(255, 0, 0))
+            # log de pessoas nos ônibus a cada 600 passos
+            if(step % 600 == 0):
+                simulation.get_all_people_on_simulation_buses(step)
+            step += 1
 
 ### Simulação
 
@@ -13,9 +27,32 @@
       * [x]  com atraso nos ônibus
       * [x]  sem atrasos nos ônibus
 
-### Refatoração do código
+ Relatório gerado a cada 600seg do número de pessoas transportadas em cada ônibus
+![image](resources/report.png)
 
-    * [ ] Refatorar o código para melhorar a legibilidade
-    * [x] Refatorar o código para receber parâmetros de entrada com params
-    * [x] Formatar a chave dos ônibus para ser um valor sequêncial numérico ou acrescentar duas casas 00 na frente
-    * [x] Separar toda a parte do relatório como criar arquivos, printar logs e gerar gráficos
+Log da quantidade de pessoas nas paradas a cada 10 segundos
+![image](resources/bus-stop.png)
+
+### TODO
+
+## Informações sobre paradas de ônibus
+  
+    * [ ] Implementar painel para exibir em tempo real
+      * [ ] Quantidade de pessoas nas paradas a cada 10seg
+      * [ ] Chegada de um ônibus na parada
+
+## Informações sobre os ônibus
+
+    * [ ] Implementar painel para exibir em tempo real
+      * [ ] Quantidade de pessoas no ônibus
+      * [ ] Quantidade de pessoas que desceram e subiram nas paradas
+
+## Tecnologias
+
+* Python 3.8
+* SUMO
+* Traci
+* W10 ou Ubuntu
+* Pandas (lib)
+* Matplotlib (lib)
+  
