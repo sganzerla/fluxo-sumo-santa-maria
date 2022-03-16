@@ -6,7 +6,6 @@ Foi criado a linha Bombeiros-UFSM com as paradas geograficamente nos pontos reai
 
 Passageiros foram gerados randomicamente para popularem as paradas e serem transportadas pelos ônibus que passam de tempos em tempos.
 
-
 O itinerário é este abaixo numa visualização feita com o [App Moovit](https://moovitapp.com/santa_maria-4143/poi/UFSM/Parada%20Bombeiros/pt-br?tll=-29.71735_-53.71705&fll=-29.689202_-53.81529&customerId=4908&ref=7&poiType=error)
 
 ![image](resources/rotaA.png)
@@ -18,16 +17,14 @@ Para rodar a simulação primeiro acessar o diretório `./rota-1_bombeiros-ufsm/
 Depois se possuir o `PowerShell` instalado na máquina (inclusive no Linux) basta executar no terminal o script `run.ps1`
 
     `./rota-1_bombeiros-ufsm/files/run.ps1`
-    
+
 Ou pode-se também chamar a simulação desta maneira
 
     `./rota-1_bombeiros-ufsm/files/python .\runner.py`
 
 Vídeo da simulação rodando.
 
-![image](https://youtu.be/_pl1Y_42GJk)
-
-
+[![Vídeo](resources/sumo.png)](https://youtu.be/_pl1Y_42GJk)
 
 O arquivo `\runner.py` é responsável por controlar a simulação, aqui um trecho do código com manipulação via Traci
 
