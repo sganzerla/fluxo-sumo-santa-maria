@@ -23,6 +23,12 @@ Ou pode-se também chamar a simulação desta maneira
 
     `./rota-1_bombeiros-ufsm/files/python .\runner.py`
 
+Vídeo da simulação rodando.
+
+![image](https://youtu.be/_pl1Y_42GJk)
+
+
+
 O arquivo `\runner.py` é responsável por controlar a simulação, aqui um trecho do código com manipulação via Traci
 
     while step <= 5200:
